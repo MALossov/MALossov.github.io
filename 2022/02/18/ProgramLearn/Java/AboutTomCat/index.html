@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World | Hexo</title>
+  <title>TOMCAT的学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="基本使用方法为：官网下zip,然后bin目录下startup 服务等高级安装方法见：(128条消息) Tomcat 下载安装，启动，停止，注册服务，开机自启_蚩尤后裔-CSDN博客_tomcat 服务启动 注意服务启动必须设置JAVA_HOME，不设置就很惨(128条消息) 配置JAVA_HOME_追风者-CSDN博客_java_home   更改用户名为：(128条消息) 如何设置tomcat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://shumeipai.local/2022/02/18/hello-world/index.html">
+<meta property="og:title" content="TOMCAT的学习">
+<meta property="og:url" content="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutTomCat/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="基本使用方法为：官网下zip,然后bin目录下startup 服务等高级安装方法见：(128条消息) Tomcat 下载安装，启动，停止，注册服务，开机自启_蚩尤后裔-CSDN博客_tomcat 服务启动 注意服务启动必须设置JAVA_HOME，不设置就很惨(128条消息) 配置JAVA_HOME_追风者-CSDN博客_java_home   更改用户名为：(128条消息) 如何设置tomcat">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-17T19:50:41.885Z">
-<meta property="article:modified_time" content="2022-02-17T19:50:41.885Z">
+<meta property="article:published_time" content="2022-02-17T20:00:53.000Z">
+<meta property="article:modified_time" content="2022-02-17T20:23:17.234Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="编程学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -73,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-ProgramLearn/Java/AboutTomCat" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/02/18/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-02-17T19:50:41.885Z" itemprop="datePublished">2022-02-18</time>
+    <a href="/2022/02/18/ProgramLearn/Java/AboutTomCat/" class="article-date">
+  <time class="dt-published" datetime="2022-02-17T20:00:53.000Z" itemprop="datePublished">2022-02-18</time>
 </a>
     
   </div>
@@ -87,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Hello World
+      TOMCAT的学习
     </h1>
   
 
@@ -95,42 +96,55 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <ul>
+<li>基本使用方法为：官网下zip,然后bin目录下startup</li>
+<li>服务等高级安装方法见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangmx1993328/article/details/81013715">(128条消息) Tomcat 下载安装，启动，停止，注册服务，开机自启_蚩尤后裔-CSDN博客_tomcat 服务启动</a><ul>
+<li>注意服务启动必须设置JAVA_HOME，不设置就很惨<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42017152/article/details/90732057">(128条消息) 配置JAVA_HOME_追风者-CSDN博客_java_home</a></li>
+</ul>
+</li>
+<li>更改用户名为：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lubin100/article/details/81018054">(128条消息) 如何设置tomcat管理员的用户名和密码_这个人很吊的技术博客-CSDN博客_tomcat 用户名密码</a></li>
+<li>更改GBK编码，不然都是乱码：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25775675/article/details/104839569">(128条消息) Windows 下Tomcat中文乱码解决_菜鸟小窝的博客-CSDN博客_tomcat 乱码</a></li>
+<li>关闭命令为：.&#x2F;shutdown.bat</li>
+</ul>
+<h2 id="非常重要"><a href="#非常重要" class="headerlink" title="非常重要"></a><strong>非常重要</strong></h2><ul>
+<li>开始使用tomcat的一晚上：2&#x2F;7日晚，一直无法成功部署，原因不明，估计是<strong>pom.xml</strong>没有配置正确导致文件有些损坏的原因</li>
+<li>找了一堆资料，一晚上，终于找到一种能用的：<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/hyh17808770899/article/details/114628758?spm=1001.2101.3001.6650.2&depth_1-utm_relevant_index=3">(129条消息) 在IDEA中使用maven创建第一个Servlet项目_雨云21的博客-CSDN博客</a></li>
+<li>还有一个不能用但看着还挺科学的:<a target="_blank" rel="noopener" href="https://blog.csdn.net/huweiliyi/article/details/107637785">(129条消息) IDEA中用maven创建的Servlet项目_lucashu的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/guodao/p/9702488.html">关于servlet的@WebServlet注解。 - 过道 - 博客园 (cnblogs.com)</a></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shumeipai.local/2022/02/18/hello-world/" data-id="ckzrfls1o0000swlu8bymdmm7" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutTomCat/" data-id="ckzrfls2a000qswluhlcg5niv" data-title="TOMCAT的学习" class="article-share-link">Share</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2022/02/18/ProgramLearn/Raspberry/SystemUSE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/02/18/ProgramLearn/Java/AboutMySQL/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          树莓派系统基础
+          MYSQL的学习
         
       </div>
     </a>
   
+  
+    <a href="/2022/02/18/ProgramLearn/Java/JDBC/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JDBC的学习</div>
+    </a>
   
 </nav>
 

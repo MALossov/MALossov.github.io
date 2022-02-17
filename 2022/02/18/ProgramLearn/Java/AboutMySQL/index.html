@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>树莓派系统基础 | Hexo</title>
+  <title>MYSQL的学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="查看剩余内存使用情况：树莓派查看硬盘空间使用 - 13717607836 - 博客园 (cnblogs.com)———一言以蔽之df -h">
+  <meta name="description" content="踩过的坑 在配置mysql的时候踩过的坑还是挺多的，包括但不限于： 开始装了一堆奇怪的服务，结果server的服务在终端上意外地不太好用，心态炸裂 曾经没有记住命令 mysqld --initialize --console这个命令产生时的密码，导致的后果是——登录不了，需要各种方法绕，比如：(128条消息) Windows下忘记MySQL数据库root用户密码解决办法_Random-CSDN博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派系统基础">
-<meta property="og:url" content="http://shumeipai.local/2022/02/18/ProgramLearn/Raspberry/SystemUSE/index.html">
+<meta property="og:title" content="MYSQL的学习">
+<meta property="og:url" content="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutMySQL/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="查看剩余内存使用情况：树莓派查看硬盘空间使用 - 13717607836 - 博客园 (cnblogs.com)———一言以蔽之df -h">
+<meta property="og:description" content="踩过的坑 在配置mysql的时候踩过的坑还是挺多的，包括但不限于： 开始装了一堆奇怪的服务，结果server的服务在终端上意外地不太好用，心态炸裂 曾经没有记住命令 mysqld --initialize --console这个命令产生时的密码，导致的后果是——登录不了，需要各种方法绕，比如：(128条消息) Windows下忘记MySQL数据库root用户密码解决办法_Random-CSDN博客">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-17T20:00:53.000Z">
-<meta property="article:modified_time" content="2022-02-17T20:23:10.225Z">
+<meta property="article:modified_time" content="2022-02-17T20:23:18.400Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="编程学习">
 <meta name="twitter:card" content="summary">
@@ -74,9 +74,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ProgramLearn/Raspberry/SystemUSE" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-ProgramLearn/Java/AboutMySQL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/02/18/ProgramLearn/Raspberry/SystemUSE/" class="article-date">
+    <a href="/2022/02/18/ProgramLearn/Java/AboutMySQL/" class="article-date">
   <time class="dt-published" datetime="2022-02-17T20:00:53.000Z" itemprop="datePublished">2022-02-18</time>
 </a>
     
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      树莓派系统基础
+      MYSQL的学习
     </h1>
   
 
@@ -96,15 +96,38 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <ul>
-<li>查看剩余内存使用情况：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/salesking/p/11109546.html">树莓派查看硬盘空间使用 - 13717607836 - 博客园 (cnblogs.com)</a>———一言以蔽之<code>df -h</code></li>
-<li></li>
+        <h3 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h3><ul>
+<li>在配置mysql的时候踩过的坑还是挺多的，包括但不限于：<ul>
+<li>开始装了一堆奇怪的服务，结果server的服务在终端上意外地不太好用，心态炸裂</li>
+<li>曾经没有记住命令 <code>mysqld --initialize --console</code>这个命令产生时的密码，导致的后果是——登录不了，需要各种方法绕，比如：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kaitu/article/details/78994893">(128条消息) Windows下忘记MySQL数据库root用户密码解决办法_Random-CSDN博客_windows忘记mysqlroot密码</a></li>
+<li>在开始服务的时候没有用上管理员模式，导致结果欠佳</li>
+<li>关于服务无法启动的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/JWbonze/article/details/80241417">(128条消息) net start mysql无法启动MySQL_咕咕咕的下班时间-CSDN博客_mysql net start</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="最终的选择"><a href="#最终的选择" class="headerlink" title="最终的选择"></a>最终的选择</h3><ul>
+<li>最终选择的结果为：<strong>命令行下的MySQL</strong>当然这种情况的话，在配置的时候也会有不少麻烦，最后是看了这篇文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/queen00000/article/details/90727996">(128条消息) Mysql压缩包版的安装教程_Z2Min_-CSDN博客_mysql压缩包怎么安装</a>————讲的东西还比较详细，而且也是基础范围内的</li>
+<li>教程一如既往还是看廖雪峰的</li>
+</ul>
+<h3 id="补充内容"><a href="#补充内容" class="headerlink" title="补充内容"></a>补充内容</h3><ul>
+<li>关于可视化工具的选择：选择了官方的<strong>MySQLWorkbench</strong>作为可视化工具，直接上官网下载即可<ul>
+<li>但是把内容汉化了，却没有保存，参考的gitee仓库为：<a target="_blank" rel="noopener" href="https://gitee.com/haozing/mysql_workbench_chinese">MySQL Workbench 汉化: MySQL Workbench 汉化 (gitee.com)</a></li>
+<li>使用教程的地址：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/260139380">MySQL Workbench使用教程 - 知乎 (zhihu.com)</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="详细使用"><a href="#详细使用" class="headerlink" title="详细使用"></a>详细使用</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/7152.html">MySQL修改密码的3种方式 (biancheng.net)</a></li>
+</ul>
+<h3 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h3><ul>
+<li>表的每一行称为记录（Record），记录是一个逻辑意义上的数据。</li>
+<li>表的每一列称为字段（Column），同一个表的每一行记录都拥有相同的若干字段。</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shumeipai.local/2022/02/18/ProgramLearn/Raspberry/SystemUSE/" data-id="ckzrfls2c000yswlugten1y0d" data-title="树莓派系统基础" class="article-share-link">Share</a>
+      <a data-url="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutMySQL/" data-id="ckzrfls29000oswlucep172af" data-title="MYSQL的学习" class="article-share-link">Share</a>
       
       
       
@@ -116,19 +139,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/02/18/ProgramLearn/Raspberry/Blog/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/02/18/ProgramLearn/Java/AboutIDE__iDea/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          树莓派博客搭建基础
+          JAVA--配置IDEA
         
       </div>
     </a>
   
   
-    <a href="/2022/02/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/02/18/ProgramLearn/Java/AboutTomCat/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">TOMCAT的学习</div>
     </a>
   
 </nav>
