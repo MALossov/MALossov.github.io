@@ -4,19 +4,14 @@
   <meta charset="utf-8">
   
   
-  <title>STM32的I2S总线问题（未解决） | Hexo</title>
+  <title>Tag: WSL | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="关于I2S的接线问题：第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com) 以PCM1808接STM32F103RCT6的I2S2为例： DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15 LR">
-<meta property="og:type" content="article">
-<meta property="og:title" content="STM32的I2S总线问题（未解决）">
-<meta property="og:url" content="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/I2s/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://shumeipai.local/tags/WSL/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于I2S的接线问题：第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com) 以PCM1808接STM32F103RCT6的I2S2为例： DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15 LR">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-17T20:00:53.000Z">
-<meta property="article:modified_time" content="2022-02-17T20:23:37.665Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="编程学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -74,76 +69,39 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ProgramLearn/Embed/I2s" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/02/18/ProgramLearn/Embed/I2s/" class="article-date">
-  <time class="dt-published" datetime="2022-02-17T20:00:53.000Z" itemprop="datePublished">2022-02-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      STM32的I2S总线问题（未解决）
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2022/02/18/ProgramLearn/ComputerCommonSenses/WSL/" class="archive-article-date">
+  <time class="dt-published" datetime="2022-02-17T20:00:53.000Z" itemprop="datePublished">Feb 18</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/02/18/ProgramLearn/ComputerCommonSenses/WSL/">WSLOnWindows</a>
     </h1>
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
-<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
-<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
-<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
-<li>SCK&#x2F;BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
-<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/I2s/" data-id="ckzrfv5jn000rd0luci1u5hpj" data-title="STM32的I2S总线问题（未解决）" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/02/18/ProgramLearn/Embed/OpenOCD/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Clion中OpenOCD的配置（待补充）
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/02/18/ProgramLearn/Front/CSS/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">CSS-Learning</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 
 </section>
