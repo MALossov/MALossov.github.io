@@ -20,20 +20,22 @@
     var CONFIG = {"hostname":"shumeipai.local","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="非常重要！：自己修改之后一定记得改这个不然肯定要出错！(133条消息) Clion配置STM32开发环境踩坑_FILWY_M的博客-CSDN博客关于最后成功使用OpenOCD的一些个人理解：所有的连接器配置在&#x2F;script&#x2F;target里面，所有的板子的配置在&#x2F;script&#x2F;board&#x2F;里面我们要做的就是把类似于stm32-discovery-f3里面的东西给复制下来改成我们自己需要的。毕竟这玩意">
+  <meta name="description" content="查看剩余内存使用情况：树莓派查看硬盘空间使用 - 13717607836 - 博客园 (cnblogs.com)———一言以蔽之df -h  系统的初始化 不推荐：奇巧淫技：树莓派raspberry pi zero w上手笔记 - 简书 (jianshu.com)———用串口通信实属离谱 如何联网——推荐：树莓派zero 首次连接WiFi网络 - 在路上2019 - 博客园 (cnblogs.c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Clion中OpenOCD的配置（待补充）">
-<meta property="og:url" content="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/OpenOCD/index.html">
+<meta property="og:title" content="树莓派系统基础">
+<meta property="og:url" content="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/SystemUSE/index.html">
 <meta property="og:site_name" content="MAL&#39;S_BLOG">
-<meta property="og:description" content="非常重要！：自己修改之后一定记得改这个不然肯定要出错！(133条消息) Clion配置STM32开发环境踩坑_FILWY_M的博客-CSDN博客关于最后成功使用OpenOCD的一些个人理解：所有的连接器配置在&#x2F;script&#x2F;target里面，所有的板子的配置在&#x2F;script&#x2F;board&#x2F;里面我们要做的就是把类似于stm32-discovery-f3里面的东西给复制下来改成我们自己需要的。毕竟这玩意">
+<meta property="og:description" content="查看剩余内存使用情况：树莓派查看硬盘空间使用 - 13717607836 - 博客园 (cnblogs.com)———一言以蔽之df -h  系统的初始化 不推荐：奇巧淫技：树莓派raspberry pi zero w上手笔记 - 简书 (jianshu.com)———用串口通信实属离谱 如何联网——推荐：树莓派zero 首次连接WiFi网络 - 在路上2019 - 博客园 (cnblogs.c">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-02-17T20:00:53.000Z">
-<meta property="article:modified_time" content="2022-02-19T17:18:18.854Z">
+<meta property="article:published_time" content="2022-02-20T10:00:53.000Z">
+<meta property="article:modified_time" content="2022-02-19T17:28:23.797Z">
 <meta property="article:author" content="MALossov">
 <meta property="article:tag" content="编程学习">
+<meta property="article:tag" content="OS">
+<meta property="article:tag" content="Raspberry">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/OpenOCD/">
+<link rel="canonical" href="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/SystemUSE/">
 
 
 <script id="page-configurations">
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>Clion中OpenOCD的配置（待补充） | MAL'S_BLOG</title>
+  <title>树莓派系统基础 | MAL'S_BLOG</title>
   
 
 
@@ -162,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/OpenOCD/">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/SystemUSE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -175,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Clion中OpenOCD的配置（待补充）
+          树莓派系统基础
         </h1>
 
         <div class="post-meta">
@@ -184,16 +186,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+              <time title="Created: 2022-02-20 18:00:53 / Modified: 01:28:23" itemprop="dateCreated datePublished" datetime="2022-02-20T18:00:53+08:00">2022-02-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:18:18" itemprop="dateModified" datetime="2022-02-20T01:18:18+08:00">2022-02-20</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -215,8 +211,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>非常重要</strong>！：自己修改之后一定记得改这个不然肯定要出错！<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/118826584">(133条消息) Clion配置STM32开发环境踩坑_FILWY_M的博客-CSDN博客</a><br><strong>关于最后成功使用OpenOCD的一些个人理解</strong>：所有的连接器配置在<code>/script/target</code>里面，所有的板子的配置在<code>/script/board/</code>里面我们要做的就是把类似于<em>stm32-discovery-f3</em>里面的东西给复制下来改成我们自己需要的。<br>毕竟这玩意里面find一层套一层的，我这种笨比基本上是顶不住的。</p>
-<h2 id="总之要在Board里面新建点东西，就是这样捏"><a href="#总之要在Board里面新建点东西，就是这样捏" class="headerlink" title="总之要在Board里面新建点东西，就是这样捏"></a>总之要在Board里面新建点东西，就是这样捏</h2>
+        <ul>
+<li>查看剩余内存使用情况：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/salesking/p/11109546.html">树莓派查看硬盘空间使用 - 13717607836 - 博客园 (cnblogs.com)</a>———一言以蔽之<code>df -h</code></li>
+</ul>
+<h2 id="系统的初始化"><a href="#系统的初始化" class="headerlink" title="系统的初始化"></a>系统的初始化</h2><ul>
+<li>不推荐：奇巧淫技：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e798bf6624aa">树莓派raspberry pi zero w上手笔记 - 简书 (jianshu.com)</a>———用串口通信实属离谱</li>
+<li>如何<strong>联网</strong>——推荐：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/syj888/p/11762702.html">树莓派zero 首次连接WiFi网络 - 在路上2019 - 博客园 (cnblogs.com)</a><br>  <strong>注意：在使用系统的时候依旧需要加入空文件ssh，否则容易出事，否则容易出事，否则不启用ssh</strong><ul>
+<li>另外：在使用ssh的时候如果已经添加过公钥我的建议是直接删除这个公钥orz，不然容易出事，不然容易出事，不然容易出事……：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangguchao/article/details/85614914">(135条消息) 问题解决——SSH时出现WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!_口袋里的跳跳糖-CSDN博客</a><h2 id="系统的换源"><a href="#系统的换源" class="headerlink" title="系统的换源"></a>系统的换源</h2></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/98079246">教你如何给树莓派更换软件源 - 知乎 (zhihu.com)</a>———一键更新，非常丝滑。<strong>不过已经落后了，我查出来我们的是11orz</strong><ul>
+<li>注意换源前查看raspberrypi的debian版本，一定要对上：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35768839/article/details/104751061">(135条消息) 关于Debian发行版本（树莓派系统版本）_经济好没有钱的博客-CSDN博客_树莓派查看debian版本</a>命令为<code>lsb_release -a</code></li>
+</ul>
+</li>
+<li>真正的教程害得看这个：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_18275789/article/details/122997715">(135条消息) 树莓派 Raspberry Pi （bullseye）更换阿里云源方法_老鱼干的博客-CSDN博客</a></li>
+</ul>
+<p><strong>真实命令：</strong><br>编辑 &#x2F;etc&#x2F;apt&#x2F;sources.list 文件，这里推荐就用系统自带的 nano 命令编辑，命令如下：<br><code>sudo nano /etc/apt/sources.list</code><br>进入编辑界面，删除原有的内容，粘贴如下内容：</p>
+<blockquote>
+<p>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye  main non-free contrib rpi<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye main non-free contrib</p>
+</blockquote>
+<h2 id="系统的关机"><a href="#系统的关机" class="headerlink" title="系统的关机"></a>系统的关机</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-halt.html">Linux halt命令 | 菜鸟教程 (runoob.com)</a></li>
+<li><code>halt</code></li>
+</ul>
+<h2 id="设置系统wifi的方法"><a href="#设置系统wifi的方法" class="headerlink" title="设置系统wifi的方法"></a>设置系统wifi的方法</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136463580">设置树莓派wifi的几种方式 - 知乎 (zhihu.com)</a>———单个wifi的多种方式</li>
+<li>多个wifi:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;wo_shi_yige_wifi_ssid&quot;</span></span><br><span class="line"> scan_ssid=1</span><br><span class="line"> psk=<span class="string">&quot;wo_shi_mi_ma&quot;</span></span><br><span class="line"> priority=5</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;pi&quot;</span></span><br><span class="line"> psk=<span class="string">&quot;onlyforpi&quot;</span></span><br><span class="line"> priority=1</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
     </div>
 
     
@@ -226,6 +248,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag"># 编程学习</a>
+              <a href="/tags/OS/" rel="tag"># OS</a>
+              <a href="/tags/Raspberry/" rel="tag"># Raspberry</a>
           </div>
 
         
@@ -234,13 +258,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/" rel="prev" title="JAVA配置ECLIPSE(大坑)">
-      <i class="fa fa-chevron-left"></i> JAVA配置ECLIPSE(大坑)
+    <a href="/2022/02/19/ProgramLearn/ComputerCommonSenses/Git_helper/" rel="prev" title="Linux的软件源">
+      <i class="fa fa-chevron-left"></i> Linux的软件源
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/02/18/ProgramLearn/Front/CSS/" rel="next" title="CSS-Learning">
-      CSS-Learning <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -299,7 +320,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E4%B9%8B%E8%A6%81%E5%9C%A8Board%E9%87%8C%E9%9D%A2%E6%96%B0%E5%BB%BA%E7%82%B9%E4%B8%9C%E8%A5%BF%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%BF%99%E6%A0%B7%E6%8D%8F"><span class="nav-number">1.</span> <span class="nav-text">总之要在Board里面新建点东西，就是这样捏</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">系统的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8D%A2%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">系统的换源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%85%B3%E6%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">系统的关机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9Fwifi%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">设置系统wifi的方法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -333,6 +354,17 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/malossov" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;malossov" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/yi-wan-nzlao-si-ji" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yi-wan-nzlao-si-ji" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/malossov" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;malossov" rel="noopener" target="_blank"><i class="fab fa-gitee fa-fw"></i>Gitee</a>
+      </span>
+  </div>
 
 
 
