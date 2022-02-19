@@ -6,18 +6,19 @@
   
   <title>树莓派博客搭建基础 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="用树莓派服务器运行Hexo博客网页 - 知乎 (zhihu.com)—比较详细，甚至连怎么搞内网穿透都讲了 hexo无法提交的小问题：hexo d命令报错：ERROR Deployer not found: git-阿里云开发者社区 (aliyun.com)—注意是在站点目录下（就是本地博客的目录中使用这个命令：npm install hexo-deployer-git --save   使用h">
+  <meta name="description" content="初始化相关 用树莓派服务器运行Hexo博客网页 - 知乎 (zhihu.com)—比较详细，甚至连怎么搞内网穿透都讲了 hexo无法提交的小问题：hexo d命令报错：ERROR Deployer not found: git-阿里云开发者社区 (aliyun.com)—注意是在站点目录下（就是本地博客的目录中使用这个命令：npm install hexo-deployer-git --save">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派博客搭建基础">
 <meta property="og:url" content="http://shumeipai.local/2022/02/18/ProgramLearn/Raspberry/Blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="用树莓派服务器运行Hexo博客网页 - 知乎 (zhihu.com)—比较详细，甚至连怎么搞内网穿透都讲了 hexo无法提交的小问题：hexo d命令报错：ERROR Deployer not found: git-阿里云开发者社区 (aliyun.com)—注意是在站点目录下（就是本地博客的目录中使用这个命令：npm install hexo-deployer-git --save   使用h">
+<meta property="og:description" content="初始化相关 用树莓派服务器运行Hexo博客网页 - 知乎 (zhihu.com)—比较详细，甚至连怎么搞内网穿透都讲了 hexo无法提交的小问题：hexo d命令报错：ERROR Deployer not found: git-阿里云开发者社区 (aliyun.com)—注意是在站点目录下（就是本地博客的目录中使用这个命令：npm install hexo-deployer-git --save">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-17T20:00:53.000Z">
-<meta property="article:modified_time" content="2022-02-17T20:28:37.027Z">
+<meta property="article:modified_time" content="2022-02-19T11:39:37.551Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="编程学习">
 <meta property="article:tag" content="Raspberry">
+<meta property="article:tag" content="Blog">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -97,23 +98,31 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <ul>
+        <h2 id="初始化相关"><a href="#初始化相关" class="headerlink" title="初始化相关"></a>初始化相关</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/402382426">用树莓派服务器运行Hexo博客网页 - 知乎 (zhihu.com)</a>—比较详细，甚至连怎么搞内网穿透都讲了<ul>
 <li>hexo无法提交的小问题：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/764974">hexo d命令报错：ERROR Deployer not found: git-阿里云开发者社区 (aliyun.com)</a>—注意是在站点目录下（就是本地博客的目录中使用这个命令：<code>npm install hexo-deployer-git --save</code></li>
 </ul>
 </li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/palance/p/5493201.html">使用hexo搭建博客并上传GitHub - palance - 博客园 (cnblogs.com)</a>看着还挺有用的—–其他有关博客的小知识，CSDN搬运的</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/97758641">(134条消息) Hexo新建标签、分类、归档等页面_荷塘月色-CSDN博客_hexo新建页面</a>————关于在blog中新建标签、分类、归档的东西哦</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/97758641">(134条消息) Hexo新建标签、分类、归档等页面_荷塘月色-CSDN博客_hexo新建页面</a>————关于在blog中新建标签、分类、归档的东西哦<h3 id="在github上的初始化"><a href="#在github上的初始化" class="headerlink" title="在github上的初始化"></a>在github上的初始化</h3></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">知乎：使用hexo在github上建立个人博客</a><h2 id="关于推送相关"><a href="#关于推送相关" class="headerlink" title="关于推送相关"></a>关于推送相关</h2><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45667885/article/details/101084532">(135条消息) Hexo同时部署在GitHub、Coding、Gitee_Ashin Wang’s Blog-CSDN博客</a></li>
+</ul>
+<h2 id="各种奇奇怪怪的教程"><a href="#各种奇奇怪怪的教程" class="headerlink" title="各种奇奇怪怪的教程"></a>各种奇奇怪怪的教程</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://haee.gitee.io/2021/02/18/hexo32/">hexo | 同时提交到 github 和 gitee | 犀牛的博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45667885/article/details/101084532">(135条消息) Hexo同时部署在GitHub、Coding、Gitee_Ashin Wang’s Blog-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/palance/p/5493201.html">使用hexo搭建博客并上传GitHub - palance - 博客园 (cnblogs.com)</a>__不太靠谱的一个，从一开始就很讲的不太清楚哦</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/59088760">如何用github page搭建博客？ - 知乎 (zhihu.com)</a></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shumeipai.local/2022/02/18/ProgramLearn/Raspberry/Blog/" data-id="ckztqff9k001bn8luf70egd5o" data-title="树莓派博客搭建基础" class="article-share-link">Share</a>
+      <a data-url="http://shumeipai.local/2022/02/18/ProgramLearn/Raspberry/Blog/" data-id="ckztrr3dk001qh0lu9mva6ncx" data-title="树莓派博客搭建基础" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry/" rel="tag">Raspberry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry/" rel="tag">Raspberry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li></ul>
 
     </footer>
   </div>
@@ -131,9 +140,9 @@
     </a>
   
   
-    <a href="/2022/02/18/ProgramLearn/Raspberry/SystemUSE/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/02/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">树莓派系统基础</div>
+      <div class="article-nav-title">Hello World</div>
     </a>
   
 </nav>
@@ -153,7 +162,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AD/" rel="tag">AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVN/" rel="tag">MVN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry/" rel="tag">Raspberry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TomCat/" rel="tag">TomCat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/" rel="tag">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AD/" rel="tag">AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVN/" rel="tag">MVN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry/" rel="tag">Raspberry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TomCat/" rel="tag">TomCat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/" rel="tag">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li></ul>
     </div>
   </div>
 
@@ -163,7 +172,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AD/" style="font-size: 10px;">AD</a> <a href="/tags/IDE/" style="font-size: 12.5px;">IDE</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MVN/" style="font-size: 10px;">MVN</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/OS/" style="font-size: 15px;">OS</a> <a href="/tags/Raspberry/" style="font-size: 12.5px;">Raspberry</a> <a href="/tags/TomCat/" style="font-size: 10px;">TomCat</a> <a href="/tags/WSL/" style="font-size: 10px;">WSL</a> <a href="/tags/gui/" style="font-size: 10px;">gui</a> <a href="/tags/matlab/" style="font-size: 12.5px;">matlab</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;">前端</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">编程学习</a>
+      <a href="/tags/AD/" style="font-size: 10px;">AD</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/IDE/" style="font-size: 12.5px;">IDE</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MVN/" style="font-size: 10px;">MVN</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/OS/" style="font-size: 15px;">OS</a> <a href="/tags/Raspberry/" style="font-size: 12.5px;">Raspberry</a> <a href="/tags/TomCat/" style="font-size: 10px;">TomCat</a> <a href="/tags/WSL/" style="font-size: 10px;">WSL</a> <a href="/tags/gui/" style="font-size: 10px;">gui</a> <a href="/tags/matlab/" style="font-size: 12.5px;">matlab</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;">前端</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">编程学习</a>
     </div>
   </div>
 
@@ -185,11 +194,11 @@
       <ul>
         
           <li>
-            <a href="/2022/02/18/ProgramLearn/ComputerCommonSenses/WSL/">WSLOnWindows</a>
+            <a href="/2022/02/19/ProgramLearn/ComputerCommonSenses/Git_helper/">Linux的软件源</a>
           </li>
         
           <li>
-            <a href="/2022/02/18/ProgramLearn/ComputerCommonSenses/SthOther/">Linux的软件源</a>
+            <a href="/2022/02/19/ProgramLearn/Raspberry/SystemUSE/">树莓派系统基础</a>
           </li>
         
           <li>
@@ -197,11 +206,11 @@
           </li>
         
           <li>
-            <a href="/2022/02/18/ProgramLearn/Embed/I2s/">STM32的I2S总线问题（未解决）</a>
+            <a href="/2022/02/18/ProgramLearn/ComputerCommonSenses/SthOther/">Linux的软件源</a>
           </li>
         
           <li>
-            <a href="/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/">WindowsTerminal-Learning</a>
+            <a href="/2022/02/18/ProgramLearn/ComputerCommonSenses/WSL/">WSLOnWindows</a>
           </li>
         
       </ul>
