@@ -1,102 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>JAVA配置MVN | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"shumeipai.local","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
   <meta name="description" content="关于maven的资料放在这里下载配置和安装资料： maven的下载安装配置教程（详细图文） - 砰砰的猿 - 博客园 (cnblogs.com)–资料内容较好我的评价是较好，关于 如何换源，还有更换存储库的位置之类的问题讲的也挺多的 (128条消息) maven国内镜像换源_浪子寒的策略空间-CSDN博客_mvn 国内源–阿里云的mirror设置,我的评价是不会和上面那个一样报错 (128条消息)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA配置MVN">
 <meta property="og:url" content="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutMVN/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="MAL&#39;S_BLOG">
 <meta property="og:description" content="关于maven的资料放在这里下载配置和安装资料： maven的下载安装配置教程（详细图文） - 砰砰的猿 - 博客园 (cnblogs.com)–资料内容较好我的评价是较好，关于 如何换源，还有更换存储库的位置之类的问题讲的也挺多的 (128条消息) maven国内镜像换源_浪子寒的策略空间-CSDN博客_mvn 国内源–阿里云的mirror设置,我的评价是不会和上面那个一样报错 (128条消息)">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="article:published_time" content="2022-02-17T20:00:53.000Z">
 <meta property="article:modified_time" content="2022-02-17T20:29:37.532Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="MALAossov">
 <meta property="article:tag" content="编程学习">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="MVN">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<link rel="canonical" href="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutMVN/">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-  
-<meta name="generator" content="Hexo 6.0.0"></head>
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ShuMeiPai.local"></form>
-      </div>
+  <title>JAVA配置MVN | MAL'S_BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
-</header>
 
-      <div class="outer">
-        <section id="main"><article id="post-ProgramLearn/Java/AboutMVN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/02/18/ProgramLearn/Java/AboutMVN/" class="article-date">
-  <time class="dt-published" datetime="2022-02-17T20:00:53.000Z" itemprop="datePublished">2022-02-18</time>
-</a>
-    
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MAL'S_BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome to Malossov's Personal Archieve!</p>
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      JAVA配置MVN
-    </h1>
-  
 
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutMVN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="MALAossov">
+      <meta itemprop="description" content="很菜的人的很菜的博客捏">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JAVA配置MVN
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:29:37" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+            </span>
+
+          
+
+        </div>
       </header>
+
     
-    <div class="e-content article-entry" itemprop="articleBody">
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
         <h2 id="关于maven的资料放在这里"><a href="#关于maven的资料放在这里" class="headerlink" title="关于maven的资料放在这里"></a>关于maven的资料放在这里</h2><h3 id="下载配置和安装资料："><a href="#下载配置和安装资料：" class="headerlink" title="下载配置和安装资料："></a>下载配置和安装资料：</h3><ol>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pengpengdeyuan/p/14217772.html#:~:text=maven%E7%9A%84%E5%AE%89%E8%A3%85%E5%BE%88%E7%AE%80%E5%8D%95%EF%BC%8C%E5%B0%B1%E6%98%AF%E7%9B%B4%E6%8E%A5%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6%E5%B0%B1%E8%A1%8C%E4%BA%86%EF%BC%88%E5%BD%93%E7%84%B6%E4%BA%86%EF%BC%8C%E5%89%8D%E6%8F%90%E6%98%AF%E4%BD%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%98%AFzip%E5%8E%8B%E7%BC%A9%E5%8C%85%E6%A0%BC%E5%BC%8F%EF%BC%89,1%E3%80%81%E5%87%86%E5%A4%87%E5%A5%BDmaven%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%202%E3%80%81%E5%8F%B3%E5%87%BB%E8%A7%A3%E5%8E%8B%E7%BC%A9%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%A7%A3%E5%8E%8B%E7%BC%A9%E8%BF%87%E7%A8%8B%E5%B0%B1%E6%98%AF%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%87%AA%E5%B7%B1%E8%A7%A3%E5%8E%8B%E5%90%8E%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95">maven的下载安装配置教程（详细图文） - 砰砰的猿 - 博客园 (cnblogs.com)</a>–资料内容较好我的评价是较好，关于 <strong>如何换源，还有更换存储库的位置</strong>之类的问题讲的也挺多的</li>
@@ -105,150 +199,195 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xywxhzsjhh/article/details/114848175?spm=1001.2101.3001.6661.1&depth_1-">(129条消息) idea中使用maven引入依赖报错：Invalid content was found starting with element_xywxhzsjhh的博客-CSDN博客</a></li>
 </ol>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutMVN/" data-id="ckztt2pda000sz8lu9d905hw5" data-title="JAVA配置MVN" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVN/" rel="tag">MVN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li></ul>
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag"># 编程学习</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/MVN/" rel="tag"># MVN</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/18/ProgramLearn/Java/AboutMySQL/" rel="prev" title="MYSQL的学习">
+      <i class="fa fa-chevron-left"></i> MYSQL的学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/02/18/ProgramLearn/Java/AboutIDE__iDea/" rel="next" title="JAVA--配置IDEA">
+      JAVA--配置IDEA <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Emaven%E7%9A%84%E8%B5%84%E6%96%99%E6%94%BE%E5%9C%A8%E8%BF%99%E9%87%8C"><span class="nav-number">1.</span> <span class="nav-text">关于maven的资料放在这里</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE%E5%92%8C%E5%AE%89%E8%A3%85%E8%B5%84%E6%96%99%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">下载配置和安装资料：</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">MALAossov</p>
+  <div class="site-description" itemprop="description">很菜的人的很菜的博客捏</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MALAossov</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
     </footer>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/02/18/ProgramLearn/MatLab/FFT/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          MATLAB-FFT学习
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/02/18/ProgramLearn/Java/AboutMySQL/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MYSQL的学习</div>
-    </a>
-  
-</nav>
 
   
-</article>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AD/" rel="tag">AD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVN/" rel="tag">MVN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OS/" rel="tag">OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry/" rel="tag">Raspberry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TomCat/" rel="tag">TomCat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gui/" rel="tag">gui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag">编程学习</a></li></ul>
-    </div>
-  </div>
+<script src="/js/schemes/muse.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/AD/" style="font-size: 10px;">AD</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/IDE/" style="font-size: 12.5px;">IDE</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/MVN/" style="font-size: 10px;">MVN</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/OS/" style="font-size: 15px;">OS</a> <a href="/tags/Raspberry/" style="font-size: 12.5px;">Raspberry</a> <a href="/tags/TomCat/" style="font-size: 10px;">TomCat</a> <a href="/tags/WSL/" style="font-size: 10px;">WSL</a> <a href="/tags/gui/" style="font-size: 10px;">gui</a> <a href="/tags/matlab/" style="font-size: 12.5px;">matlab</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;">前端</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">编程学习</a>
-    </div>
-  </div>
+<script src="/js/next-boot.js"></script>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/02/19/ProgramLearn/ComputerCommonSenses/Git_helper/">Linux的软件源</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/19/ProgramLearn/Raspberry/SystemUSE/">树莓派系统基础</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/18/ProgramLearn/AD/AD_PCB/">AD22-Learning(blogs)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/18/ProgramLearn/ComputerCommonSenses/SthOther/">Linux的软件源</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/">WindowsTerminal-Learning</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>
