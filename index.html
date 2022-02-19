@@ -250,7 +250,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-19 18:00:53 / Modified: 19:03:35" itemprop="dateCreated datePublished" datetime="2022-02-19T18:00:53+08:00">2022-02-19</time>
+              <time title="Created: 2022-02-19 18:00:53 / Modified: 21:33:53" itemprop="dateCreated datePublished" datetime="2022-02-19T18:00:53+08:00">2022-02-19</time>
             </span>
 
           
@@ -279,10 +279,7 @@
 </li>
 <li>真正的教程害得看这个：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_18275789/article/details/122997715">(135条消息) 树莓派 Raspberry Pi （bullseye）更换阿里云源方法_老鱼干的博客-CSDN博客</a></li>
 </ul>
-<p><strong>真实命令：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编辑 /etc/apt/sources.list 文件，这里推荐就用系统自带的 nano 命令编辑，命令如下：</span><br></pre></td></tr></table></figure>
-<p><code>sudo nano /etc/apt/sources.list</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">进入编辑界面，删除原有的内容，粘贴如下内容：</span><br></pre></td></tr></table></figure>
+<p><strong>真实命令：</strong><br>编辑 &#x2F;etc&#x2F;apt&#x2F;sources.list 文件，这里推荐就用系统自带的 nano 命令编辑，命令如下：<br><code>sudo nano /etc/apt/sources.list</code><br>进入编辑界面，删除原有的内容，粘贴如下内容：</p>
 <blockquote>
 <p>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye  main non-free contrib rpi<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye main non-free contrib</p>
 </blockquote>
@@ -292,7 +289,7 @@
 </ul>
 <h2 id="设置系统wifi的方法"><a href="#设置系统wifi的方法" class="headerlink" title="设置系统wifi的方法"></a>设置系统wifi的方法</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136463580">设置树莓派wifi的几种方式 - 知乎 (zhihu.com)</a>———单个wifi的多种方式</li>
-<li>多个wifi:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">network=&#123;</span><br><span class="line"></span><br><span class="line"> ssid=<span class="string">&quot;wo_shi_yige_wifi_ssid&quot;</span></span><br><span class="line"></span><br><span class="line"> scan_ssid=1</span><br><span class="line"></span><br><span class="line"> psk=<span class="string">&quot;wo_shi_mi_ma&quot;</span></span><br><span class="line"></span><br><span class="line"> priority=5</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> network=&#123;</span><br><span class="line"></span><br><span class="line"> ssid=<span class="string">&quot;pi&quot;</span></span><br><span class="line"></span><br><span class="line"> psk=<span class="string">&quot;onlyforpi&quot;</span></span><br><span class="line"></span><br><span class="line"> priority=1</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+<li>多个wifi:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;wo_shi_yige_wifi_ssid&quot;</span></span><br><span class="line"> scan_ssid=1</span><br><span class="line"> psk=<span class="string">&quot;wo_shi_mi_ma&quot;</span></span><br><span class="line"> priority=5</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;pi&quot;</span></span><br><span class="line"> psk=<span class="string">&quot;onlyforpi&quot;</span></span><br><span class="line"> priority=1</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -377,7 +374,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/ComputerCommonSenses/WSL/">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -391,7 +388,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/18/ProgramLearn/ComputerCommonSenses/WSL/" class="post-title-link" itemprop="url">WSLOnWindows</a>
+            <a href="/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/" class="post-title-link" itemprop="url">WindowsTerminal-Learning</a>
         </h2>
 
         <div class="post-meta">
@@ -402,7 +399,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:31:03" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:30:41" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
             </span>
 
           
@@ -416,9 +413,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/carle-09/p/12596979.html">问题—执行sh .&#x2F;xxx.sh出现：Syntax error: “(“ unexpected (expecting “done”) - WP的烂笔头 - 博客园 (cnblogs.com)</a></li>
+          <h3 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h3><ul>
+<li>不少，挺多，具体来说还过来的时候也看了不少博客，挺多现在看来都挺傻的而且没啥意义：比如上github直接当下来整个的<strong>主题模式的使用</strong>的方法，结果效果是相当差劲的。说实话当时脑子真是被驴踢过</li>
 </ul>
+<h3 id="一些比较重要的配置"><a href="#一些比较重要的配置" class="headerlink" title="一些比较重要的配置"></a>一些比较重要的配置</h3><ol>
+<li>使用管理员权限的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30262407/article/details/114921714">(128条消息) windows terminal使用管理员权限打开_alphahao的博客-CSDN博客_windowsterminal管理员权限</a></li>
+<li></li>
+</ol>
 
       
     </div>
@@ -499,7 +500,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/I2s/">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/ComputerCommonSenses/WSL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -513,7 +514,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/18/ProgramLearn/Embed/I2s/" class="post-title-link" itemprop="url">STM32的I2S总线问题（未解决）</a>
+            <a href="/2022/02/18/ProgramLearn/ComputerCommonSenses/WSL/" class="post-title-link" itemprop="url">WSLOnWindows</a>
         </h2>
 
         <div class="post-meta">
@@ -524,7 +525,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:23:37" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:31:03" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
             </span>
 
           
@@ -539,17 +540,7 @@
 
       
           <ul>
-<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
-<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
-<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
-<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
-<li>SCK&#x2F;BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
-<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/carle-09/p/12596979.html">问题—执行sh .&#x2F;xxx.sh出现：Syntax error: “(“ unexpected (expecting “done”) - WP的烂笔头 - 博客园 (cnblogs.com)</a></li>
 </ul>
 
       
@@ -570,7 +561,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/CLionEnv/">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Front/CSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -584,7 +575,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/18/ProgramLearn/Embed/CLionEnv/" class="post-title-link" itemprop="url">在Clion下的嵌入式学习配置</a>
+            <a href="/2022/02/18/ProgramLearn/Front/CSS/" class="post-title-link" itemprop="url">CSS-Learning</a>
         </h2>
 
         <div class="post-meta">
@@ -595,7 +586,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:23:41" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:30:32" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
             </span>
 
           
@@ -609,71 +600,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12222811">基于clion的野火stm32标准库开发(printf打印已解决) - 哔哩哔哩 (bilibili.com)</a>——主要是解决printf的问题（其实这个问题没有解决而且版本比较老）</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/444893180">手把手教你用CLion玩转STM32 - 知乎 (zhihu.com)</a>————正在尝试：&#x3D;&#x3D;&#x3D;&#x3D;很详细，甚至教你怎么配OpenOCD&#x3D;&#x3D;&#x3D;&#x3D;然后就是printf的事情，后来证明解决的并不好，我们还是需要别的</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/117776784?spm=1001.2101.3001.6650.6&depth_1-utm_relevant_index=13">(133条消息) CLion 在stm32 环境下使用重定向printf方法,导致float数据无法输出的解决办法_FILWY_M的博客-CSDN博客</a>：这篇讲了浮点的</li>
-</ol>
+          <ul>
+<li>通过CSS设置背景：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/mqxs/p/4324175.html">【CSS】css网页背景图片设置 - 梦琪小生 - 博客园 (cnblogs.com)</a></li>
+<li>设置透明度：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/142521562">css如何设置透明度？设置透明度的两种方法（代码实例） - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/dengdengda/article/details/51909956">(129条消息) css动画效果：实现鼠标移入菜单栏文字下出现下划线_dengdengda的博客-CSDN博客_css鼠标悬停文字下划线动画</a><ul>
+<li><a target="_blank" rel="noopener" href="https://www.shejiku.net/wenzixiahuaxian.html">文字如何在鼠标移上去的时候加下划线 HTML5+CSS3, 网站制作, 网站建设, 网站开发, 网站设计, 网页UI设计 厦门网站建设 (shejiku.net)</a></li>
+</ul>
+</li>
+</ul>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/OpenOCD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Embed/OpenOCD/" class="post-title-link" itemprop="url">Clion中OpenOCD的配置（待补充）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:23:36" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>非常重要</strong>！：自己修改之后一定记得改这个不然肯定要出错！<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/118826584">(133条消息) Clion配置STM32开发环境踩坑_FILWY_M的博客-CSDN博客</a><br><strong>关于最后成功使用OpenOCD的一些个人理解</strong>：所有的连接器配置在<code>/script/target</code>里面，所有的板子的配置在<code>/script/board/</code>里面我们要做的就是把类似于<em>stm32-discovery-f3</em>里面的东西给复制下来改成我们自己需要的。<br>毕竟这玩意里面find一层套一层的，我这种笨比基本上是顶不住的。</p>
-<h2 id="总之要在Board里面新建点东西，就是这样捏"><a href="#总之要在Board里面新建点东西，就是这样捏" class="headerlink" title="总之要在Board里面新建点东西，就是这样捏"></a>总之要在Board里面新建点东西，就是这样捏</h2>
       
     </div>
 
@@ -753,7 +688,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -767,7 +702,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/" class="post-title-link" itemprop="url">WindowsTerminal-Learning</a>
+            <a href="/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/" class="post-title-link" itemprop="url">JAVA配置ECLIPSE(大坑)</a>
         </h2>
 
         <div class="post-meta">
@@ -778,7 +713,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:30:41" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:30:00" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
             </span>
 
           
@@ -792,12 +727,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h3><ul>
-<li>不少，挺多，具体来说还过来的时候也看了不少博客，挺多现在看来都挺傻的而且没啥意义：比如上github直接当下来整个的<strong>主题模式的使用</strong>的方法，结果效果是相当差劲的。说实话当时脑子真是被驴踢过</li>
+          <h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><ul>
+<li>入坑的原因在于lxf的学习插件用的是Eclipse</li>
+<li>所以我就下了一个，但是过程挺曲折的：<ol>
+<li>刚开始的时候下载的是官方的，镜像在韩国，没下下来</li>
+<li>后来找个清华的镜像下载的</li>
+</ol>
+</li>
 </ul>
-<h3 id="一些比较重要的配置"><a href="#一些比较重要的配置" class="headerlink" title="一些比较重要的配置"></a>一些比较重要的配置</h3><ol>
-<li>使用管理员权限的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30262407/article/details/114921714">(128条消息) windows terminal使用管理员权限打开_alphahao的博客-CSDN博客_windowsterminal管理员权限</a></li>
-<li></li>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li>安装的时候下载的是一个zip的绿色文件，翻镜像站的时候版本挺多的，选win32_x64那个版本就成，总之还是很快乐的。但是要500多M，长得一言难尽，像大型玩具</li>
+<li>然后就包的导入，目录在<code>Help--添加软件</code>这个目录下面，怪，具体操作不难。</li>
+<li>导入语言包的学习是通过：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43736451/article/details/116240449">(128条消息) eclipse汉化教程（官方汉化包，傻瓜式操作，附带中英文快捷切换方式）_Zeromes的博客-CSDN博客_eclipse汉化</a>————他同时还介绍了怎么切换中英文。<ul>
+<li>另外比较好的：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/342692825#:~:text=%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%EF%BC%9A%20%EF%BC%881%EF%BC%89%E6%89%93%E5%BC%80Eclipse%E4%B8%BB%E7%95%8C%E9%9D%A2%EF%BC%8C%E9%80%89%E6%8B%A9%E8%8F%9C%E5%8D%95%27Help%27%20%3E%20%27Install%20new%20software...%27,%EF%BC%882%EF%BC%89%E5%A2%9E%E5%8A%A0%E8%AF%AD%E8%A8%80%E5%8C%85%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%EF%BC%9A%20https%3A%2F%2F%20download.eclipse.org%2Fte%20chnology%2Fbabel%2Fupdate-site%2FR0.19.0%2F2021-06%2F%20%EF%BC%883%EF%BC%89%E9%80%89%E6%8B%A9%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%20%EF%BC%884%EF%BC%89%E9%87%8D%E5%90%AFEclipse%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%B1%89%E5%8C%96%E7%9A%84Eclipse%E4%BA%86%E3%80%82">Eclipse安装中文语言包（官方汉化） - 知乎 (zhihu.com)</a></li>
+<li>放弃了，nmd根本分析不出来 垃圾ide</li>
+</ul>
+</li>
+<li>换源的操作见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/mashuai720/article/details/80001793">(128条消息) eclipse 更换国内镜像_马帅的博客-CSDN博客_eclipse换源</a></li>
+<li>适配高分辨率屏幕：<a target="_blank" rel="noopener" href="https://blog.csdn.net/seabiscuityj/article/details/89916208">(128条消息) eclipse适配高分辨率屏幕（不需要新建manifest）_seabiscuityj的博客-CSDN博客_eclipse高分辨率</a></li>
+<li>黑色主题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zbctop/article/details/90741420">(128条消息) eclipse设置 “暗黑色” 主题_zbctop的博客-CSDN博客_eclipse黑色主题</a></li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>修改文件编码：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/AlanLee/p/5295105.html#:~:text=%E7%AC%AC%E4%B8%80%E6%AD%A5%20%EF%BC%9A%E8%BF%9B%E5%85%A5%20eclipse%20%EF%BC%8C%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%EF%BC%8C%E5%9C%A8%E8%8F%9C%E5%8D%95%E6%A0%8F%E7%82%B9%E5%87%BB%20Window%20%EF%BC%8C%E9%80%89%E6%8B%A9%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E9%80%89%E9%A1%B9%20Preferences%20%EF%BC%9A.,%E5%A4%A7%E5%AE%B6%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0Default%EF%BC%8C%E9%BB%98%E8%AE%A4%E4%B8%BAGBK%EF%BC%8C%E6%88%91%E4%BB%AC%E7%82%B9%E5%87%BB%20Other%20%EF%BC%8C%E5%B9%B6%E9%80%89%E6%8B%A9%E4%B8%BA%20UTF-8%20%2C%E8%BF%99%E6%A0%B7%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%9A%84%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%B0%B1%E5%8F%98%E6%88%90%E4%BA%86UTF-8%E3%80%82.%20%E8%BF%99%E6%A0%B7%E5%B0%B1%E5%AE%8C%E5%85%A8%E6%B2%A1%E9%97%AE%E9%A2%98%E4%BA%86%E5%90%97%EF%BC%9F.%20%E5%8F%AF%E4%B8%8D%E8%A7%81%E5%BE%97%E5%93%A6%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%BE%80%E4%B8%8B%E8%B5%B0%E3%80%82.%20">eclipse编码格式设置 - AlanLee-Java - 博客园 (cnblogs.com)</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/CLionEnv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/18/ProgramLearn/Embed/CLionEnv/" class="post-title-link" itemprop="url">在Clion下的嵌入式学习配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:23:41" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12222811">基于clion的野火stm32标准库开发(printf打印已解决) - 哔哩哔哩 (bilibili.com)</a>——主要是解决printf的问题（其实这个问题没有解决而且版本比较老）</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/444893180">手把手教你用CLion玩转STM32 - 知乎 (zhihu.com)</a>————正在尝试：&#x3D;&#x3D;&#x3D;&#x3D;很详细，甚至教你怎么配OpenOCD&#x3D;&#x3D;&#x3D;&#x3D;然后就是printf的事情，后来证明解决的并不好，我们还是需要别的</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/117776784?spm=1001.2101.3001.6650.6&depth_1-utm_relevant_index=13">(133条消息) CLion 在stm32 环境下使用重定向printf方法,导致float数据无法输出的解决办法_FILWY_M的博客-CSDN博客</a>：这篇讲了浮点的</li>
 </ol>
 
       
