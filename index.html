@@ -342,7 +342,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-21 21:53:28" itemprop="dateModified" datetime="2022-02-21T21:53:28+08:00">2022-02-21</time>
+                <time title="Modified: 2022-02-22 17:27:34" itemprop="dateModified" datetime="2022-02-22T17:27:34+08:00">2022-02-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -417,6 +417,105 @@
 </li>
 </ul>
 <h2 id="修改树莓派的主机名："><a href="#修改树莓派的主机名：" class="headerlink" title="修改树莓派的主机名："></a>修改树莓派的主机名：</h2><p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2019/02/27/how-to-change-the-hostname-of-your-raspberry-pi.html">如何修改树莓派的主机名 | 树莓派实验室 (nxez.com)</a></p>
+<h2 id="树莓派的清除缓存"><a href="#树莓派的清除缓存" class="headerlink" title="树莓派的清除缓存"></a>树莓派的清除缓存</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2017/12/18/how-to-modify-raspberry-pi-swap-partition.html">修改树莓派交换分区 SWAP 的正确姿势 | 树莓派实验室 (nxez.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pc-boke/articles/10213695.html">Linux释放cache和buffer内存空间 - 腾飞的鹰 - 博客园 (cnblogs.com)</a></li>
+</ul>
+<h2 id="树莓派写脚本"><a href="#树莓派写脚本" class="headerlink" title="树莓派写脚本"></a>树莓派写脚本</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yinheyi/p/6648242.html">linux下的shell脚本（基本） - 殷大侠 - 博客园 (cnblogs.com)</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">树莓派系统基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-20 18:00:53" itemprop="dateCreated datePublished" datetime="2022-02-20T18:00:53+08:00">2022-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-22 23:13:13" itemprop="dateModified" datetime="2022-02-22T23:13:13+08:00">2022-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="关于-x2F-etc-x2F-rc-local"><a href="#关于-x2F-etc-x2F-rc-local" class="headerlink" title="关于**&#x2F;etc&#x2F;rc.local**"></a>关于**&#x2F;etc&#x2F;rc.local**</h2><ul>
+<li>该文件为Linux下的系统启动文件。根据各种博客的总结，该文件的启动为：<strong>联网之后运行命令</strong>，并且在进入系统之后停止。</li>
+<li>刚开始搜索时的发现为：可以通过这些运行代码<ul>
+<li>其实可以不完全执行完，每条命令之后加<code>&amp;</code>即可。</li>
+</ul>
+</li>
+</ul>
+<h3 id="问题的出现："><a href="#问题的出现：" class="headerlink" title="问题的出现："></a>问题的出现：</h3><ul>
+<li>由于引用了其他的<strong>bash</strong>脚本，而原本该程序运行的环境为<strong>sh</strong><ul>
+<li>所有的报错和问题和这篇如出一辙，放上来：<a target="_blank" rel="noopener" href="https://www.codenong.com/45776003/">关于bash：修复systemd服务203 &#x2F; EXEC失败(没有这样的文件或目录) | 码农家园 (codenong.com)</a></li>
+<li>其他不对应的还有：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xmfdsh/p/4469577.html">Linux树莓派中&#x2F;etc&#x2F;rc.local不执行的问题 - 晓镜水月 - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/liuwinner/article/details/91040565">(138条消息) Linux自启动脚本及解决rc.local不执行脚本问题_社会我大姐，人狠胸不大（^_^）-CSDN博客_rc.local不执行</a><h3 id="查询服务的状态："><a href="#查询服务的状态：" class="headerlink" title="查询服务的状态："></a>查询服务的状态：</h3></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/codeit/p/14489491.html">树莓派&#x2F;etc&#x2F;rc.local开机启动不执行 - 盛世芳华 - 博客园 (cnblogs.com)</a><ul>
+<li>即：<code>sudo systemctl status rc-local</code></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -666,102 +765,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Raspberry/Blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/ProgramLearn/Raspberry/Blog/" class="post-title-link" itemprop="url">树莓派博客搭建基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:28:12" itemprop="dateModified" datetime="2022-02-20T01:28:12+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="初始化相关"><a href="#初始化相关" class="headerlink" title="初始化相关"></a>初始化相关</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/402382426">用树莓派服务器运行Hexo博客网页 - 知乎 (zhihu.com)</a>—比较详细，甚至连怎么搞内网穿透都讲了<ul>
-<li>hexo无法提交的小问题：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/764974">hexo d命令报错：ERROR Deployer not found: git-阿里云开发者社区 (aliyun.com)</a>—注意是在站点目录下（就是本地博客的目录中使用这个命令：<code>npm install hexo-deployer-git --save</code></li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/palance/p/5493201.html">使用hexo搭建博客并上传GitHub - palance - 博客园 (cnblogs.com)</a>看着还挺有用的—–其他有关博客的小知识，CSDN搬运的</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/97758641">(134条消息) Hexo新建标签、分类、归档等页面_荷塘月色-CSDN博客_hexo新建页面</a>————关于在blog中新建标签、分类、归档的东西哦<h3 id="在github上的初始化"><a href="#在github上的初始化" class="headerlink" title="在github上的初始化"></a>在github上的初始化</h3></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">知乎：使用hexo在github上建立个人博客</a><h2 id="关于推送相关"><a href="#关于推送相关" class="headerlink" title="关于推送相关"></a>关于推送相关</h2><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45667885/article/details/101084532">(135条消息) Hexo同时部署在GitHub、Coding、Gitee_Ashin Wang’s Blog-CSDN博客</a></li>
-</ul>
-<h2 id="给hexo安装主题"><a href="#给hexo安装主题" class="headerlink" title="给hexo安装主题"></a>给hexo安装主题</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41160054/article/details/89473887">(135条消息) 给hexo安装主题_一颗西蓝花的博客-CSDN博客_hexo主题安装</a></li>
-<li><strong>非常好的教程：</strong><a target="_blank" rel="noopener" href="https://neveryu.github.io/2016/09/03/hexo-next-one/">(ฅ&gt;ω&lt;*ฅ) Thank Vue~ Hexo-NexT搭建个人博客（一） | Never_yu’s Blog (neveryu.github.io)</a><ul>
-<li>或者直接看Next的官方教程：<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">开始使用 - NexT 使用文档 (iissnan.com)</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="各种奇奇怪怪的教程"><a href="#各种奇奇怪怪的教程" class="headerlink" title="各种奇奇怪怪的教程"></a>各种奇奇怪怪的教程</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://haee.gitee.io/2021/02/18/hexo32/">hexo | 同时提交到 github 和 gitee | 犀牛的博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45667885/article/details/101084532">(135条消息) Hexo同时部署在GitHub、Coding、Gitee_Ashin Wang’s Blog-CSDN博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/palance/p/5493201.html">使用hexo搭建博客并上传GitHub - palance - 博客园 (cnblogs.com)</a>__不太靠谱的一个，从一开始就很讲的不太清楚哦</li>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/59088760">如何用github page搭建博客？ - 知乎 (zhihu.com)</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Java/AboutMySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -954,7 +957,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Python/BOT/">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Raspberry/Blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -968,7 +971,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/19/ProgramLearn/Python/BOT/" class="post-title-link" itemprop="url">利用python开发基于Nonebot2的QQ机器人</a>
+            <a href="/2022/02/19/ProgramLearn/Raspberry/Blog/" class="post-title-link" itemprop="url">树莓派博客搭建基础</a>
         </h2>
 
         <div class="post-meta">
@@ -985,7 +988,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 22:38:34" itemprop="dateModified" datetime="2022-02-20T22:38:34+08:00">2022-02-20</time>
+                <time title="Modified: 2022-02-20 01:28:12" itemprop="dateModified" datetime="2022-02-20T01:28:12+08:00">2022-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1008,7 +1011,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>教程见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/340849952">使用 nonebot 搭建 qq 群聊机器人 - 知乎 (zhihu.com)</a></p>
+          <h2 id="初始化相关"><a href="#初始化相关" class="headerlink" title="初始化相关"></a>初始化相关</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/402382426">用树莓派服务器运行Hexo博客网页 - 知乎 (zhihu.com)</a>—比较详细，甚至连怎么搞内网穿透都讲了<ul>
+<li>hexo无法提交的小问题：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/764974">hexo d命令报错：ERROR Deployer not found: git-阿里云开发者社区 (aliyun.com)</a>—注意是在站点目录下（就是本地博客的目录中使用这个命令：<code>npm install hexo-deployer-git --save</code></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/palance/p/5493201.html">使用hexo搭建博客并上传GitHub - palance - 博客园 (cnblogs.com)</a>看着还挺有用的—–其他有关博客的小知识，CSDN搬运的</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/97758641">(134条消息) Hexo新建标签、分类、归档等页面_荷塘月色-CSDN博客_hexo新建页面</a>————关于在blog中新建标签、分类、归档的东西哦<h3 id="在github上的初始化"><a href="#在github上的初始化" class="headerlink" title="在github上的初始化"></a>在github上的初始化</h3></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">知乎：使用hexo在github上建立个人博客</a><h2 id="关于推送相关"><a href="#关于推送相关" class="headerlink" title="关于推送相关"></a>关于推送相关</h2><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45667885/article/details/101084532">(135条消息) Hexo同时部署在GitHub、Coding、Gitee_Ashin Wang’s Blog-CSDN博客</a></li>
+</ul>
+<h2 id="给hexo安装主题"><a href="#给hexo安装主题" class="headerlink" title="给hexo安装主题"></a>给hexo安装主题</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41160054/article/details/89473887">(135条消息) 给hexo安装主题_一颗西蓝花的博客-CSDN博客_hexo主题安装</a></li>
+<li><strong>非常好的教程：</strong><a target="_blank" rel="noopener" href="https://neveryu.github.io/2016/09/03/hexo-next-one/">(ฅ&gt;ω&lt;*ฅ) Thank Vue~ Hexo-NexT搭建个人博客（一） | Never_yu’s Blog (neveryu.github.io)</a><ul>
+<li>或者直接看Next的官方教程：<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">开始使用 - NexT 使用文档 (iissnan.com)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="各种奇奇怪怪的教程"><a href="#各种奇奇怪怪的教程" class="headerlink" title="各种奇奇怪怪的教程"></a>各种奇奇怪怪的教程</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://haee.gitee.io/2021/02/18/hexo32/">hexo | 同时提交到 github 和 gitee | 犀牛的博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45667885/article/details/101084532">(135条消息) Hexo同时部署在GitHub、Coding、Gitee_Ashin Wang’s Blog-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/palance/p/5493201.html">使用hexo搭建博客并上传GitHub - palance - 博客园 (cnblogs.com)</a>__不太靠谱的一个，从一开始就很讲的不太清楚哦</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/59088760">如何用github page搭建博客？ - 知乎 (zhihu.com)</a></li>
+</ul>
 
       
     </div>
@@ -1264,7 +1289,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
