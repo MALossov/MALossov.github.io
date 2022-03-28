@@ -336,7 +336,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-03-28 04:00:53 / Modified: 22:39:18" itemprop="dateCreated datePublished" datetime="2022-03-28T04:00:53+08:00">2022-03-28</time>
+              <time title="Created: 2022-03-28 22:40:53 / Modified: 22:40:50" itemprop="dateCreated datePublished" datetime="2022-03-28T22:40:53+08:00">2022-03-28</time>
             </span>
 
           
@@ -486,106 +486,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">树莓派自启动问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-20 18:00:53" itemprop="dateCreated datePublished" datetime="2022-02-20T18:00:53+08:00">2022-02-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-04 19:14:42" itemprop="dateModified" datetime="2022-03-04T19:14:42+08:00">2022-03-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="关于-x2F-etc-x2F-rc-local"><a href="#关于-x2F-etc-x2F-rc-local" class="headerlink" title="关于**&#x2F;etc&#x2F;rc.local**"></a>关于**&#x2F;etc&#x2F;rc.local**</h2><ul>
-<li>该文件为Linux下的系统启动文件。根据各种博客的总结，该文件的启动为：<strong>联网之后运行命令</strong>，并且在进入系统之后停止。</li>
-<li>刚开始搜索时的发现为：可以通过这些运行代码<ul>
-<li>其实可以不完全执行完，每条命令之后加<code>&amp;</code>即可。</li>
-</ul>
-</li>
-</ul>
-<h3 id="问题的出现："><a href="#问题的出现：" class="headerlink" title="问题的出现："></a>问题的出现：</h3><ul>
-<li>由于引用了其他的<strong>bash</strong>脚本，而原本该程序运行的环境为<strong>sh</strong><ul>
-<li>所有的报错和问题和这篇如出一辙，放上来：<a target="_blank" rel="noopener" href="https://www.codenong.com/45776003/">关于bash：修复systemd服务203 &#x2F; EXEC失败(没有这样的文件或目录) | 码农家园 (codenong.com)</a></li>
-<li>其他不对应的还有：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xmfdsh/p/4469577.html">Linux树莓派中&#x2F;etc&#x2F;rc.local不执行的问题 - 晓镜水月 - 博客园 (cnblogs.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/liuwinner/article/details/91040565">(138条消息) Linux自启动脚本及解决rc.local不执行脚本问题_社会我大姐，人狠胸不大（^_^）-CSDN博客_rc.local不执行</a><h3 id="查询服务的状态："><a href="#查询服务的状态：" class="headerlink" title="查询服务的状态："></a>查询服务的状态：</h3></li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/codeit/p/14489491.html">树莓派&#x2F;etc&#x2F;rc.local开机启动不执行 - 盛世芳华 - 博客园 (cnblogs.com)</a><ul>
-<li>即：<code>sudo systemctl status rc-local</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="进程的保活"><a href="#进程的保活" class="headerlink" title="进程的保活"></a>进程的保活</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-nohup.html#:~:text=Linux%20nohup%20%E5%91%BD%E4%BB%A4.%20Linux%20%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8.%20nohup%20%E8%8B%B1%E6%96%87%E5%85%A8%E7%A7%B0%20no,nohup%20%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%9C%A8%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%88%E9%9D%9E%E9%87%8D%E5%AE%9A%E5%90%91%E6%97%B6%EF%BC%89%EF%BC%8C%E4%BC%9A%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%AA%E5%90%8D%E5%8F%AB%20nohup.out%20%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8B%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%20nohup.out%20%E6%96%87%E4%BB%B6%E4%B8%8D%E5%8F%AF%E5%86%99%EF%BC%8C%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%20%24HOME%2Fnohup.out%20%E6%96%87%E4%BB%B6%E4%B8%AD%E3%80%82.">Linux nohup 命令 | 菜鸟教程 (runoob.com)</a><ul>
-<li>概括一下：<code> nohup Command [ Arg … ] [　&amp; ]</code></li>
-<li>进行一个删除：如果要停止运行，你需要使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除：<code>ps -aux | grep &quot;runoob.sh&quot;</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="开机进程的注册："><a href="#开机进程的注册：" class="headerlink" title="开机进程的注册："></a>开机进程的注册：</h3><p>-<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/93b6a62a8922">ubuntu20.04利用systemctl命令实现开机自启服务 - 简书 (jianshu.com)</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/SystemUSE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -699,6 +599,106 @@
 <h2 id="树莓派写脚本"><a href="#树莓派写脚本" class="headerlink" title="树莓派写脚本"></a>树莓派写脚本</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yinheyi/p/6648242.html">linux下的shell脚本（基本） - 殷大侠 - 博客园 (cnblogs.com)</a></li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">树莓派自启动问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-20 18:00:53" itemprop="dateCreated datePublished" datetime="2022-02-20T18:00:53+08:00">2022-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-03-04 19:14:42" itemprop="dateModified" datetime="2022-03-04T19:14:42+08:00">2022-03-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="关于-x2F-etc-x2F-rc-local"><a href="#关于-x2F-etc-x2F-rc-local" class="headerlink" title="关于**&#x2F;etc&#x2F;rc.local**"></a>关于**&#x2F;etc&#x2F;rc.local**</h2><ul>
+<li>该文件为Linux下的系统启动文件。根据各种博客的总结，该文件的启动为：<strong>联网之后运行命令</strong>，并且在进入系统之后停止。</li>
+<li>刚开始搜索时的发现为：可以通过这些运行代码<ul>
+<li>其实可以不完全执行完，每条命令之后加<code>&amp;</code>即可。</li>
+</ul>
+</li>
+</ul>
+<h3 id="问题的出现："><a href="#问题的出现：" class="headerlink" title="问题的出现："></a>问题的出现：</h3><ul>
+<li>由于引用了其他的<strong>bash</strong>脚本，而原本该程序运行的环境为<strong>sh</strong><ul>
+<li>所有的报错和问题和这篇如出一辙，放上来：<a target="_blank" rel="noopener" href="https://www.codenong.com/45776003/">关于bash：修复systemd服务203 &#x2F; EXEC失败(没有这样的文件或目录) | 码农家园 (codenong.com)</a></li>
+<li>其他不对应的还有：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xmfdsh/p/4469577.html">Linux树莓派中&#x2F;etc&#x2F;rc.local不执行的问题 - 晓镜水月 - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/liuwinner/article/details/91040565">(138条消息) Linux自启动脚本及解决rc.local不执行脚本问题_社会我大姐，人狠胸不大（^_^）-CSDN博客_rc.local不执行</a><h3 id="查询服务的状态："><a href="#查询服务的状态：" class="headerlink" title="查询服务的状态："></a>查询服务的状态：</h3></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/codeit/p/14489491.html">树莓派&#x2F;etc&#x2F;rc.local开机启动不执行 - 盛世芳华 - 博客园 (cnblogs.com)</a><ul>
+<li>即：<code>sudo systemctl status rc-local</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="进程的保活"><a href="#进程的保活" class="headerlink" title="进程的保活"></a>进程的保活</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-nohup.html#:~:text=Linux%20nohup%20%E5%91%BD%E4%BB%A4.%20Linux%20%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8.%20nohup%20%E8%8B%B1%E6%96%87%E5%85%A8%E7%A7%B0%20no,nohup%20%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%9C%A8%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%88%E9%9D%9E%E9%87%8D%E5%AE%9A%E5%90%91%E6%97%B6%EF%BC%89%EF%BC%8C%E4%BC%9A%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%AA%E5%90%8D%E5%8F%AB%20nohup.out%20%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8B%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%20nohup.out%20%E6%96%87%E4%BB%B6%E4%B8%8D%E5%8F%AF%E5%86%99%EF%BC%8C%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%20%24HOME%2Fnohup.out%20%E6%96%87%E4%BB%B6%E4%B8%AD%E3%80%82.">Linux nohup 命令 | 菜鸟教程 (runoob.com)</a><ul>
+<li>概括一下：<code> nohup Command [ Arg … ] [　&amp; ]</code></li>
+<li>进行一个删除：如果要停止运行，你需要使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除：<code>ps -aux | grep &quot;runoob.sh&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="开机进程的注册："><a href="#开机进程的注册：" class="headerlink" title="开机进程的注册："></a>开机进程的注册：</h3><p>-<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/93b6a62a8922">ubuntu20.04利用systemctl命令实现开机自启服务 - 简书 (jianshu.com)</a></p>
 
       
     </div>
