@@ -336,7 +336,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-04-16 04:00:53 / Modified: 03:29:35" itemprop="dateCreated datePublished" datetime="2022-04-16T04:00:53+08:00">2022-04-16</time>
+              <time title="Created: 2022-04-16 04:00:53 / Modified: 04:01:46" itemprop="dateCreated datePublished" datetime="2022-04-16T04:00:53+08:00">2022-04-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -369,7 +369,7 @@
 <li>但是<strong>这个之乎回答也是坑，虽然能找到，但是需要鼠标和眼睛寻找的地方还是太多</strong></li>
 <li>我发现一个更好的方法：（<em>虽然这个方法并不能够推广，仅仅适用于轻量级的服务器</em>）</li>
 <li>略微总结即为：直接访问<strong>轻量级</strong>产品控制台：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/lighthouse/instance/index">服务器 - 轻量应用服务器 - 控制台 (tencent.com)</a></li>
-<li>![[Pasted image 20220416021934.png]]</li>
+<li><img src="/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud_1/Pasted%20image%2020220416021934.png" alt="Pasted image 20220416021934.png"></li>
 <li>将页面拖到底端可以看到我们订单中创建的服务器</li>
 </ul>
 </li>
@@ -386,7 +386,7 @@
 <li>服务器刚在我们手上的时候的密码是不可知的，需要手动设置，我们选择便于使用秘钥登录的<strong>SSH登录</strong>方法</li>
 <li>首先配置密码：<ul>
 <li>配置密码需要在<strong>远程登录-&gt;VNC</strong>当中进行，页面如下：</li>
-<li>![[Pasted image 20220416022801.png]]</li>
+<li><img src="/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud_1/Pasted%20image%2020220416022801.png" alt="Pasted image 20220416022801.png"></li>
 <li>进行重置密码非常简单，按照要求来即可，请一定要记住自己的密码！</li>
 </ul>
 </li>
@@ -403,7 +403,7 @@
 </ul>
 <p><em><strong>个人观点：在小组合作时不建议修改和创建更多用户，甚至不建议使用su命令进入root身份。因为这样可能导致不同用户创建的文件其他人无法访问和修改，导致各种奇怪的问题，尤其是需要自己搭建自启动的系统服务的时候。</strong></em></p>
 <ul>
-<li>我们输入命令后如果是<strong>win10</strong>等版本自带的<strong>Open-ssh</strong>会提示是否保存对该IP的登录信息，我们选择<code>yes</code>：![[Pasted image 20220416024000.png]]</li>
+<li>我们输入命令后如果是<strong>win10</strong>等版本自带的<strong>Open-ssh</strong>会提示是否保存对该IP的登录信息，我们选择<code>yes</code>：<img src="/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud_1/Pasted%20image%2020220416024000.png" alt="Pasted image 20220416024000.png"></li>
 <li>接下来会要求输入密码，输入成功后即可进入系统<ul>
 <li><em><strong>注意，SHELL下LINUX输入密码一律不会出现字符显示，输入就完了</strong></em></li>
 </ul>
@@ -425,7 +425,7 @@
 </ol>
 <p>这里因为前面已经登陆过服务器，下面使用用户计算机开始生成秘钥，</p>
 <ul>
-<li><p>在<strong>PowerShell</strong>中使用命令<code>ssh-keygen</code>生成秘钥，默认使用RSA算法进行加密（<em>膜拜杨神，会自己做RSA加密</em>），如果使用<code>-t</code>参数，则可以指定加密算法。![[Pasted image 20220416030842.png]]</p>
+<li><p>在<strong>PowerShell</strong>中使用命令<code>ssh-keygen</code>生成秘钥，默认使用RSA算法进行加密（<em>膜拜杨神，会自己做RSA加密</em>），如果使用<code>-t</code>参数，则可以指定加密算法。<img src="/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud_1/Pasted%20image%2020220416030842.png" alt="Pasted image 20220416030842.png"></p>
 <ul>
 <li>在所有问题的选项中，其实敲<code>Enter</code>就行，主要是相关文件名称和密码保护的，这里默认就行，需要关注的为：<blockquote>
 <p><code>Enter file in which to save the key ((C:\Users\MALossov/.ssh/id_rsa)</code></p>
@@ -435,7 +435,7 @@
 </li>
 <li><p>这行文字表示我们的秘钥保存的地址为我们的用户下的.ssh文件夹，文件名为id_rsa，如果是使用服务器进行生成可以更好地看清这一过程。</p>
 <ul>
-<li>我们使用<code>ls -a</code>目录可以看到 <strong>.ssh</strong> 这个隐藏文件夹就在我们的用户目录下（<em>LINUX中~表示用户目录（&#x2F;home&#x2F;用户名），而上一条windows宏对应的命令输出为：<code>Enter file in which to save the key (/home/ubuntu/.ssh/id_rsa)</code>）</em>——它是对应我们这个用户的ssh秘钥，接下来进行一波查看![[Pasted image 20220416025743.png]]</li>
+<li>我们使用<code>ls -a</code>目录可以看到 <strong>.ssh</strong> 这个隐藏文件夹就在我们的用户目录下（<em>LINUX中~表示用户目录（&#x2F;home&#x2F;用户名），而上一条windows宏对应的命令输出为：<code>Enter file in which to save the key (/home/ubuntu/.ssh/id_rsa)</code>）</em>——它是对应我们这个用户的ssh秘钥，接下来进行一波查看<img src="/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud_1/Pasted%20image%2020220416025743.png" alt="Pasted image 20220416025743.png"></li>
 <li>可以发现<strong>公钥</strong>和<strong>私钥</strong>其实是放在同一文件夹下的</li>
 <li>如果有必要可以使用<code>chmod</code>命令修改权限防止他人删除或改动</li>
 </ul>
@@ -451,7 +451,7 @@
 </li>
 <li><p>那么如何配置我们复制下来的私钥作为ssh登陆时使用的私钥呢?</p>
 </li>
-<li><p>我们首先要找到我们本地计算机的ssh配置地址：以<code>Windows11</code>为例，为：<em>C:\Users\[用户名]\.ssh</em>        ![[Pasted image 20220416030448.png]]</p>
+<li><p>我们首先要找到我们本地计算机的ssh配置地址：以<code>Windows11</code>为例，为：<em>C:\Users\[用户名]\.ssh</em>        <img src="/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud_1/Pasted%20image%2020220416030448.png" alt="Pasted image 20220416030448.png"></p>
 <ul>
 <li>在这个文件夹下我们取出公钥并上传到服务器的**~&#x2F;.ssh&#x2F;**目录下：文件命名称和内容与本次的公钥内容不一致。<ul>
 <li>校验文件的命名默认为：<strong>authorized_keys</strong><ul>
@@ -476,6 +476,63 @@
 </li>
 </ul>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/04/16/ProgramLearn/UbuntuOnTencentCloud_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/16/ProgramLearn/UbuntuOnTencentCloud_1/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-04-16 03:57:09" itemprop="dateCreated datePublished" datetime="2022-04-16T03:57:09+08:00">2022-04-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
       
     </div>
 
@@ -1214,80 +1271,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Python/BOT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/ProgramLearn/Python/BOT/" class="post-title-link" itemprop="url">利用python开发基于Nonebot2的QQ机器人</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 22:38:34" itemprop="dateModified" datetime="2022-02-20T22:38:34+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>教程见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/340849952">使用 nonebot 搭建 qq 群聊机器人 - 知乎 (zhihu.com)</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1359,7 +1342,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
