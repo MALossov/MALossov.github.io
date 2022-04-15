@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"shumeipai.local","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="在哪里找到我们的服务器？ 一开始我想当然的以为会在腾讯云控制台中，但是搜寻一番之后发现结果不尽人意 后来想想其实我自己用腾讯翻译API的时候也不是在控制台中 经过求助知乎，发现——   答案在马化腾叔叔那里，可以参考知乎回答：(54 封私信 &#x2F; 81 条消息) 腾讯云如何查看自己的服务器? - 知乎 (zhihu.com) 但是这个之乎回答也是坑，虽然能找到，但是需要鼠标和眼睛寻找的地方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于拿到了服务器我们应该做什么并且做了什么【1】">
+<meta property="og:url" content="http://shumeipai.local/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud/index.html">
+<meta property="og:site_name" content="MAL&#39;S_BLOG">
+<meta property="og:description" content="在哪里找到我们的服务器？ 一开始我想当然的以为会在腾讯云控制台中，但是搜寻一番之后发现结果不尽人意 后来想想其实我自己用腾讯翻译API的时候也不是在控制台中 经过求助知乎，发现——   答案在马化腾叔叔那里，可以参考知乎回答：(54 封私信 &#x2F; 81 条消息) 腾讯云如何查看自己的服务器? - 知乎 (zhihu.com) 但是这个之乎回答也是坑，虽然能找到，但是需要鼠标和眼睛寻找的地方">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-04-15T20:00:53.000Z">
+<meta property="article:modified_time" content="2022-04-15T19:29:35.747Z">
+<meta property="article:author" content="MALossov">
+<meta property="article:tag" content="编程学习">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Cloud">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://shumeipai.local/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>关于拿到了服务器我们应该做什么并且做了什么【1】 | MAL'S_BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MAL'S_BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome to Malossov's Personal Archieve!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+
+    <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于拿到了服务器我们应该做什么并且做了什么【1】
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-04-16 04:00:53 / Modified: 03:29:35" itemprop="dateCreated datePublished" datetime="2022-04-16T04:00:53+08:00">2022-04-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="在哪里找到我们的服务器？"><a href="#在哪里找到我们的服务器？" class="headerlink" title="在哪里找到我们的服务器？"></a>在哪里找到我们的服务器？</h2><ul>
+<li>一开始我想当然的以为会在<strong>腾讯云控制台</strong>中，但是搜寻一番之后发现结果不尽人意<ul>
+<li>后来想想其实我自己用腾讯翻译API的时候也不是在控制台中</li>
+<li>经过求助知乎，发现——</li>
+</ul>
+</li>
+<li>答案在马化腾叔叔那里，可以参考知乎回答：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/448478892/answer/1771975432">(54 封私信 &#x2F; 81 条消息) 腾讯云如何查看自己的服务器? - 知乎 (zhihu.com)</a><ul>
+<li>但是<strong>这个之乎回答也是坑，虽然能找到，但是需要鼠标和眼睛寻找的地方还是太多</strong></li>
+<li>我发现一个更好的方法：（<em>虽然这个方法并不能够推广，仅仅适用于轻量级的服务器</em>）</li>
+<li>略微总结即为：直接访问<strong>轻量级</strong>产品控制台：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/lighthouse/instance/index">服务器 - 轻量应用服务器 - 控制台 (tencent.com)</a></li>
+<li>![[Pasted image 20220416021934.png]]</li>
+<li>将页面拖到底端可以看到我们订单中创建的服务器</li>
+</ul>
+</li>
+</ul>
+<h2 id="如何开始食用我们的服务器"><a href="#如何开始食用我们的服务器" class="headerlink" title="如何开始食用我们的服务器"></a>如何开始食用我们的服务器</h2><p><strong>注意：</strong> 由于咱自己玩过<em>树莓派</em> 所以选择了<strong>Ubuntu 20.04LTS</strong>这一派生于  ** Debian** 的操作系统，因为比较能够方便的用<code>apt</code>命令来管理软件包，其他操作系统如：<strong>CentOS</strong>等习惯使用<code>yum</code>命令进行管理的发行版无法兼顾，非常抱歉。</p>
+<p>开始使用主要需要面对以下两个需求：</p>
+<ol>
+<li>如何安装好我们需要的软件</li>
+<li>如何做好远程管理的准备</li>
+</ol>
+<p>由于我们首先需要登录，先从第二点开始：</p>
+<h2 id="如何做好远程管理的准备"><a href="#如何做好远程管理的准备" class="headerlink" title="如何做好远程管理的准备"></a>如何做好远程管理的准备</h2><hr>
+<h3 id="使用ssh登录"><a href="#使用ssh登录" class="headerlink" title="使用ssh登录"></a>使用ssh登录</h3><h4 id="先修改密码"><a href="#先修改密码" class="headerlink" title="先修改密码"></a>先修改密码</h4><ul>
+<li>服务器刚在我们手上的时候的密码是不可知的，需要手动设置，我们选择便于使用秘钥登录的<strong>SSH登录</strong>方法</li>
+<li>首先配置密码：<ul>
+<li>配置密码需要在<strong>远程登录-&gt;VNC</strong>当中进行，页面如下：</li>
+<li>![[Pasted image 20220416022801.png]]</li>
+<li>进行重置密码非常简单，按照要求来即可，请一定要记住自己的密码！</li>
+</ul>
+</li>
+<li>接下来进行ssh登录的准备环节，我们首先使用<strong>PowerShell</strong>对于<code>ssh</code>命令进行测试。<ul>
+<li>一般情况下Windows自带该命令，如果没有自带可以求助万能的百度<h4 id="再来看ssh"><a href="#再来看ssh" class="headerlink" title="再来看ssh"></a>再来看ssh</h4></li>
+</ul>
+</li>
+<li>使用<code>ssh</code>命令远程登录的命令在一般使用时的 格式为：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [用户名]@[通道地址] -p [端口号]</span><br></pre></td></tr></table></figure></li>
+<li>例如：<code>ssh malossov@192.168.0.4 -p 22</code><ul>
+<li>一般情况下，端口号默认为<strong>22</strong>我们不必输入</li>
+<li>ubuntu系统的默认用户名应该为：ubuntu</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>个人观点：在小组合作时不建议修改和创建更多用户，甚至不建议使用su命令进入root身份。因为这样可能导致不同用户创建的文件其他人无法访问和修改，导致各种奇怪的问题，尤其是需要自己搭建自启动的系统服务的时候。</strong></em></p>
+<ul>
+<li>我们输入命令后如果是<strong>win10</strong>等版本自带的<strong>Open-ssh</strong>会提示是否保存对该IP的登录信息，我们选择<code>yes</code>：![[Pasted image 20220416024000.png]]</li>
+<li>接下来会要求输入密码，输入成功后即可进入系统<ul>
+<li><em><strong>注意，SHELL下LINUX输入密码一律不会出现字符显示，输入就完了</strong></em></li>
+</ul>
+</li>
+<li><h5 id="恭喜你-已经学会了SSH！"><a href="#恭喜你-已经学会了SSH！" class="headerlink" title="恭喜你 已经学会了SSH！"></a>恭喜你 已经学会了SSH！</h5></li>
+</ul>
+<p>当然不可能，我们还需要下一步：配置SSH秘钥来让我们的登录变得方便</p>
+<hr>
+<h4 id="SSH的秘钥配置"><a href="#SSH的秘钥配置" class="headerlink" title="SSH的秘钥配置"></a>SSH的秘钥配置</h4><h5 id="认识秘钥"><a href="#认识秘钥" class="headerlink" title="认识秘钥"></a>认识秘钥</h5><p>首先按照我的理解两句话介绍一下什么是秘钥以及为什么我们需要秘钥：</p>
+<ol>
+<li>SSH默认采用的密码很不安全，虽然你记着很难受，但其实破译很容易；</li>
+<li>所以如果校验秘钥的话就会方便很多，我们在SSH命令的时候就进行秘钥的校验可以更加安全，也更加快速地连接我们的服务器。</li>
+</ol>
+<p><em><strong>起码在我的个人经验看来，很多时候都是只允许秘钥登录而不允许密码登录的。当然对我个人而言：更多的是不用输入密码可以偷懒</strong></em></p>
+<h5 id="生成和配置秘钥"><a href="#生成和配置秘钥" class="headerlink" title="生成和配置秘钥"></a>生成和配置秘钥</h5><p><strong>密钥</strong>分为<strong>公钥</strong>和<strong>私钥</strong>两个部分，而这两个部分的运作过程是：</p>
+<ol>
+<li><strong>公钥</strong>保存在服务器上，<strong>私钥</strong>保存在个人计算机上。</li>
+<li>在ssh时，服务器发来数据，个人计算机用<strong>私钥</strong>进行签名后返回服务器进行验证，一致即可登录<br>从上来看，秘钥一定是成对出现的，而且是通过同一台用户计算机生成的，公钥是用户计算机放到服务器上的。</li>
+</ol>
+<p>这里因为前面已经登陆过服务器，下面使用用户计算机开始生成秘钥，</p>
+<ul>
+<li><p>在<strong>PowerShell</strong>中使用命令<code>ssh-keygen</code>生成秘钥，默认使用RSA算法进行加密（<em>膜拜杨神，会自己做RSA加密</em>），如果使用<code>-t</code>参数，则可以指定加密算法。![[Pasted image 20220416030842.png]]</p>
+<ul>
+<li>在所有问题的选项中，其实敲<code>Enter</code>就行，主要是相关文件名称和密码保护的，这里默认就行，需要关注的为：<blockquote>
+<p><code>Enter file in which to save the key ((C:\Users\MALossov/.ssh/id_rsa)</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>这行文字表示我们的秘钥保存的地址为我们的用户下的.ssh文件夹，文件名为id_rsa，如果是使用服务器进行生成可以更好地看清这一过程。</p>
+<ul>
+<li>我们使用<code>ls -a</code>目录可以看到 <strong>.ssh</strong> 这个隐藏文件夹就在我们的用户目录下（<em>LINUX中~表示用户目录（&#x2F;home&#x2F;用户名），而上一条windows宏对应的命令输出为：<code>Enter file in which to save the key (/home/ubuntu/.ssh/id_rsa)</code>）</em>——它是对应我们这个用户的ssh秘钥，接下来进行一波查看![[Pasted image 20220416025743.png]]</li>
+<li>可以发现<strong>公钥</strong>和<strong>私钥</strong>其实是放在同一文件夹下的</li>
+<li>如果有必要可以使用<code>chmod</code>命令修改权限防止他人删除或改动</li>
+</ul>
+</li>
+<li><p>接下来我们要做的，就是</p>
+<ul>
+<li>让公钥保持在服务器上不动作为校验</li>
+<li>把私钥下载到自己的电脑上作为ssh的校验方法<ul>
+<li>可以使用<code>scp</code>命令的方法，也可以直接使用<code>cat</code>命令的输出进行复制粘贴。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>那么如何配置我们复制下来的私钥作为ssh登陆时使用的私钥呢?</p>
+</li>
+<li><p>我们首先要找到我们本地计算机的ssh配置地址：以<code>Windows11</code>为例，为：<em>C:\Users\[用户名]\.ssh</em>        ![[Pasted image 20220416030448.png]]</p>
+<ul>
+<li>在这个文件夹下我们取出公钥并上传到服务器的**~&#x2F;.ssh&#x2F;**目录下：文件命名称和内容与本次的公钥内容不一致。<ul>
+<li>校验文件的命名默认为：<strong>authorized_keys</strong><ul>
+<li>【作废】使用命令进行复制：首先复制本地秘钥的内容，<code>cd</code>进入**.shh** 目录，然后使用<code>echo</code>命令直接写入文件    例：<code>echo [公钥内容] &gt; id_rsa.pub</code></li>
+</ul>
+</li>
+<li>↑这里出现了小小的问题，公钥是分为多行的，所以我们采用另外一种办法，使用Ubuntu内置的编辑器<strong>nano</strong></li>
+<li>使用方法很简单：输入命令<code>nano authorized_keys</code></li>
+<li>进入编辑窗口，复制粘贴完公钥内容之后<ul>
+<li>可以直接使用右键复制粘贴</li>
+</ul>
+</li>
+<li>使用快捷键<code>Ctrl+X</code>退出，按照提示保存修改。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>接下来测试一下，在<strong>PowerShell</strong>中登出用户，重新登录。</p>
+<ul>
+<li>发现不用输入密码了，秘钥的配置成功</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag"># 编程学习</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+              <a href="/tags/Cloud/" rel="tag"># Cloud</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/15/ProgramLearn/AD/MINI-SYSTEM/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%93%AA%E9%87%8C%E6%89%BE%E5%88%B0%E6%88%91%E4%BB%AC%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">在哪里找到我们的服务器？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B%E9%A3%9F%E7%94%A8%E6%88%91%E4%BB%AC%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">如何开始食用我们的服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">3.</span> <span class="nav-text">如何做好远程管理的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8ssh%E7%99%BB%E5%BD%95"><span class="nav-number">3.1.</span> <span class="nav-text">使用ssh登录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%88%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">3.1.1.</span> <span class="nav-text">先修改密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%8D%E6%9D%A5%E7%9C%8Bssh"><span class="nav-number">3.1.2.</span> <span class="nav-text">再来看ssh</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%81%AD%E5%96%9C%E4%BD%A0-%E5%B7%B2%E7%BB%8F%E5%AD%A6%E4%BC%9A%E4%BA%86SSH%EF%BC%81"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">恭喜你 已经学会了SSH！</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH%E7%9A%84%E7%A7%98%E9%92%A5%E9%85%8D%E7%BD%AE"><span class="nav-number">3.1.3.</span> <span class="nav-text">SSH的秘钥配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%A4%E8%AF%86%E7%A7%98%E9%92%A5"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">认识秘钥</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%92%8C%E9%85%8D%E7%BD%AE%E7%A7%98%E9%92%A5"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">生成和配置秘钥</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MALossov"
+      src="/uploads/avator.png">
+  <p class="site-author-name" itemprop="name">MALossov</p>
+  <div class="site-description" itemprop="description">是很菜的人的很菜的博客捏，无栈工程学徒ing。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/malossov" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;malossov" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/yi-wan-nzlao-si-ji" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yi-wan-nzlao-si-ji" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/malossov" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;malossov" rel="noopener" target="_blank"><i class="fab fa-gitee fa-fw"></i>Gitee</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MALossov</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+
+</body>
+</html>

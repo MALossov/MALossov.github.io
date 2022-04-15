@@ -311,6 +311,734 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/SystemUSE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/20/ProgramLearn/Raspberry/SystemUSE/" class="post-title-link" itemprop="url">树莓派系统基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-20 18:00:53" itemprop="dateCreated datePublished" datetime="2022-02-20T18:00:53+08:00">2022-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-22 17:27:34" itemprop="dateModified" datetime="2022-02-22T17:27:34+08:00">2022-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="内存使用情况"><a href="#内存使用情况" class="headerlink" title="内存使用情况"></a>内存使用情况</h2><ul>
+<li>查看剩余内存使用情况：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/salesking/p/11109546.html">树莓派查看硬盘空间使用 - 13717607836 - 博客园 (cnblogs.com)</a>———一言以蔽之<code>df -h</code></li>
+</ul>
+<h2 id="系统版本"><a href="#系统版本" class="headerlink" title="系统版本"></a>系统版本</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://bbs.shumeipaiba.com/thread-11-1-1.html">linux版本、内核查询的常用方法 - 综合版块 - 树莓派论坛 - Powered by Discuz! (shumeipaiba.com)</a><ul>
+<li>登录到服务器执行 <code>lsb_release -a</code> 即可列出所有版本信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="系统的初始化"><a href="#系统的初始化" class="headerlink" title="系统的初始化"></a>系统的初始化</h2><ul>
+<li>不推荐：奇巧淫技：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e798bf6624aa">树莓派raspberry pi zero w上手笔记 - 简书 (jianshu.com)</a>———用串口通信实属离谱</li>
+<li>如何<strong>联网</strong>——推荐：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/syj888/p/11762702.html">树莓派zero 首次连接WiFi网络 - 在路上2019 - 博客园 (cnblogs.com)</a><br>  <strong>注意：在使用系统的时候依旧需要加入空文件ssh，否则容易出事，否则容易出事，否则不启用ssh</strong><ul>
+<li>另外：在使用ssh的时候如果已经添加过公钥我的建议是直接删除这个公钥orz，不然容易出事，不然容易出事，不然容易出事……：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangguchao/article/details/85614914">(135条消息) 问题解决——SSH时出现WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!_口袋里的跳跳糖-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="系统的换源"><a href="#系统的换源" class="headerlink" title="系统的换源"></a>系统的换源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/98079246">教你如何给树莓派更换软件源 - 知乎 (zhihu.com)</a>———一键更新，非常丝滑。<strong>不过已经落后了，我查出来我们的是11orz</strong><ul>
+<li>注意换源前查看raspberrypi的debian版本，一定要对上：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35768839/article/details/104751061">(135条消息) 关于Debian发行版本（树莓派系统版本）_经济好没有钱的博客-CSDN博客_树莓派查看debian版本</a>命令为<code>lsb_release -a</code></li>
+</ul>
+</li>
+<li>真正的教程害得看这个：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_18275789/article/details/122997715">(135条消息) 树莓派 Raspberry Pi （bullseye）更换阿里云源方法_老鱼干的博客-CSDN博客</a></li>
+<li>关于64位（注意要改一下那个啥：改一下<code>buster</code>to<code>bullseye</code>：<a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_26678247/article/details/108930421">(138条消息) 树莓派4B 64位（arm64）系统配置系统源_SWORLD-CSDN博客_树莓派arm64</a></li>
+</ul>
+<p><strong>真实命令：</strong><br>编辑 &#x2F;etc&#x2F;apt&#x2F;sources.list 文件，这里推荐就用系统自带的 nano 命令编辑，命令如下：<br><code>sudo nano /etc/apt/sources.list</code><br>进入编辑界面，删除原有的内容，粘贴如下内容：</p>
+<blockquote>
+<p>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye  main non-free contrib rpi<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye main non-free contrib</p>
+</blockquote>
+<ul>
+<li>如果出现<code>unsigned</code>报错的情况，可以通过这篇帖子更新GPG：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/DragonStart/p/8146272.html">解决linux更新apt软件源时报出GPG错误 - asml - 博客园 (cnblogs.com)</a><h2 id="系统的关机"><a href="#系统的关机" class="headerlink" title="系统的关机"></a>系统的关机</h2></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-halt.html">Linux halt命令 | 菜鸟教程 (runoob.com)</a></li>
+<li><code>halt</code></li>
+</ul>
+<h2 id="设置系统wifi的方法"><a href="#设置系统wifi的方法" class="headerlink" title="设置系统wifi的方法"></a>设置系统wifi的方法</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136463580">设置树莓派wifi的几种方式 - 知乎 (zhihu.com)</a>———单个wifi的多种方式</li>
+<li>多个wifi:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;wo_shi_yige_wifi_ssid&quot;</span></span><br><span class="line"> scan_ssid=1</span><br><span class="line"> psk=<span class="string">&quot;wo_shi_mi_ma&quot;</span></span><br><span class="line"> priority=5</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;pi&quot;</span></span><br><span class="line"> psk=<span class="string">&quot;onlyforpi&quot;</span></span><br><span class="line"> priority=1</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="系统监视"><a href="#系统监视" class="headerlink" title="系统监视"></a>系统监视</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xingqingly/article/details/104328570">(136条消息) 树莓派监控CPU负载，温度，内存和网络的工具htop和speedometer和s-tui_嵌入式技术在路上-CSDN博客_htop显示温度</a><ul>
+<li>我采用的是<code>speedometer</code>启动命令为：<code>speedometer -r eth0 -t eth0</code>和<code>speedometer -r wlan0 -t wlan0</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="免密码登录"><a href="#免密码登录" class="headerlink" title="免密码登录"></a>免密码登录</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014661152/article/details/109337818">(136条消息) vscode使用ssh密匙远程登录ssh，避免每次登录都输入密码_u014661152的博客-CSDN博客_vscode记住ssh远程密码</a><ul>
+<li>主要内容就是俩密钥orz</li>
+<li><a target="_blank" rel="noopener" href="https://blog.songjiahao.com/archives/262">VS Code使用ssh密钥连接linux – SAquariusの梦想屋 (songjiahao.com)</a></li>
+<li><strong>备注：目前没成功</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="修改树莓派的主机名："><a href="#修改树莓派的主机名：" class="headerlink" title="修改树莓派的主机名："></a>修改树莓派的主机名：</h2><p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2019/02/27/how-to-change-the-hostname-of-your-raspberry-pi.html">如何修改树莓派的主机名 | 树莓派实验室 (nxez.com)</a></p>
+<h2 id="树莓派的清除缓存"><a href="#树莓派的清除缓存" class="headerlink" title="树莓派的清除缓存"></a>树莓派的清除缓存</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2017/12/18/how-to-modify-raspberry-pi-swap-partition.html">修改树莓派交换分区 SWAP 的正确姿势 | 树莓派实验室 (nxez.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pc-boke/articles/10213695.html">Linux释放cache和buffer内存空间 - 腾飞的鹰 - 博客园 (cnblogs.com)</a></li>
+</ul>
+<h2 id="树莓派写脚本"><a href="#树莓派写脚本" class="headerlink" title="树莓派写脚本"></a>树莓派写脚本</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yinheyi/p/6648242.html">linux下的shell脚本（基本） - 殷大侠 - 博客园 (cnblogs.com)</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">树莓派自启动问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-20 18:00:53" itemprop="dateCreated datePublished" datetime="2022-02-20T18:00:53+08:00">2022-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-03-04 19:14:42" itemprop="dateModified" datetime="2022-03-04T19:14:42+08:00">2022-03-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="关于-x2F-etc-x2F-rc-local"><a href="#关于-x2F-etc-x2F-rc-local" class="headerlink" title="关于**&#x2F;etc&#x2F;rc.local**"></a>关于**&#x2F;etc&#x2F;rc.local**</h2><ul>
+<li>该文件为Linux下的系统启动文件。根据各种博客的总结，该文件的启动为：<strong>联网之后运行命令</strong>，并且在进入系统之后停止。</li>
+<li>刚开始搜索时的发现为：可以通过这些运行代码<ul>
+<li>其实可以不完全执行完，每条命令之后加<code>&amp;</code>即可。</li>
+</ul>
+</li>
+</ul>
+<h3 id="问题的出现："><a href="#问题的出现：" class="headerlink" title="问题的出现："></a>问题的出现：</h3><ul>
+<li>由于引用了其他的<strong>bash</strong>脚本，而原本该程序运行的环境为<strong>sh</strong><ul>
+<li>所有的报错和问题和这篇如出一辙，放上来：<a target="_blank" rel="noopener" href="https://www.codenong.com/45776003/">关于bash：修复systemd服务203 &#x2F; EXEC失败(没有这样的文件或目录) | 码农家园 (codenong.com)</a></li>
+<li>其他不对应的还有：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xmfdsh/p/4469577.html">Linux树莓派中&#x2F;etc&#x2F;rc.local不执行的问题 - 晓镜水月 - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/liuwinner/article/details/91040565">(138条消息) Linux自启动脚本及解决rc.local不执行脚本问题_社会我大姐，人狠胸不大（^_^）-CSDN博客_rc.local不执行</a><h3 id="查询服务的状态："><a href="#查询服务的状态：" class="headerlink" title="查询服务的状态："></a>查询服务的状态：</h3></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/codeit/p/14489491.html">树莓派&#x2F;etc&#x2F;rc.local开机启动不执行 - 盛世芳华 - 博客园 (cnblogs.com)</a><ul>
+<li>即：<code>sudo systemctl status rc-local</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="进程的保活"><a href="#进程的保活" class="headerlink" title="进程的保活"></a>进程的保活</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-nohup.html#:~:text=Linux%20nohup%20%E5%91%BD%E4%BB%A4.%20Linux%20%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8.%20nohup%20%E8%8B%B1%E6%96%87%E5%85%A8%E7%A7%B0%20no,nohup%20%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%9C%A8%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%88%E9%9D%9E%E9%87%8D%E5%AE%9A%E5%90%91%E6%97%B6%EF%BC%89%EF%BC%8C%E4%BC%9A%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%AA%E5%90%8D%E5%8F%AB%20nohup.out%20%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8B%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%20nohup.out%20%E6%96%87%E4%BB%B6%E4%B8%8D%E5%8F%AF%E5%86%99%EF%BC%8C%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%20%24HOME%2Fnohup.out%20%E6%96%87%E4%BB%B6%E4%B8%AD%E3%80%82.">Linux nohup 命令 | 菜鸟教程 (runoob.com)</a><ul>
+<li>概括一下：<code> nohup Command [ Arg … ] [　&amp; ]</code></li>
+<li>进行一个删除：如果要停止运行，你需要使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除：<code>ps -aux | grep &quot;runoob.sh&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="开机进程的注册："><a href="#开机进程的注册：" class="headerlink" title="开机进程的注册："></a>开机进程的注册：</h3><p>-<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/93b6a62a8922">ubuntu20.04利用systemctl命令实现开机自启服务 - 简书 (jianshu.com)</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/ComputerCommonSenses/Git_helper/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/ComputerCommonSenses/Git_helper/" class="post-title-link" itemprop="url">Linux的软件源</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-19 19:00:53 / Modified: 19:49:42" itemprop="dateCreated datePublished" datetime="2022-02-19T19:00:53+08:00">2022-02-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基本的全局设置"><a href="#基本的全局设置" class="headerlink" title="基本的全局设置"></a>基本的全局设置</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34802511/article/details/90055273">(135条消息) git—全局设置用户名、密码、邮箱_qq_34802511的博客-CSDN博客_git设置用户名和密码</a></p>
+<ul>
+<li>无法查看的原因和解决：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30588827/article/details/95389491">(135条消息) window上git bash运行错误记录_weixin_30588827的博客-CSDN博客</a></li>
+</ul>
+</li>
+<li><p>解决无法连接github的问题：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Archer314/p/14641310.html">解决ssh: connect to host github.com port 22: Connection refused - Biile - 博客园 (cnblogs.com)</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Embed/I2s/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Embed/I2s/" class="post-title-link" itemprop="url">STM32的I2S总线问题（未解决）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:18:28" itemprop="dateModified" datetime="2022-02-20T01:18:28+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
+<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
+<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
+<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
+<li>SCK&#x2F;BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
+<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Embed/OpenOCD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Embed/OpenOCD/" class="post-title-link" itemprop="url">Clion中OpenOCD的配置（待补充）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:27:41" itemprop="dateModified" datetime="2022-02-20T01:27:41+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>非常重要</strong>！：自己修改之后一定记得改这个不然肯定要出错！<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/118826584">(133条消息) Clion配置STM32开发环境踩坑_FILWY_M的博客-CSDN博客</a><br><strong>关于最后成功使用OpenOCD的一些个人理解</strong>：所有的连接器配置在<code>/script/target</code>里面，所有的板子的配置在<code>/script/board/</code>里面我们要做的就是把类似于<em>stm32-discovery-f3</em>里面的东西给复制下来改成我们自己需要的。<br>毕竟这玩意里面find一层套一层的，我这种笨比基本上是顶不住的。</p>
+<h2 id="总之要在Board里面新建点东西，就是这样捏"><a href="#总之要在Board里面新建点东西，就是这样捏" class="headerlink" title="总之要在Board里面新建点东西，就是这样捏"></a>总之要在Board里面新建点东西，就是这样捏</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Java/AboutMySQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Java/AboutMySQL/" class="post-title-link" itemprop="url">MYSQL的学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:17:24" itemprop="dateModified" datetime="2022-02-20T01:17:24+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h3><ul>
+<li>在配置mysql的时候踩过的坑还是挺多的，包括但不限于：<ul>
+<li>开始装了一堆奇怪的服务，结果server的服务在终端上意外地不太好用，心态炸裂</li>
+<li>曾经没有记住命令 <code>mysqld --initialize --console</code>这个命令产生时的密码，导致的后果是——登录不了，需要各种方法绕，比如：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kaitu/article/details/78994893">(128条消息) Windows下忘记MySQL数据库root用户密码解决办法_Random-CSDN博客_windows忘记mysqlroot密码</a></li>
+<li>在开始服务的时候没有用上管理员模式，导致结果欠佳</li>
+<li>关于服务无法启动的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/JWbonze/article/details/80241417">(128条消息) net start mysql无法启动MySQL_咕咕咕的下班时间-CSDN博客_mysql net start</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="最终的选择"><a href="#最终的选择" class="headerlink" title="最终的选择"></a>最终的选择</h3><ul>
+<li>最终选择的结果为：<strong>命令行下的MySQL</strong>当然这种情况的话，在配置的时候也会有不少麻烦，最后是看了这篇文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/queen00000/article/details/90727996">(128条消息) Mysql压缩包版的安装教程_Z2Min_-CSDN博客_mysql压缩包怎么安装</a>————讲的东西还比较详细，而且也是基础范围内的</li>
+<li>教程一如既往还是看廖雪峰的</li>
+</ul>
+<h3 id="补充内容"><a href="#补充内容" class="headerlink" title="补充内容"></a>补充内容</h3><ul>
+<li>关于可视化工具的选择：选择了官方的<strong>MySQLWorkbench</strong>作为可视化工具，直接上官网下载即可<ul>
+<li>但是把内容汉化了，却没有保存，参考的gitee仓库为：<a target="_blank" rel="noopener" href="https://gitee.com/haozing/mysql_workbench_chinese">MySQL Workbench 汉化: MySQL Workbench 汉化 (gitee.com)</a></li>
+<li>使用教程的地址：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/260139380">MySQL Workbench使用教程 - 知乎 (zhihu.com)</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="详细使用"><a href="#详细使用" class="headerlink" title="详细使用"></a>详细使用</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/7152.html">MySQL修改密码的3种方式 (biancheng.net)</a></li>
+</ul>
+<h3 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h3><ul>
+<li>表的每一行称为记录（Record），记录是一个逻辑意义上的数据。</li>
+<li>表的每一列称为字段（Column），同一个表的每一行记录都拥有相同的若干字段。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Java/AboutTomCat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Java/AboutTomCat/" class="post-title-link" itemprop="url">TOMCAT的学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:17:27" itemprop="dateModified" datetime="2022-02-20T01:17:27+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>基本使用方法为：官网下zip,然后bin目录下startup</li>
+<li>服务等高级安装方法见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangmx1993328/article/details/81013715">(128条消息) Tomcat 下载安装，启动，停止，注册服务，开机自启_蚩尤后裔-CSDN博客_tomcat 服务启动</a><ul>
+<li>注意服务启动必须设置JAVA_HOME，不设置就很惨<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42017152/article/details/90732057">(128条消息) 配置JAVA_HOME_追风者-CSDN博客_java_home</a></li>
+</ul>
+</li>
+<li>更改用户名为：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lubin100/article/details/81018054">(128条消息) 如何设置tomcat管理员的用户名和密码_这个人很吊的技术博客-CSDN博客_tomcat 用户名密码</a></li>
+<li>更改GBK编码，不然都是乱码：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25775675/article/details/104839569">(128条消息) Windows 下Tomcat中文乱码解决_菜鸟小窝的博客-CSDN博客_tomcat 乱码</a></li>
+<li>关闭命令为：.&#x2F;shutdown.bat</li>
+</ul>
+<h2 id="非常重要"><a href="#非常重要" class="headerlink" title="非常重要"></a><strong>非常重要</strong></h2><ul>
+<li>开始使用tomcat的一晚上：2&#x2F;7日晚，一直无法成功部署，原因不明，估计是<strong>pom.xml</strong>没有配置正确导致文件有些损坏的原因</li>
+<li>找了一堆资料，一晚上，终于找到一种能用的：<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/hyh17808770899/article/details/114628758?spm=1001.2101.3001.6650.2&depth_1-utm_relevant_index=3">(129条消息) 在IDEA中使用maven创建第一个Servlet项目_雨云21的博客-CSDN博客</a></li>
+<li>还有一个不能用但看着还挺科学的:<a target="_blank" rel="noopener" href="https://blog.csdn.net/huweiliyi/article/details/107637785">(129条消息) IDEA中用maven创建的Servlet项目_lucashu的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/guodao/p/9702488.html">关于servlet的@WebServlet注解。 - 过道 - 博客园 (cnblogs.com)</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Python/BOT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Python/BOT/" class="post-title-link" itemprop="url">利用python开发基于Nonebot2的QQ机器人</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 22:38:34" itemprop="dateModified" datetime="2022-02-20T22:38:34+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>教程见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/340849952">使用 nonebot 搭建 qq 群聊机器人 - 知乎 (zhihu.com)</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Raspberry/Blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -490,650 +1218,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/19/ProgramLearn/Raspberry/DEV/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/ProgramLearn/Raspberry/DEV/" class="post-title-link" itemprop="url">树莓派远程开发基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 22:36:29" itemprop="dateModified" datetime="2022-02-20T22:36:29+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><h2 id="VSCODE"><a href="#VSCODE" class="headerlink" title="VSCODE"></a>VSCODE</h2><ul>
-<li>使用VSCODE请注意：树莓派的ARM内核必须为<strong>7</strong>及以上，否则压根出不来配置</li>
-<li>然后就挺愉快的，反正VSC的远程和本地是分开来设置的</li>
-</ul>
-<h3 id="PYCHARM"><a href="#PYCHARM" class="headerlink" title="PYCHARM"></a>PYCHARM</h3><ul>
-<li>使用pycharm时无法通过ssh直接将项目部署在树莓派上，原因查不出来</li>
-<li>其他就是，只需要调整解释器的地址，包管理也可以从本地做</li>
-<li>注意部署的地址，如果命令行找不到要记得调整，详细见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39319907/article/details/115276598">(136条消息) pycharm连接远程服务器，报错No such file or directory_我又可以了的博客-CSDN博客</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/AD/AD_PCB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/AD/AD_PCB/" class="post-title-link" itemprop="url">AD22-Learning(blogs)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:31:18" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/116459617">(131条消息) Altium AD20批量修改丝印大小、更改丝印字体、丝印显示中文、更改位号丝印 相对元件的位置_Mark_md的博客-CSDN博客_ad20丝印</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/li707414287/article/details/99348867">(131条消息) PCB丝印间距设置_li707414287的博客-CSDN博客_ad丝印间距规则设置</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/116642218">(131条消息) AD20如何用图片做丝印的图案，丝印层导入logo_Mark_md的博客-CSDN博客_ad丝印层导入图片</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41110384/article/details/104913895">(131条消息) Altium Designer 在PCB中添加 图片 Logo 或者丝印_NullStr的博客-CSDN博客_ad丝印层导入图片</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Embed/CLionEnv/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Embed/CLionEnv/" class="post-title-link" itemprop="url">在Clion下的嵌入式学习配置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:18:34" itemprop="dateModified" datetime="2022-02-20T01:18:34+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12222811">基于clion的野火stm32标准库开发(printf打印已解决) - 哔哩哔哩 (bilibili.com)</a>——主要是解决printf的问题（其实这个问题没有解决而且版本比较老）</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/444893180">手把手教你用CLion玩转STM32 - 知乎 (zhihu.com)</a>————正在尝试：&#x3D;&#x3D;&#x3D;&#x3D;很详细，甚至教你怎么配OpenOCD&#x3D;&#x3D;&#x3D;&#x3D;然后就是printf的事情，后来证明解决的并不好，我们还是需要别的</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/117776784?spm=1001.2101.3001.6650.6&depth_1-utm_relevant_index=13">(133条消息) CLion 在stm32 环境下使用重定向printf方法,导致float数据无法输出的解决办法_FILWY_M的博客-CSDN博客</a>：这篇讲了浮点的</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/" class="post-title-link" itemprop="url">WindowsTerminal-Learning</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 16:43:18" itemprop="dateModified" datetime="2022-02-20T16:43:18+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h3><ul>
-<li>不少，挺多，具体来说还过来的时候也看了不少博客，挺多现在看来都挺傻的而且没啥意义：比如上github直接当下来整个的<strong>主题模式的使用</strong>的方法，结果效果是相当差劲的。说实话当时脑子真是被驴踢过</li>
-</ul>
-<h3 id="一些比较重要的配置"><a href="#一些比较重要的配置" class="headerlink" title="一些比较重要的配置"></a>一些比较重要的配置</h3><ol>
-<li>使用管理员权限的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30262407/article/details/114921714">(128条消息) windows terminal使用管理员权限打开_alphahao的博客-CSDN博客_windowsterminal管理员权限</a></li>
-</ol>
-<h3 id="使用WCH-LINK"><a href="#使用WCH-LINK" class="headerlink" title="使用WCH_LINK:"></a>使用WCH_LINK:</h3><p>来自CSDN：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/milton/p/15848573.html">沁恒CH32F103C8T6(三): PlatformIO DAPLink和WCHLink下载配置 - Milton - 博客园 (cnblogs.com)</a></p>
-<ul>
-<li>比较简略的一个：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011781073/article/details/120481845">(136条消息) wch-link替代st-link（实际支持大部分arm核芯片）_u011781073的博客-CSDN博客</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Environment&Editor/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Environment&Editor/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/" class="post-title-link" itemprop="url">电子科技大学校园网的自动登录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-21 11:47:55" itemprop="dateModified" datetime="2022-02-21T11:47:55+08:00">2022-02-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>具体内容就是检测到你不活的时候发送请求：<ul>
-<li>请求的body为：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;userId=17313120725&amp;password=12345678&amp;service=&amp;queryString=userip%253D100.66.78.33%2526wlanacname%253D%2526nasip%253D171.88.130.251%2526wlanparameter%253D68-26-2a-da-8c-b0%2526url%253Dhttp%253A%252F%252Fwww.msftconnecttest.com%252Fredirect%2526userlocation%253Dethtrunk%252F3%253A842.3201&amp;operatorPwd=&amp;operatorUserId=&amp;validcode=&amp;passwordEncrypt=false&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>请求头为：<code>http://172.25.249.8/eportal/InterFace.do?method=login</code></li>
-</ul>
-<p>开始运行该网页时：</p>
-<ul>
-<li>使用请求：<code>http://172.25.249.8/eportal/InterFace.do?method=getOnlineUserInfo</code><ul>
-<li>post的data为：<code>&quot;userIndex=38396661336264646362666631666631626434656438646638656535353832335f3130302e36362e37382e33335f3137333133313230373235&quot;</code></li>
-</ul>
-</li>
-<li>全部的命令为：<code>curl -d &quot;userIndex=38396661336264646362666631666631626434656438646638656535353832335f3130302e36362e37382e33335f3137333133313230373235&quot;  &quot;http://172.25.249.8/eportal/InterFace.do?method=getOnlineUserInfo&quot;</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/" class="post-title-link" itemprop="url">JAVA配置ECLIPSE(大坑)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:16:51" itemprop="dateModified" datetime="2022-02-20T01:16:51+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><ul>
-<li>入坑的原因在于lxf的学习插件用的是Eclipse</li>
-<li>所以我就下了一个，但是过程挺曲折的：<ol>
-<li>刚开始的时候下载的是官方的，镜像在韩国，没下下来</li>
-<li>后来找个清华的镜像下载的</li>
-</ol>
-</li>
-</ul>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
-<li>安装的时候下载的是一个zip的绿色文件，翻镜像站的时候版本挺多的，选win32_x64那个版本就成，总之还是很快乐的。但是要500多M，长得一言难尽，像大型玩具</li>
-<li>然后就包的导入，目录在<code>Help--添加软件</code>这个目录下面，怪，具体操作不难。</li>
-<li>导入语言包的学习是通过：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43736451/article/details/116240449">(128条消息) eclipse汉化教程（官方汉化包，傻瓜式操作，附带中英文快捷切换方式）_Zeromes的博客-CSDN博客_eclipse汉化</a>————他同时还介绍了怎么切换中英文。<ul>
-<li>另外比较好的：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/342692825#:~:text=%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%EF%BC%9A%20%EF%BC%881%EF%BC%89%E6%89%93%E5%BC%80Eclipse%E4%B8%BB%E7%95%8C%E9%9D%A2%EF%BC%8C%E9%80%89%E6%8B%A9%E8%8F%9C%E5%8D%95%27Help%27%20%3E%20%27Install%20new%20software...%27,%EF%BC%882%EF%BC%89%E5%A2%9E%E5%8A%A0%E8%AF%AD%E8%A8%80%E5%8C%85%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%EF%BC%9A%20https%3A%2F%2F%20download.eclipse.org%2Fte%20chnology%2Fbabel%2Fupdate-site%2FR0.19.0%2F2021-06%2F%20%EF%BC%883%EF%BC%89%E9%80%89%E6%8B%A9%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%20%EF%BC%884%EF%BC%89%E9%87%8D%E5%90%AFEclipse%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%B1%89%E5%8C%96%E7%9A%84Eclipse%E4%BA%86%E3%80%82">Eclipse安装中文语言包（官方汉化） - 知乎 (zhihu.com)</a></li>
-<li>放弃了，nmd根本分析不出来 垃圾ide</li>
-</ul>
-</li>
-<li>换源的操作见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/mashuai720/article/details/80001793">(128条消息) eclipse 更换国内镜像_马帅的博客-CSDN博客_eclipse换源</a></li>
-<li>适配高分辨率屏幕：<a target="_blank" rel="noopener" href="https://blog.csdn.net/seabiscuityj/article/details/89916208">(128条消息) eclipse适配高分辨率屏幕（不需要新建manifest）_seabiscuityj的博客-CSDN博客_eclipse高分辨率</a></li>
-<li>黑色主题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zbctop/article/details/90741420">(128条消息) eclipse设置 “暗黑色” 主题_zbctop的博客-CSDN博客_eclipse黑色主题</a></li>
-</ol>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
-<li>修改文件编码：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/AlanLee/p/5295105.html#:~:text=%E7%AC%AC%E4%B8%80%E6%AD%A5%20%EF%BC%9A%E8%BF%9B%E5%85%A5%20eclipse%20%EF%BC%8C%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%EF%BC%8C%E5%9C%A8%E8%8F%9C%E5%8D%95%E6%A0%8F%E7%82%B9%E5%87%BB%20Window%20%EF%BC%8C%E9%80%89%E6%8B%A9%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E9%80%89%E9%A1%B9%20Preferences%20%EF%BC%9A.,%E5%A4%A7%E5%AE%B6%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0Default%EF%BC%8C%E9%BB%98%E8%AE%A4%E4%B8%BAGBK%EF%BC%8C%E6%88%91%E4%BB%AC%E7%82%B9%E5%87%BB%20Other%20%EF%BC%8C%E5%B9%B6%E9%80%89%E6%8B%A9%E4%B8%BA%20UTF-8%20%2C%E8%BF%99%E6%A0%B7%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%9A%84%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%B0%B1%E5%8F%98%E6%88%90%E4%BA%86UTF-8%E3%80%82.%20%E8%BF%99%E6%A0%B7%E5%B0%B1%E5%AE%8C%E5%85%A8%E6%B2%A1%E9%97%AE%E9%A2%98%E4%BA%86%E5%90%97%EF%BC%9F.%20%E5%8F%AF%E4%B8%8D%E8%A7%81%E5%BE%97%E5%93%A6%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%BE%80%E4%B8%8B%E8%B5%B0%E3%80%82.%20">eclipse编码格式设置 - AlanLee-Java - 博客园 (cnblogs.com)</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/ProgramLearn/Java/AboutMVN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Java/AboutMVN/" class="post-title-link" itemprop="url">JAVA配置MVN</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:16:55" itemprop="dateModified" datetime="2022-02-20T01:16:55+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="关于maven的资料放在这里"><a href="#关于maven的资料放在这里" class="headerlink" title="关于maven的资料放在这里"></a>关于maven的资料放在这里</h2><h3 id="下载配置和安装资料："><a href="#下载配置和安装资料：" class="headerlink" title="下载配置和安装资料："></a>下载配置和安装资料：</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pengpengdeyuan/p/14217772.html#:~:text=maven%E7%9A%84%E5%AE%89%E8%A3%85%E5%BE%88%E7%AE%80%E5%8D%95%EF%BC%8C%E5%B0%B1%E6%98%AF%E7%9B%B4%E6%8E%A5%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6%E5%B0%B1%E8%A1%8C%E4%BA%86%EF%BC%88%E5%BD%93%E7%84%B6%E4%BA%86%EF%BC%8C%E5%89%8D%E6%8F%90%E6%98%AF%E4%BD%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%98%AFzip%E5%8E%8B%E7%BC%A9%E5%8C%85%E6%A0%BC%E5%BC%8F%EF%BC%89,1%E3%80%81%E5%87%86%E5%A4%87%E5%A5%BDmaven%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%202%E3%80%81%E5%8F%B3%E5%87%BB%E8%A7%A3%E5%8E%8B%E7%BC%A9%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%A7%A3%E5%8E%8B%E7%BC%A9%E8%BF%87%E7%A8%8B%E5%B0%B1%E6%98%AF%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%87%AA%E5%B7%B1%E8%A7%A3%E5%8E%8B%E5%90%8E%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95">maven的下载安装配置教程（详细图文） - 砰砰的猿 - 博客园 (cnblogs.com)</a>–资料内容较好我的评价是较好，关于 <strong>如何换源，还有更换存储库的位置</strong>之类的问题讲的也挺多的</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26095375/article/details/120859485">(128条消息) maven国内镜像换源_浪子寒的策略空间-CSDN博客_mvn 国内源</a>–阿里云的mirror设置,我的评价是不会和上面那个一样报错</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42057154/article/details/106114515">(128条消息) IDEA配置Maven（详细版）_Dawn的博客-CSDN博客_idea配置maven</a>——总之就是见字如面</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xywxhzsjhh/article/details/114848175?spm=1001.2101.3001.6661.1&depth_1-">(129条消息) idea中使用maven引入依赖报错：Invalid content was found starting with element_xywxhzsjhh的博客-CSDN博客</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://shumeipai.local/2022/02/18/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 03:50:41" itemprop="dateCreated datePublished" datetime="2022-02-18T03:50:41+08:00">2022-02-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1201,7 +1289,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1214,7 +1302,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
