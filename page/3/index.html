@@ -316,7 +316,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -330,7 +330,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/18/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/" class="post-title-link" itemprop="url">JAVA配置ECLIPSE(大坑)</a>
         </h2>
 
         <div class="post-meta">
@@ -340,7 +340,23 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-02-18 03:50:41" itemprop="dateCreated datePublished" datetime="2022-02-18T03:50:41+08:00">2022-02-18</time>
+              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:16:51" itemprop="dateModified" datetime="2022-02-20T01:16:51+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                </span>
             </span>
 
           
@@ -354,19 +370,108 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          <h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><ul>
+<li>入坑的原因在于lxf的学习插件用的是Eclipse</li>
+<li>所以我就下了一个，但是过程挺曲折的：<ol>
+<li>刚开始的时候下载的是官方的，镜像在韩国，没下下来</li>
+<li>后来找个清华的镜像下载的</li>
+</ol>
+</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li>安装的时候下载的是一个zip的绿色文件，翻镜像站的时候版本挺多的，选win32_x64那个版本就成，总之还是很快乐的。但是要500多M，长得一言难尽，像大型玩具</li>
+<li>然后就包的导入，目录在<code>Help--添加软件</code>这个目录下面，怪，具体操作不难。</li>
+<li>导入语言包的学习是通过：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43736451/article/details/116240449">(128条消息) eclipse汉化教程（官方汉化包，傻瓜式操作，附带中英文快捷切换方式）_Zeromes的博客-CSDN博客_eclipse汉化</a>————他同时还介绍了怎么切换中英文。<ul>
+<li>另外比较好的：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/342692825#:~:text=%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%EF%BC%9A%20%EF%BC%881%EF%BC%89%E6%89%93%E5%BC%80Eclipse%E4%B8%BB%E7%95%8C%E9%9D%A2%EF%BC%8C%E9%80%89%E6%8B%A9%E8%8F%9C%E5%8D%95%27Help%27%20%3E%20%27Install%20new%20software...%27,%EF%BC%882%EF%BC%89%E5%A2%9E%E5%8A%A0%E8%AF%AD%E8%A8%80%E5%8C%85%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%EF%BC%9A%20https%3A%2F%2F%20download.eclipse.org%2Fte%20chnology%2Fbabel%2Fupdate-site%2FR0.19.0%2F2021-06%2F%20%EF%BC%883%EF%BC%89%E9%80%89%E6%8B%A9%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85%20%EF%BC%884%EF%BC%89%E9%87%8D%E5%90%AFEclipse%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%B1%89%E5%8C%96%E7%9A%84Eclipse%E4%BA%86%E3%80%82">Eclipse安装中文语言包（官方汉化） - 知乎 (zhihu.com)</a></li>
+<li>放弃了，nmd根本分析不出来 垃圾ide</li>
+</ul>
+</li>
+<li>换源的操作见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/mashuai720/article/details/80001793">(128条消息) eclipse 更换国内镜像_马帅的博客-CSDN博客_eclipse换源</a></li>
+<li>适配高分辨率屏幕：<a target="_blank" rel="noopener" href="https://blog.csdn.net/seabiscuityj/article/details/89916208">(128条消息) eclipse适配高分辨率屏幕（不需要新建manifest）_seabiscuityj的博客-CSDN博客_eclipse高分辨率</a></li>
+<li>黑色主题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zbctop/article/details/90741420">(128条消息) eclipse设置 “暗黑色” 主题_zbctop的博客-CSDN博客_eclipse黑色主题</a></li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>修改文件编码：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/AlanLee/p/5295105.html#:~:text=%E7%AC%AC%E4%B8%80%E6%AD%A5%20%EF%BC%9A%E8%BF%9B%E5%85%A5%20eclipse%20%EF%BC%8C%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%EF%BC%8C%E5%9C%A8%E8%8F%9C%E5%8D%95%E6%A0%8F%E7%82%B9%E5%87%BB%20Window%20%EF%BC%8C%E9%80%89%E6%8B%A9%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E9%80%89%E9%A1%B9%20Preferences%20%EF%BC%9A.,%E5%A4%A7%E5%AE%B6%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0Default%EF%BC%8C%E9%BB%98%E8%AE%A4%E4%B8%BAGBK%EF%BC%8C%E6%88%91%E4%BB%AC%E7%82%B9%E5%87%BB%20Other%20%EF%BC%8C%E5%B9%B6%E9%80%89%E6%8B%A9%E4%B8%BA%20UTF-8%20%2C%E8%BF%99%E6%A0%B7%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%9A%84%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%B0%B1%E5%8F%98%E6%88%90%E4%BA%86UTF-8%E3%80%82.%20%E8%BF%99%E6%A0%B7%E5%B0%B1%E5%AE%8C%E5%85%A8%E6%B2%A1%E9%97%AE%E9%A2%98%E4%BA%86%E5%90%97%EF%BC%9F.%20%E5%8F%AF%E4%B8%8D%E8%A7%81%E5%BE%97%E5%93%A6%EF%BC%8C%E7%BB%A7%E7%BB%AD%E5%BE%80%E4%B8%8B%E8%B5%B0%E3%80%82.%20">eclipse编码格式设置 - AlanLee-Java - 博客园 (cnblogs.com)</a></li>
+</ul>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Java/AboutMVN/">
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/18/ProgramLearn/Java/AboutMVN/" class="post-title-link" itemprop="url">JAVA配置MVN</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:16:55" itemprop="dateModified" datetime="2022-02-20T01:16:55+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="关于maven的资料放在这里"><a href="#关于maven的资料放在这里" class="headerlink" title="关于maven的资料放在这里"></a>关于maven的资料放在这里</h2><h3 id="下载配置和安装资料："><a href="#下载配置和安装资料：" class="headerlink" title="下载配置和安装资料："></a>下载配置和安装资料：</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pengpengdeyuan/p/14217772.html#:~:text=maven%E7%9A%84%E5%AE%89%E8%A3%85%E5%BE%88%E7%AE%80%E5%8D%95%EF%BC%8C%E5%B0%B1%E6%98%AF%E7%9B%B4%E6%8E%A5%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6%E5%B0%B1%E8%A1%8C%E4%BA%86%EF%BC%88%E5%BD%93%E7%84%B6%E4%BA%86%EF%BC%8C%E5%89%8D%E6%8F%90%E6%98%AF%E4%BD%A0%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%98%AFzip%E5%8E%8B%E7%BC%A9%E5%8C%85%E6%A0%BC%E5%BC%8F%EF%BC%89,1%E3%80%81%E5%87%86%E5%A4%87%E5%A5%BDmaven%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%202%E3%80%81%E5%8F%B3%E5%87%BB%E8%A7%A3%E5%8E%8B%E7%BC%A9%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%A7%A3%E5%8E%8B%E7%BC%A9%E8%BF%87%E7%A8%8B%E5%B0%B1%E6%98%AF%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%87%AA%E5%B7%B1%E8%A7%A3%E5%8E%8B%E5%90%8E%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95">maven的下载安装配置教程（详细图文） - 砰砰的猿 - 博客园 (cnblogs.com)</a>—资料内容较好我的评价是较好，关于 <strong>如何换源，还有更换存储库的位置</strong>之类的问题讲的也挺多的</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26095375/article/details/120859485">(128条消息) maven国内镜像换源_浪子寒的策略空间-CSDN博客_mvn 国内源</a>—阿里云的mirror设置,我的评价是不会和上面那个一样报错</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42057154/article/details/106114515">(128条消息) IDEA配置Maven（详细版）_Dawn的博客-CSDN博客_idea配置maven</a>——总之就是见字如面</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xywxhzsjhh/article/details/114848175?spm=1001.2101.3001.6661.1&amp;depth_1-">(129条消息) idea中使用maven引入依赖报错：Invalid content was found starting with element_xywxhzsjhh的博客-CSDN博客</a></li>
+</ol>
 
       
     </div>
@@ -675,7 +780,7 @@
 
       
           <h2 id="关于软件源问题"><a href="#关于软件源问题" class="headerlink" title="关于软件源问题"></a>关于软件源问题</h2><ul>
-<li>大部分软件需要的软件源：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20848879/article/details/106958156?spm=1001.2101.3001.6650.1&depth_1-utm_relevant_index=2">(128条消息) [转] eclipse下载插件速度很慢解决方案 - 国内镜像汇总 及使用方法_汪非凡的博客-CSDN博客</a></li>
+<li>大部分软件需要的软件源：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20848879/article/details/106958156?spm=1001.2101.3001.6650.1&amp;depth_1-utm_relevant_index=2">(128条消息) [转] eclipse下载插件速度很慢解决方案 - 国内镜像汇总 及使用方法_汪非凡的博客-CSDN博客</a></li>
 </ul>
 
       
@@ -751,7 +856,7 @@
 
       
           <ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/carle-09/p/12596979.html">问题—执行sh .&#x2F;xxx.sh出现：Syntax error: “(“ unexpected (expecting “done”) - WP的烂笔头 - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/carle-09/p/12596979.html">问题—-执行sh ./xxx.sh出现：Syntax error: “(“ unexpected (expecting “done”) - WP的烂笔头 - 博客园 (cnblogs.com)</a></li>
 </ul>
 
       
@@ -772,7 +877,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/16/ProgramLearn/MatLab/FFT/">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/16/ProgramLearn/Front/JS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -786,7 +891,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/16/ProgramLearn/MatLab/FFT/" class="post-title-link" itemprop="url">MATLAB-FFT学习</a>
+            <a href="/2022/02/16/ProgramLearn/Front/JS/" class="post-title-link" itemprop="url">JS-Learning</a>
         </h2>
 
         <div class="post-meta">
@@ -803,7 +908,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:17:47" itemprop="dateModified" datetime="2022-02-20T01:17:47+08:00">2022-02-20</time>
+                <time title="Modified: 2022-02-20 01:18:05" itemprop="dateModified" datetime="2022-02-20T01:18:05+08:00">2022-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -811,7 +916,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">学术</span></a>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
             </span>
 
@@ -827,7 +932,7 @@
 
       
           <ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Reborn_Lee/article/details/83387192">(133条消息) 【 MATLAB 】使用 MATLAB 实现模拟信号的近似及其连续傅里叶变换_Reborn Lee-CSDN博客_matlab 模拟信号</a></li>
+<li>发送请求：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/5995.html#:~:text=%E5%9C%A8%20JavaScript%20%E4%B8%AD%EF%BC%8CPOST%20%E8%AF%B7%E6%B1%82%E5%85%81%E8%AE%B8%E5%8F%91%E9%80%81%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E3%80%81%E9%95%BF%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%A4%9A%E7%94%A8%E4%BA%8E%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%EF%BC%8C%E4%BB%A5%20send,%28%29%20%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E4%BC%A0%E9%80%92%EF%BC%8C%E8%80%8C%E4%B8%8D%E4%BB%A5%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9B%E8%A1%8C%E4%BC%A0%E9%80%92%E3%80%82%20POST%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%20GET%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%A0%BC%E5%BC%8F%E7%9B%B8%E5%90%8C%E3%80%82">JS XMLHttpRequest入门教程（非常详细） (biancheng.net)</a></li>
 </ul>
 
       
@@ -922,7 +1027,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/16/ProgramLearn/Front/JS/">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/16/ProgramLearn/MatLab/FFT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -936,7 +1041,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/16/ProgramLearn/Front/JS/" class="post-title-link" itemprop="url">JS-Learning</a>
+            <a href="/2022/02/16/ProgramLearn/MatLab/FFT/" class="post-title-link" itemprop="url">MATLAB-FFT学习</a>
         </h2>
 
         <div class="post-meta">
@@ -953,7 +1058,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:18:05" itemprop="dateModified" datetime="2022-02-20T01:18:05+08:00">2022-02-20</time>
+                <time title="Modified: 2022-02-20 01:17:47" itemprop="dateModified" datetime="2022-02-20T01:17:47+08:00">2022-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -961,7 +1066,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                  <a href="/categories/%E5%AD%A6%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">学术</span></a>
                 </span>
             </span>
 
@@ -977,7 +1082,7 @@
 
       
           <ul>
-<li>发送请求：<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/5995.html#:~:text=%E5%9C%A8%20JavaScript%20%E4%B8%AD%EF%BC%8CPOST%20%E8%AF%B7%E6%B1%82%E5%85%81%E8%AE%B8%E5%8F%91%E9%80%81%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E3%80%81%E9%95%BF%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%A4%9A%E7%94%A8%E4%BA%8E%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%EF%BC%8C%E4%BB%A5%20send,%28%29%20%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E4%BC%A0%E9%80%92%EF%BC%8C%E8%80%8C%E4%B8%8D%E4%BB%A5%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9B%E8%A1%8C%E4%BC%A0%E9%80%92%E3%80%82%20POST%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%20GET%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%A0%BC%E5%BC%8F%E7%9B%B8%E5%90%8C%E3%80%82">JS XMLHttpRequest入门教程（非常详细） (biancheng.net)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Reborn_Lee/article/details/83387192">(133条消息) 【 MATLAB 】使用 MATLAB 实现模拟信号的近似及其连续傅里叶变换_Reborn Lee-CSDN博客_matlab 模拟信号</a></li>
 </ul>
 
       
@@ -1064,7 +1169,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1075,7 +1180,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1170,6 +1275,8 @@
 
 
 
+
+  
 
   
 

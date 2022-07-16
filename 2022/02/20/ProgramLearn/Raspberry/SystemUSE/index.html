@@ -391,24 +391,22 @@
 </ul>
 <h2 id="系统的换源"><a href="#系统的换源" class="headerlink" title="系统的换源"></a>系统的换源</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/98079246">教你如何给树莓派更换软件源 - 知乎 (zhihu.com)</a>———一键更新，非常丝滑。<strong>不过已经落后了，我查出来我们的是11orz</strong><ul>
-<li>注意换源前查看raspberrypi的debian版本，一定要对上：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35768839/article/details/104751061">(135条消息) 关于Debian发行版本（树莓派系统版本）_经济好没有钱的博客-CSDN博客_树莓派查看debian版本</a>命令为<code>lsb_release -a</code></li>
+<li>注意换源前查看raspberrypi的debian版本，一定要对上：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35768839/article/details/104751061">(135条消息) 关于Debian发行版本（树莓派系统版本）<em>经济好没有钱的博客-CSDN博客</em>树莓派查看debian版本</a>命令为<code>lsb_release -a</code></li>
 </ul>
 </li>
 <li>真正的教程害得看这个：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_18275789/article/details/122997715">(135条消息) 树莓派 Raspberry Pi （bullseye）更换阿里云源方法_老鱼干的博客-CSDN博客</a></li>
-<li>关于64位（注意要改一下那个啥：改一下<code>buster</code>to<code>bullseye</code>：<a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_26678247/article/details/108930421">(138条消息) 树莓派4B 64位（arm64）系统配置系统源_SWORLD-CSDN博客_树莓派arm64</a></li>
-</ul>
-<p><strong>真实命令：</strong><br>编辑 &#x2F;etc&#x2F;apt&#x2F;sources.list 文件，这里推荐就用系统自带的 nano 命令编辑，命令如下：<br><code>sudo nano /etc/apt/sources.list</code><br>进入编辑界面，删除原有的内容，粘贴如下内容：</p>
-<blockquote>
+<li>关于64位（注意要改一下那个啥：改一下<code>buster</code>to<code>bullseye</code>：<a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_26678247/article/details/108930421">(138条消息) 树莓派4B 64位（arm64）系统配置系统源<em>SWORLD-CSDN博客</em>树莓派arm64</a><br><strong>真实命令：</strong><br>编辑 /etc/apt/sources.list 文件，这里推荐就用系统自带的 nano 命令编辑，命令如下：<br><code>sudo nano /etc/apt/sources.list</code><br>进入编辑界面，删除原有的内容，粘贴如下内容：<blockquote>
 <p>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye  main non-free contrib rpi<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye main non-free contrib</p>
 </blockquote>
-<ul>
+</li>
 <li>如果出现<code>unsigned</code>报错的情况，可以通过这篇帖子更新GPG：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/DragonStart/p/8146272.html">解决linux更新apt软件源时报出GPG错误 - asml - 博客园 (cnblogs.com)</a><h2 id="系统的关机"><a href="#系统的关机" class="headerlink" title="系统的关机"></a>系统的关机</h2></li>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-halt.html">Linux halt命令 | 菜鸟教程 (runoob.com)</a></li>
 <li><code>halt</code></li>
 </ul>
 <h2 id="设置系统wifi的方法"><a href="#设置系统wifi的方法" class="headerlink" title="设置系统wifi的方法"></a>设置系统wifi的方法</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136463580">设置树莓派wifi的几种方式 - 知乎 (zhihu.com)</a>———单个wifi的多种方式</li>
-<li>多个wifi:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;wo_shi_yige_wifi_ssid&quot;</span></span><br><span class="line"> scan_ssid=1</span><br><span class="line"> psk=<span class="string">&quot;wo_shi_mi_ma&quot;</span></span><br><span class="line"> priority=5</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;pi&quot;</span></span><br><span class="line"> psk=<span class="string">&quot;onlyforpi&quot;</span></span><br><span class="line"> priority=1</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+<li>多个wifi:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;wo_shi_yige_wifi_ssid&quot;</span></span><br><span class="line"> scan_ssid=1</span><br><span class="line"> psk=<span class="string">&quot;wo_shi_mi_ma&quot;</span></span><br><span class="line"> priority=5</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;pi&quot;</span></span><br><span class="line"> psk=<span class="string">&quot;onlyforpi&quot;</span></span><br><span class="line"> priority=1</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="系统监视"><a href="#系统监视" class="headerlink" title="系统监视"></a>系统监视</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xingqingly/article/details/104328570">(136条消息) 树莓派监控CPU负载，温度，内存和网络的工具htop和speedometer和s-tui_嵌入式技术在路上-CSDN博客_htop显示温度</a><ul>
@@ -532,7 +530,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -543,7 +541,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -638,6 +636,8 @@
 
 
 
+
+  
 
   
 
