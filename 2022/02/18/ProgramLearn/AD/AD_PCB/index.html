@@ -382,8 +382,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/18/ProgramLearn/Embed/CLionEnv/" rel="prev" title="在Clion下的嵌入式学习配置">
-      <i class="fa fa-chevron-left"></i> 在Clion下的嵌入式学习配置
+    <a href="/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/" rel="prev" title="WindowsTerminal-Learning">
+      <i class="fa fa-chevron-left"></i> WindowsTerminal-Learning
     </a></div>
       <div class="post-nav-item">
     <a href="/2022/02/19/ProgramLearn/Raspberry/DEV/" rel="next" title="树莓派远程开发基础">
@@ -472,7 +472,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -566,6 +566,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

@@ -441,8 +441,8 @@
       <i class="fa fa-chevron-left"></i> 关于拿到了服务器我们应该做什么并且做了什么【1】
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/06/04/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2022/08/05/ProgramLearn/UbuntuUsage/FuckNvidia/" rel="next" title="UBUNTU升级22.04.1后由于Nvidia显卡驱动造成的无法登陆和排查方法">
+      UBUNTU升级22.04.1后由于Nvidia显卡驱动造成的无法登陆和排查方法 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -528,7 +528,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -622,6 +622,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   
