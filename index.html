@@ -316,6 +316,132 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/06/ProgramLearn/UbunUse/UbunSet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/06/ProgramLearn/UbunUse/UbunSet/" class="post-title-link" itemprop="url">Ubuntu系统的构建和美化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-06 04:00:53" itemprop="dateCreated datePublished" datetime="2022-09-06T04:00:53+08:00">2022-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-08 00:57:01" itemprop="dateModified" datetime="2022-09-08T00:57:01+08:00">2022-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>重要提醒：阅读本章节前，你应该学会使用apt和dpkg作为包管理工具。同时知道ubuntu下开启终端的快捷键，并且能够自己阅读报错解决冲突。恩好。</strong></p>
+<h1 id="UBUNTU——从装完到装死"><a href="#UBUNTU——从装完到装死" class="headerlink" title="UBUNTU——从装完到装死"></a>UBUNTU——从装完到装死</h1><h2 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h2><p>主要参考这篇，注意一定要关闭安全启动，同时安装的时候选择空的盘符进行安装。<a target="_blank" rel="noopener" href="https://www.baiyunxitong.com/jiaocheng/7081.html">Ubuntu系统22.04 LTS安装|U盘安装Ubuntu 22.04系统_白云一键重装系统</a></p>
+<p>装完之后系统很丑，不截图了 真的丑。</p>
+<h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><ol>
+<li><p>美化开始前，安装WattToolkit，在这部分当中互联网上没有教程。自我总结如下：</p>
+<ol>
+<li><p>首先按照官方的提示敲入命令，之后重启软件，此时443端口能够开放连接。</p>
+</li>
+<li><p><strong>但是！但是！</strong> 你会发现浏览器仍然上不去网，问就是证书还没有签。</p>
+</li>
+<li><p>这个时候需要用到<code>openssl</code> 进行证书的自签，否则加速无法生效。具体教程参考：（在一般情况下，证书会在：<code>~/.local/share/Steam++/SteamTools.Certificate.pem</code>）</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -in 证书名.cer -out 证书名.pem</span><br><span class="line">openssl x509 -outform der -in 证书名.pem -out 证书名.crt</span><br><span class="line">sudo cp 证书名.crt /usr/local/share/ca-certificates/证书名.crt</span><br><span class="line">sudo update-ca-certificates </span><br></pre></td></tr></table></figure>
+<pre><code> 4. 同理，当遇到浏览器不安全时，同样按照对应浏览器方法添加`.crt` 后缀的证书。
+</code></pre></li>
+<li><p>至此，可以通过<code>WattToolkit</code> 进行github的加速，方便我们进行后续主题的添加。这里建议使用<strong>Hosts模式</strong> 进行加速，不容易影响系统的socket连接。</p>
+</li>
+<li><p>接下来更换系统的源配置，注意：<strong>并不用使用CSDN上直接改sources.list</strong>的方法，可以直接在软件更新器中进行源的选择：<strong>随便选择一个在中国的源就可以</strong>（我直接选择了<em>位于中国的服务器</em>，当然选择<em>其他服务器-&gt;华为/清华都可以</em>）</p>
+<p><img src="/2022/09/06/ProgramLearn/UbunUse/UbunSet/2022-09-04-10-33-45-image.png" alt></p>
+</li>
+<li><p>现在进行GNOME桌面的美化组建的安装<strong>注意，在这部分当中，CSDN有很大误导作用，在22.04LTS中，已经不存在gnome-tweak-tool这个包</strong> 取而代之的是，我们应当直接使用命令安装优化工具和插件：<code>sudo apt install gnome-tweaks</code></p>
+<ol>
+<li>注意，在安装插件时，大多数互联网上的教程又错了，很多包冲突。但是，其实也只要再安装3个包即可安装主题美化的解锁：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gnome-shell-extension-manager  </span><br><span class="line">sudo apt install gnome-shell-extensions  </span><br><span class="line">sudo apt install chrome-gnome-shell</span><br></pre></td></tr></table></figure>
+<pre><code> 2. 这时，打开启动菜单中的**Extension Manager** 之后选择Browse，安装扩展`User Themes`才能够自主安装我们的主题，此时在”优化“中进行查看，可以看到Shell（即主题)这一项终于被解锁，喜大普奔。![](UbunSet/2022-09-04-10-50-10-image.png)
+</code></pre></li>
+<li><p>下面正式开始安装主题，我比较喜欢的是模仿Mac的一款，在这里可以查看：<a target="_blank" rel="noopener" href="https://www.pling.com/p/1403328">Mac Big Sur pling</a></p>
+<ol>
+<li><strong>注意：</strong> 一定要保证完全按照github上的readme进行安装，虽然大部分时候都是直接解压之后-&gt;cd进入目录-&gt;./install，但是特殊情况（比如作者的grub主题）仍然需要谨慎阅读。</li>
+</ol>
+</li>
+<li>可以通过:<a target="_blank" rel="noopener" href="https://extensions.gnome.org/">GNOME Shell Extensions</a> 下载需要的主题。如4中所用的工具一样。不多解释，装上浏览器插件就是很舒服。<ol>
+<li>不要使用snap版本的浏览器 比如自带的火狐，问题难以排查。</li>
+</ol>
+</li>
+</ol>
+<p>随便装了点，纪念一下美化效果：</p>
+<p><img src="/2022/09/06/ProgramLearn/UbunUse/UbunSet/2022-09-04-15-56-27-image.png" alt></p>
+<h2 id="接下来是终端的美化"><a href="#接下来是终端的美化" class="headerlink" title="接下来是终端的美化"></a>接下来是终端的美化</h2><p>终端是你吃饭喝水的地方，尤其推荐zsh，默认的bash就是快了点，各种补全等不尽人意。</p>
+<p>不太懂，但是完全可以按照这篇文章来做<a target="_blank" rel="noopener" href="https://www.kemaowang.org.cn/n/538955.html">ubuntu美化教程（如何美化你的Ubuntu终端） - 科猫网</a>，不愿意看着打的看这篇：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44520133/article/details/97110223">ubuntu美化终端_wukuy的博客-CSDN博客_ubuntu终端美化</a>，装上<code>oh-my-zsh</code></p>
+<p>同时，<strong>注意，此刻你的用户配置文件由.bashrc转换为.zshrc</strong> ，之后的环境变量需要在<code>.zshrc</code> 当中进行配置。</p>
+<p><img src="/2022/09/06/ProgramLearn/UbunUse/UbunSet/2022-09-04-16-25-26-image.png" alt></p>
+<p>终端最终的美化效果，其实我觉得挺丑的，有点像kali,笑der.</p>
+<h2 id="其他的小问题"><a href="#其他的小问题" class="headerlink" title="其他的小问题"></a>其他的小问题</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/duapple/article/details/109291029">windows linux双系统 ubuntu开机默认挂载windows分区_duapple的博客-CSDN博客</a> 对系统文件保持慎重，千万不要马虎。不然grub也救不了你。</p>
+</li>
+<li><p>做完这些之后，可以进行这一部分：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/40434062">Ubuntu和Windows下的双系统字体</a> 主要是考虑到“方块乱麻”和后续使用wps时字体的兼容。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.imfing.com/2020/06/ubuntu-18-04-theme-terminal-setup/#%E5%AE%89%E8%A3%85-zsh">Ubuntu 美化与终端配置 - Fing’s Blog</a> 大杂烩 但我觉得好</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/08/05/ProgramLearn/UbuntuUsage/FuckNvidia/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1240,114 +1366,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Java/AboutMySQL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/ProgramLearn/Java/AboutMySQL/" class="post-title-link" itemprop="url">MYSQL的学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-07 02:16:11" itemprop="dateModified" datetime="2022-05-07T02:16:11+08:00">2022-05-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h3><ul>
-<li>在配置mysql的时候踩过的坑还是挺多的，包括但不限于：<ul>
-<li>开始装了一堆奇怪的服务，结果server的服务在终端上意外地不太好用，心态炸裂</li>
-<li>曾经没有记住命令 <code>mysqld --initialize --console</code>这个命令产生时的密码，导致的后果是——登录不了，需要各种方法绕，比如：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kaitu/article/details/78994893">(128条消息) Windows下忘记MySQL数据库root用户密码解决办法_Random-CSDN博客_windows忘记mysqlroot密码</a></li>
-<li>在开始服务的时候没有用上管理员模式，导致结果欠佳</li>
-<li>关于服务无法启动的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/JWbonze/article/details/80241417">(128条消息) net start mysql无法启动MySQL_咕咕咕的下班时间-CSDN博客_mysql net start</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="最终的选择"><a href="#最终的选择" class="headerlink" title="最终的选择"></a>最终的选择</h3><ul>
-<li>最终选择的结果为：<strong>命令行下的MySQL</strong>当然这种情况的话，在配置的时候也会有不少麻烦，最后是看了这篇文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/queen00000/article/details/90727996">(128条消息) Mysql压缩包版的安装教程<em>Z2Min</em>-CSDN博客_mysql压缩包怎么安装</a>————讲的东西还比较详细，而且也是基础范围内的</li>
-<li>教程一如既往还是看廖雪峰的</li>
-</ul>
-<h3 id="补充内容"><a href="#补充内容" class="headerlink" title="补充内容"></a>补充内容</h3><ul>
-<li>关于可视化工具的选择：选择了官方的<strong>MySQLWorkbench</strong>作为可视化工具，直接上官网下载即可<ul>
-<li>但是把内容汉化了，却没有保存，参考的gitee仓库为：<a target="_blank" rel="noopener" href="https://gitee.com/haozing/mysql_workbench_chinese">MySQL Workbench 汉化: MySQL Workbench 汉化 (gitee.com)</a></li>
-<li>使用教程的地址：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/260139380">MySQL Workbench使用教程 - 知乎 (zhihu.com)</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="详细使用"><a href="#详细使用" class="headerlink" title="详细使用"></a>详细使用</h3><ul>
-<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/7152.html">MySQL修改密码的3种方式 (biancheng.net)</a></li>
-</ul>
-<h3 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h3><ul>
-<li>表的每一行称为记录（Record），记录是一个逻辑意义上的数据。</li>
-<li>表的每一列称为字段（Column），同一个表的每一行记录都拥有相同的若干字段。</li>
-</ul>
-<h1 id="管理配置"><a href="#管理配置" class="headerlink" title="管理配置"></a>管理配置</h1><ul>
-<li>新建用户和提权：<a target="_blank" rel="noopener" href="https://blog.csdn.net/shenhonglei1234/article/details/84786443">(93条消息) mysql版本:’for the right syntax to use near ‘identified by ‘password’ with grant option’_[shenhonglei]的博客-CSDN博客</a></li>
-<li>运行SQL脚本：<code>source &#123;file&#125;</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1414,7 +1436,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1425,7 +1447,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

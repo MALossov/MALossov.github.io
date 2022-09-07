@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"180.76.50.251","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="重要提醒：阅读本章节前，你应该学会使用apt和dpkg作为包管理工具。恩好。 WPS在网上有很多让你重新安装openssl的方法，我表示很坏，容易卸载掉依赖，很容易炸，尤其是dpkg解决不了直接用了aptitude&#x2F;apt的情况下。正解请看： 解决方法分两步:第一步, 给WPS的安装目录设置777的权限[必须] 1sudo chmod 0777 -R  &#x2F;opt&#x2F;kingsoft&#x2F;wps-offi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MAL&#39;S_BLOG">
+<meta property="og:url" content="http://180.76.50.251/1970/01/01/ProgramLearn/UbunUse/UbuntuApps/index.html">
+<meta property="og:site_name" content="MAL&#39;S_BLOG">
+<meta property="og:description" content="重要提醒：阅读本章节前，你应该学会使用apt和dpkg作为包管理工具。恩好。 WPS在网上有很多让你重新安装openssl的方法，我表示很坏，容易卸载掉依赖，很容易炸，尤其是dpkg解决不了直接用了aptitude&#x2F;apt的情况下。正解请看： 解决方法分两步:第一步, 给WPS的安装目录设置777的权限[必须] 1sudo chmod 0777 -R  &#x2F;opt&#x2F;kingsoft&#x2F;wps-offi">
+<meta property="og:locale">
+<meta property="article:published_time" content="1970-01-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-07T16:56:58.738Z">
+<meta property="article:author" content="MALossov">
+<meta property="article:tag" content="菜">
+<meta property="article:tag" content="胡搞瞎搞">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://180.76.50.251/1970/01/01/ProgramLearn/UbunUse/UbuntuApps/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title> | MAL'S_BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MAL'S_BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome to Malossov's Personal Archieve!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-主页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-分类">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-归档">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-友链">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+
+    <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/1970/01/01/ProgramLearn/UbunUse/UbuntuApps/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-08 00:56:58" itemprop="dateModified" datetime="2022-09-08T00:56:58+08:00">2022-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>重要提醒：阅读本章节前，你应该学会使用apt和dpkg作为包管理工具。恩好。</strong></p>
+<h2 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h2><p>在网上有很多让你重新安装openssl的方法，我表示很坏，容易卸载掉依赖，很容易炸，尤其是dpkg解决不了直接用了aptitude/apt的情况下。正解请看：</p>
+<p>解决方法分两步:<br>第一步, 给WPS的安装目录设置<code>777</code>的权限[必须]</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 0777 -R  /opt/kingsoft/wps-office</span><br></pre></td></tr></table></figure>
+<p>第二步, 删除之前WPS的安装设置[必须]</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf  ~/.config/Kingsoft/</span><br></pre></td></tr></table></figure>
+<p>在最新版本的Ubuntu中已经解决了这个问题。</p>
+<h2 id="UBUNTU下的QQ"><a href="#UBUNTU下的QQ" class="headerlink" title="UBUNTU下的QQ"></a>UBUNTU下的QQ</h2><p>星火商店作死把自己作没了，真要看QQ还的看：<a target="_blank" rel="noopener" href="https://github.com/Icalingua-plus-plus/Icalingua-plus-plus/releases/">Icalingua++</a></p>
+<p>这个可以配合mysql一块装着玩玩，主要是mysql不容易卡，sqlite容易祭。</p>
+<h2 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a>搜狗输入法</h2><p>按照搜狗官方来就行，ibus可以装个扩展：ibus tweaks加上导入词库用，但是还是不方便，删了好。【22.04按照20.04进行安装】</p>
+<p>可以和Windows下一样进行细胞词库的添加，但是无法进行皮肤的安装，打包方式不一样。</p>
+<ul>
+<li>如果配置界面出不来，按<code>Alt+F7</code> 可以将窗口拉回正常位置。</li>
+</ul>
+<p><strong>注意：</strong> 搜狗输入法如果在英伟达显卡的电脑下依赖英伟达显卡驱动，在系统升级后有可能出现输入法消失，此时需要按照我之前说过的方法进行显卡驱动的重新安装和配置，而不是瞎折腾。</p>
+<h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><p>主要是当时做项目的时候离不开，现在写一下也无妨。</p>
+<ol>
+<li><p>首先进入MySQL数据库的官网：<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/">MySQL :: MySQL Community Downloads</a></p>
+</li>
+<li><p>下载apt repository的包，添加PPA之后可以进行mysql的安装。</p>
+</li>
+<li><p>使用方法见官方：<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">MySQL :: A Quick Guide to Using the MySQL APT Repository</a></p>
+</li>
+<li><p>有的时候如果安装过程中跳不出密码选择，参照这里：</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -uroot</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">初始无需密码登录，登录后：</span></span><br><span class="line">alter user &#x27;root&#x27;@&#x27;localhost&#x27; identified with mysql_native_password by &#x27;新密码&#x27;;</span><br></pre></td></tr></table></figure>
+<h2 id="DBeaver，VSCode-Idea-Clion……"><a href="#DBeaver，VSCode-Idea-Clion……" class="headerlink" title="DBeaver，VSCode,Idea,Clion……"></a>DBeaver，VSCode,Idea,Clion……</h2><p>不建议用snap安装，首先是更新的时候还是.deb包，其次是输入法有时有问题，建议直接官网下包。</p>
+<p>Jet系的加个环境变量就行，tar.gz装着奇怪用着还行。</p>
+<h2 id="立创EDA俩"><a href="#立创EDA俩" class="headerlink" title="立创EDA俩"></a>立创EDA俩</h2><p>终于把他们那个菲拉不堪的安装脚本整好了，现在能一步装，原来还要加权什么的。</p>
+<h2 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h2><p>有官方linux支持版本，但是一年没更新就落后了。具体操作见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35628698/article/details/124815037">Ubuntu22.04运行网易云音乐错误_weinigb的博客-CSDN博客_ubuntu网易云音乐打不开</a></p>
+<p>当然，更好看的第三方是很多的，比如YesPlayMusic，具体安装可以见Github。</p>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>推荐版本16 同时使用snap安装</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/1970/01/01/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WPS"><span class="nav-number">1.</span> <span class="nav-text">WPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UBUNTU%E4%B8%8B%E7%9A%84QQ"><span class="nav-number">2.</span> <span class="nav-text">UBUNTU下的QQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">搜狗输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql"><span class="nav-number">4.</span> <span class="nav-text">Mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DBeaver%EF%BC%8CVSCode-Idea-Clion%E2%80%A6%E2%80%A6"><span class="nav-number">5.</span> <span class="nav-text">DBeaver，VSCode,Idea,Clion……</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%8B%E5%88%9BEDA%E4%BF%A9"><span class="nav-number">6.</span> <span class="nav-text">立创EDA俩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90"><span class="nav-number">7.</span> <span class="nav-text">网易云音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js"><span class="nav-number">8.</span> <span class="nav-text">Node.js</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MALossov"
+      src="/uploads/avator.png">
+  <p class="site-author-name" itemprop="name">MALossov</p>
+  <div class="site-description" itemprop="description">是很菜的人的很菜的博客捏，无栈工程学徒ing。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/malossov" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;malossov" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/yi-wan-nzlao-si-ji" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yi-wan-nzlao-si-ji" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/malossov" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;malossov" rel="noopener" target="_blank"><i class="fab fa-gitee fa-fw"></i>Gitee</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MALossov</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+
+</body>
+</html>
