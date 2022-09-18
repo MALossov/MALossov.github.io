@@ -316,6 +316,166 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/I2s/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Embed/I2s/" class="post-title-link" itemprop="url">STM32的I2S总线问题（未解决）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:18:28" itemprop="dateModified" datetime="2022-02-20T01:18:28+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
+<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
+<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
+<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
+<li>SCK/BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
+<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/OpenOCD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Embed/OpenOCD/" class="post-title-link" itemprop="url">Clion中OpenOCD的配置（待补充）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:27:41" itemprop="dateModified" datetime="2022-02-20T01:27:41+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>非常重要</strong>！：自己修改之后一定记得改这个不然肯定要出错！<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/118826584">(133条消息) Clion配置STM32开发环境踩坑_FILWY_M的博客-CSDN博客</a><br><strong>关于最后成功使用OpenOCD的一些个人理解</strong>：所有的连接器配置在<code>/script/target</code>里面，所有的板子的配置在<code>/script/board/</code>里面我们要做的就是把类似于<em>stm32-discovery-f3</em>里面的东西给复制下来改成我们自己需要的。<br>毕竟这玩意里面find一层套一层的，我这种笨比基本上是顶不住的。</p>
+<h2 id="总之要在Board里面新建点东西，就是这样捏"><a href="#总之要在Board里面新建点东西，就是这样捏" class="headerlink" title="总之要在Board里面新建点东西，就是这样捏"></a>总之要在Board里面新建点东西，就是这样捏</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Java/AboutMySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -999,177 +1159,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/" class="post-title-link" itemprop="url">WindowsTerminal-Learning</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 16:43:18" itemprop="dateModified" datetime="2022-02-20T16:43:18+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h3><ul>
-<li>不少，挺多，具体来说还过来的时候也看了不少博客，挺多现在看来都挺傻的而且没啥意义：比如上github直接当下来整个的<strong>主题模式的使用</strong>的方法，结果效果是相当差劲的。说实话当时脑子真是被驴踢过</li>
-</ul>
-<h3 id="一些比较重要的配置"><a href="#一些比较重要的配置" class="headerlink" title="一些比较重要的配置"></a>一些比较重要的配置</h3><ol>
-<li>使用管理员权限的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30262407/article/details/114921714">(128条消息) windows terminal使用管理员权限打开_alphahao的博客-CSDN博客_windowsterminal管理员权限</a></li>
-</ol>
-<h3 id="使用WCH-LINK"><a href="#使用WCH-LINK" class="headerlink" title="使用WCH_LINK:"></a>使用WCH_LINK:</h3><p>来自CSDN：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/milton/p/15848573.html">沁恒CH32F103C8T6(三): PlatformIO DAPLink和WCHLink下载配置 - Milton - 博客园 (cnblogs.com)</a></p>
-<ul>
-<li>比较简略的一个：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011781073/article/details/120481845">(136条消息) wch-link替代st-link（实际支持大部分arm核芯片）_u011781073的博客-CSDN博客</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Environment&Editor/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Environment&Editor/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/" class="post-title-link" itemprop="url">电子科技大学校园网的自动登录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-21 11:47:55" itemprop="dateModified" datetime="2022-02-21T11:47:55+08:00">2022-02-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>具体内容就是检测到你不活的时候发送请求：<ul>
-<li>请求的body为：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;userId=17313120725&amp;password=12345678&amp;service=&amp;queryString=userip%253D100.66.78.33%2526wlanacname%253D%2526nasip%253D171.88.130.251%2526wlanparameter%253D68-26-2a-da-8c-b0%2526url%253Dhttp%253A%252F%252Fwww.msftconnecttest.com%252Fredirect%2526userlocation%253Dethtrunk%252F3%253A842.3201&amp;operatorPwd=&amp;operatorUserId=&amp;validcode=&amp;passwordEncrypt=false&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>请求头为：<code>http://172.25.249.8/eportal/InterFace.do?method=login</code></li>
-</ul>
-<p>开始运行该网页时：</p>
-<ul>
-<li>使用请求：<code>http://172.25.249.8/eportal/InterFace.do?method=getOnlineUserInfo</code><ul>
-<li>post的data为：<code>&quot;userIndex=38396661336264646362666631666631626434656438646638656535353832335f3130302e36362e37382e33335f3137333133313230373235&quot;</code></li>
-</ul>
-</li>
-<li>全部的命令为：<code>curl -d &quot;userIndex=38396661336264646362666631666631626434656438646638656535353832335f3130302e36362e37382e33335f3137333133313230373235&quot;  &quot;http://172.25.249.8/eportal/InterFace.do?method=getOnlineUserInfo&quot;</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1240,7 +1229,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1251,7 +1240,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

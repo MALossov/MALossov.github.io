@@ -316,6 +316,328 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/18/ProgramLearn/1st_GroupMeet/1st-commended/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/18/ProgramLearn/1st_GroupMeet/1st-commended/" class="post-title-link" itemprop="url">科协软件：STM32简介</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-09-18 04:00:53 / Modified: 23:12:10" itemprop="dateCreated datePublished" datetime="2022-09-18T04:00:53+08:00">2022-09-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="科协软件：STM32简介"><a href="#科协软件：STM32简介" class="headerlink" title="科协软件：STM32简介"></a>科协软件：STM32简介</h1><p><strong>所有内容在组会上已经尽量和大家解释过了——内容上，只是做一个科普，了解一下将来如果选择软件路线自己可能做的事情，以及未来需要掌握的一些技能。等你真的做到了，熟练了，都不难。——就和你在EXCEL表中增删查改一样简单（大概）</strong></p>
+<p><del>我会尽量简化我的语言保证绝对的口语化</del></p>
+<h2 id="STM32单片机是什么"><a href="#STM32单片机是什么" class="headerlink" title="STM32单片机是什么"></a>STM32单片机是什么</h2><p>让我们按照<strong>定语越来越多</strong>的方式走进它：</p>
+<ol>
+<li><p>是一款MCU/单片机。</p>
+<ol>
+<li><p>即微控制单元(Microcontroller Unit；MCU)，也就是我们常说的<strong>单片机（单板计算机）</strong>。</p>
+</li>
+<li><p>望文生义，单片机就是一片芯片就能组成的计算机。可以说，MCU就是CPU的小兄弟，但是自带了一套存储设备，不需要另外购买——相当于你电脑里<strong>CPU+硬盘+内存条</strong> 三者合一之后的东西。</p>
+</li>
+<li><p>但是MCU性能比CPU弱很多，内存和存储能力也弱很多。</p>
+</li>
+<li><p>相比于CPU也更加注重 <strong>“控制”</strong>，拥有很多的接口：就像一台带着很多USB接口的电脑（只是单片机的接口可能不叫USB，但是可以对其他模块进行通信和控制。）</p>
+</li>
+</ol>
+</li>
+<li><p>一款ARM内核的MCU/单片机。</p>
+<ol>
+<li><p><strong>ARM内核</strong> 我们不去多了解，我们只需要知道，ARM内核执行的指令和你的电脑是不一样的，因此我们需要特殊的工具对单片机进行“跨指令集”的编程。</p>
+</li>
+<li><p>因此如果需要调试、运行你写出的代码，也必须下载到单片机上——因为我们的电脑无法直接运行单片机使用的机器码，他们的指令集不一样。</p>
+</li>
+</ol>
+<blockquote>
+<p>Q: 为什么我们不能在单片机上直接编程？它不是和计算机差不多吗？</p>
+<p>A: 单片机的算力和存储能力都极为有限，只能运行写好的代码。而不能直接在单片机上编程。</p>
+<pre><code>同样地，单片机的运行的程序也比电脑上的程序更加底层，没有操作系统作为辅助帮你自动分配好一些东西，需要直接对硬件发出一些指令。（比如：电脑会自动识别你插入的U盘，但是单片机如果想使用USB，就需要自己手动配置USB相关的外设。）
+</code></pre></blockquote>
+</li>
+<li><p>一款ST公司出品的ARM内核的MCU/单片机。</p>
+<ol>
+<li>ST公司生产了这款芯片，也为我们提供了技术支持。我们可以使用ST公司给我们提供的软件更加方便地编写单片机程序。</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>如果还不理解，可以看一下B站各路大佬的视频，直接搜索：STM32是什么即可。</p>
+</blockquote>
+<h2 id="STM32单片机能干什么？（简易版）"><a href="#STM32单片机能干什么？（简易版）" class="headerlink" title="STM32单片机能干什么？（简易版）"></a>STM32单片机能干什么？（简易版）</h2><ul>
+<li><p>GPIO（通用输入输出）</p>
+<ul>
+<li><p><strong>名词解释：</strong> 通用，就是说它是万金油，干什么都行。输入输出，就是说既能当输入口使用，又能当输出口使用。</p>
+</li>
+<li><p>（<strong>热知识</strong>：单片机的输入和输出只有两种，<strong>高电平和低电平</strong>，可以理解为高=1，低=0。在STM32中，高电平约为3.3V，低电平约为0V）</p>
+</li>
+<li><p><strong>应用场景：</strong> 开关控制（高电平开，低电平关——点灯就是利用了这一点），按键输入（能够读取外部电平的变化，判断电平高低。），模拟接口……</p>
+</li>
+<li><p><strong>推荐阅读：</strong> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80096604#:~:text=GPIO%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.%20%E5%AD%97%E9%9D%A2%E6%84%8F%E6%80%9D%E7%9C%8B%EF%BC%8CGPIO%3DGeneral%20Purpose%20Input%20Output%EF%BC%8C%E9%80%9A%E7%94%A8%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E3%80%82.,%E6%9C%89%E6%97%B6%E5%80%99%E7%AE%80%E7%A7%B0%E4%B8%BA%E2%80%9CIO%E5%8F%A3%E2%80%9D%E3%80%82.%20%E9%80%9A%E7%94%A8%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%AF%B4%E5%AE%83%E6%98%AF%E4%B8%87%E9%87%91%E6%B2%B9%EF%BC%8C%E5%B9%B2%E4%BB%80%E4%B9%88%E9%83%BD%E8%A1%8C%E3%80%82.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%AF%B4%E6%97%A2%E8%83%BD%E5%BD%93%E8%BE%93%E5%85%A5%E5%8F%A3%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%8F%88%E8%83%BD%E5%BD%93%E8%BE%93%E5%87%BA%E5%8F%A3%E4%BD%BF%E7%94%A8%E3%80%82.%20%E7%AB%AF%E5%8F%A3%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%85%83%E5%99%A8%E4%BB%B6%E4%B8%8A%E7%9A%84%E4%B8%80%E4%B8%AA%E5%BC%95%E8%84%9A%E3%80%82.%20%E6%80%8E%E4%B9%88%E7%94%A8%EF%BC%9F.%20%E5%86%99%E8%BD%AF%E4%BB%B6%E6%8E%A7%E5%88%B6%E3%80%82.">硬件工程师必看：GPIO用法大汇总 - 知乎 (zhihu.com)</a></p>
+</li>
+</ul>
+</li>
+<li><p>UART（串口通信）</p>
+<ul>
+<li><p><strong>名词解释：</strong> 串口，首先是”串“，意思是串行，将一长串数据切成一个一个0和1，每次发送一位——可以想象一下十字路口车子通过红绿灯的场景。“口”，则表示两边需要相互连接好，就像车辆不能逆行，同一组串口也只有一组通路（导线）互相连接，才能实现通信。</p>
+</li>
+<li><p>（<strong>热知识：</strong> 同理，并行的意思就是，一次性发送全部数据，可以在一次被读取，可以想象一下赛马时所有马一起出闸的场景）</p>
+</li>
+<li><p><strong>应用场景：</strong> 像C语言中，我们使用printf向屏幕打印信息。串口则可以通过CH340模块和计算机连接，向计算机发送信息，也能像scanf一样从计算机中读取信息（但是用法差异较大，这里方便理解）。当然，串口也可以用在单片机对单片机，单片机对模块的通信当中。</p>
+</li>
+<li><p><strong>不推荐的推荐阅读：</strong> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136806005">串口通信（UART）介绍 - 知乎 (zhihu.com)</a>——不建议现在阅读</p>
+</li>
+</ul>
+</li>
+<li><p>ADC（模拟-数字转换器）</p>
+<ul>
+<li><p><strong>名词解释：</strong> 将一个电压值转换成一个数字值，把它理解为单片机上自带的电压表就行。</p>
+</li>
+<li><p><strong>热知识：</strong> STM32中，只能测0-3.3V的电压。</p>
+</li>
+<li><p><strong>应用场景：</strong> 你用电压表做的事情它都可以做——求电阻两端电压并计算出电流<em>等</em>……</p>
+</li>
+</ul>
+</li>
+<li><p>各类通信接口：I2C,SPI等：</p>
+<ul>
+<li><p><strong>名词解释：</strong> 可以理解为电脑上的USB接口，雷电接口，用来和其他设备通信。而I2C，SPI是这些接口的通信标准/协议，单片机用这些接口和其他模块进行通信。</p>
+</li>
+<li><p><strong>热知识：</strong> 以后再说</p>
+</li>
+<li><p><strong>应用场景</strong>： 可以用他们为单片机连接一块屏幕，显示你需要的内容；连接其他协议相同的模块，指挥它们工作。</p>
+</li>
+</ul>
+</li>
+<li><p>TIM（定时器）：</p>
+<ul>
+<li><p><strong>名词解释</strong>：就像你定了一个闹钟提醒你做事一样，单片机中定时器也会计时一段时间，然后触发它去做某些事情。</p>
+</li>
+<li><p><strong>应用场景：</strong> 像我们“点灯”时，也可以使用定时器，在计数到一定时间时去点灯。但是在“等待”定时器周期时，单片机也可以忙其他事情，有效提高了效率。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>其他：</strong> 单片机还有很多强力功能，希望后来大家能在科协把他们实践出来。</p>
+</li>
+</ul>
+<h2 id="一些软件的学习建议"><a href="#一些软件的学习建议" class="headerlink" title="一些软件的学习建议"></a>一些软件的学习建议</h2><ul>
+<li><p>bilibili大学: </p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1m7411H7oT?share_source=copy_web&amp;vd_source=56e06834c0dfb1f67392b50d18e1c704">【小蜜蜂笔记】基于STM32CubeMX的嵌入式开发基础教程</a></p>
+</li>
+<li><p>↑这是讲的最基础最细的教程哦。但是它使用的按键/LED等可能和你的开发板上的引脚号并不一样，组会上已经教过大家如何看原理图了。</p>
+</li>
+<li><p>同样推荐：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV18X4y1M763?share_source=copy_web&amp;vd_source=56e06834c0dfb1f67392b50d18e1c704">【野火】STM32 HAL库开发实战指南 教学视频 手把手教学STM32全系列 零基础入门CubeMX+HAL库，基于野火全系列STM32开发板</a>——讲的会更贴近原理</p>
+</li>
+</ul>
+</li>
+<li><p>多多尝试，不明白的多找我们学长们：我，胡哥，铃兰，包括群里的其他软件人。</p>
+</li>
+<li><p>多去科协，多去才能多调，多调才能熟练，也能收获学长学姐们手把手的指导。</p>
+</li>
+<li><p>多看手册——目前来看还是太难，算了。但是绝没有坏处，很多技术细节都在手册当中。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/18/ProgramLearn/1st_GroupMeet/1st-sofr&shop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/18/ProgramLearn/1st_GroupMeet/1st-sofr&shop/" class="post-title-link" itemprop="url">STM32配套软件的推荐安装和器件购买</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-09-18 04:00:53 / Modified: 23:12:03" itemprop="dateCreated datePublished" datetime="2022-09-18T04:00:53+08:00">2022-09-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="STM32配套软件的推荐安装和器件购买"><a href="#STM32配套软件的推荐安装和器件购买" class="headerlink" title="STM32配套软件的推荐安装和器件购买"></a>STM32配套软件的推荐安装和器件购买</h1><h2 id="软件的推荐安装"><a href="#软件的推荐安装" class="headerlink" title="软件的推荐安装"></a>软件的推荐安装</h2><p>首先下载群内精华消息中的压缩包：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://uestc.feishu.cn/file/boxcnHEySUk5UQ2ojX3klAOjsDf">飞书软件下载</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Br-fBQeU70qXQHp_3hbdTA?pwd=eeuv">百度网盘下载</a>  提取码：eeuv </p>
+</li>
+</ul>
+<p>然后解压这个压缩包之后，你会发现如下目录↓</p>
+<p><strong>其中，圈出为红字的就是我们需要安装的软件。</strong></p>
+<p><img src="/2022/09/18/ProgramLearn/1st_GroupMeet/1st-sofr&shop/2022-09-18-22-47-46-U{WAZ_C$NNH_W5PX92S7XTA.png" alt></p>
+<p>接下来，我会分别介绍这些软件是做什么的。</p>
+<p><strong>至于安装教程？——最下面那个软件初步就是我们的安装教程。</strong></p>
+<ul>
+<li><p><strong>01-MDK535</strong> :就是学长口中常说的KEIL，是用来编译单片机程序和进行程序的下载、调试的。</p>
+</li>
+<li><p><strong>06-CUBE MX</strong>：是用来简化配置工程过程，进行单片机相关功能配置、生成工程文件的的。</p>
+</li>
+</ul>
+<blockquote>
+<p>简单来说：如果写单片机程序是炒一盘菜。</p>
+<ul>
+<li><p>CUBE MX，就是洗菜、切菜的菜刀。</p>
+</li>
+<li><p>KEIL就是把菜炒成菜的锅。</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p><strong>04&amp;07-串口套件</strong>：04是一个串口驱动，08是能让电脑显示串口信息的上位机。</p>
+</li>
+<li><p><strong>08- CUBE PROGRAMMER</strong>:可以进行有高级设置的程序下载。（目前阶段用的不是很多）</p>
+</li>
+<li><p><strong>软件初步</strong>：教你安装软件的视频！</p>
+</li>
+<li><p>其他：</p>
+<ul>
+<li><p><strong>09 &amp; 10</strong> 硬件要用的，等宋羽学长讲。</p>
+</li>
+<li><p>其他：暂时不用</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="器件购买"><a href="#器件购买" class="headerlink" title="器件购买"></a>器件购买</h2><p>以管理员胡哥发表的器件购买指南为准：</p>
+<ul>
+<li><p>两种开发板，选一个就行：<del>芯片型号都是一样的，只需要注意原理图差异</del></p>
+<ul>
+<li><p><strong>基础版（便宜一点18.5）</strong>：选择c8T6未焊排针或者已焊排针<br><a target="_blank" rel="noopener" href="https://m.tb.cn/h.U1qyBQx?tk=l6co2wUpd7I CZ3457">【淘宝】「STM32F103C8T6单片机开发板 最小系统板 C6T6核心板 ARM实验板」</a></p>
+</li>
+<li><p><strong>高级版（好用33）</strong>：<br><a target="_blank" rel="noopener" href="https://m.tb.cn/h.Ubxu8kp?tk=SJDW2wULuRy CZ3457">【淘宝】「【优信电子】STM32F103C8T6单片机核心板 STM32开发板/M3」</a></p>
+</li>
+</ul>
+</li>
+<li><p>STlink下载器：选择可升级固件版本22元<br><a target="_blank" rel="noopener" href="https://m.tb.cn/h.UYt1mc5?tk=QwTx2wULMdB CZ3457">【淘宝】「ST-LINK V2 STM8/STM32仿真器编程器 stlink下载器线烧录器调试器」</a> </p>
+</li>
+<li><p>CH340串口转USB 5元<br>  <a target="_blank" rel="noopener" href="https://m.tb.cn/h.UYt1r4U?tk=qRQa2wULr2s CZ0001">【淘宝】「USB转TTL CH340模块 USB转串口 单片机下载线 刷机线板 升级小板」</a> </p>
+</li>
+</ul>
+<hr>
+<p>↑以上器件的作用：</p>
+<ol>
+<li><p><strong>最小系统板</strong>：单片机主要的开发平台，本质上就是<strong>芯片+必要电路+排针</strong>，用来快速验证我们需要验证的功能。</p>
+</li>
+<li><p><strong>ST-LINK</strong>：下载器、调试器，作用就是把程序下载到单片机中，也能调试程序的运行。没有它，你无法下载程序。</p>
+</li>
+<li><p>CH340:用来串口通信，可以让单片机向你的电脑打印hello-world!</p>
+</li>
+</ol>
+<hr>
+<ul>
+<li><p>STLINK和单片机如何连接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44454169/article/details/101357331">(123条消息) st-link与STM32连接_辣鸡工程猿的博客-CSDN博客_stlink连接stm32</a></p>
+</li>
+<li><p>CH340与单片机如何连接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/371737388">(89 封私信 / 73 条消息) 自带Ch340的设备，怎样与单片机TTL连接？ - 知乎 (zhihu.com)</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/06/ProgramLearn/UbunUse/UbunSet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1206,166 +1528,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/I2s/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/ProgramLearn/Embed/I2s/" class="post-title-link" itemprop="url">STM32的I2S总线问题（未解决）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:18:28" itemprop="dateModified" datetime="2022-02-20T01:18:28+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
-<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
-<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
-<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
-<li>SCK/BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
-<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/OpenOCD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/ProgramLearn/Embed/OpenOCD/" class="post-title-link" itemprop="url">Clion中OpenOCD的配置（待补充）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:27:41" itemprop="dateModified" datetime="2022-02-20T01:27:41+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>非常重要</strong>！：自己修改之后一定记得改这个不然肯定要出错！<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/118826584">(133条消息) Clion配置STM32开发环境踩坑_FILWY_M的博客-CSDN博客</a><br><strong>关于最后成功使用OpenOCD的一些个人理解</strong>：所有的连接器配置在<code>/script/target</code>里面，所有的板子的配置在<code>/script/board/</code>里面我们要做的就是把类似于<em>stm32-discovery-f3</em>里面的东西给复制下来改成我们自己需要的。<br>毕竟这玩意里面find一层套一层的，我这种笨比基本上是顶不住的。</p>
-<h2 id="总之要在Board里面新建点东西，就是这样捏"><a href="#总之要在Board里面新建点东西，就是这样捏" class="headerlink" title="总之要在Board里面新建点东西，就是这样捏"></a>总之要在Board里面新建点东西，就是这样捏</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1436,7 +1598,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1447,7 +1609,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

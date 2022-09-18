@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"180.76.50.251","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="科协软件：STM32简介所有内容在组会上已经尽量和大家解释过了——内容上，只是做一个科普，了解一下将来如果选择软件路线自己可能做的事情，以及未来需要掌握的一些技能。等你真的做到了，熟练了，都不难。——就和你在EXCEL表中增删查改一样简单（大概） 我会尽量简化我的语言保证绝对的口语化 STM32单片机是什么让我们按照定语越来越多的方式走进它：  是一款MCU&#x2F;单片机。  即微控制单元(Microc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科协软件：STM32简介">
+<meta property="og:url" content="http://180.76.50.251/2022/09/18/ProgramLearn/1st_GroupMeet/1st-commended/index.html">
+<meta property="og:site_name" content="MAL&#39;S_BLOG">
+<meta property="og:description" content="科协软件：STM32简介所有内容在组会上已经尽量和大家解释过了——内容上，只是做一个科普，了解一下将来如果选择软件路线自己可能做的事情，以及未来需要掌握的一些技能。等你真的做到了，熟练了，都不难。——就和你在EXCEL表中增删查改一样简单（大概） 我会尽量简化我的语言保证绝对的口语化 STM32单片机是什么让我们按照定语越来越多的方式走进它：  是一款MCU&#x2F;单片机。  即微控制单元(Microc">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-09-17T20:00:53.000Z">
+<meta property="article:modified_time" content="2022-09-18T15:12:10.055Z">
+<meta property="article:author" content="MALossov">
+<meta property="article:tag" content="STM32">
+<meta property="article:tag" content="科协">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://180.76.50.251/2022/09/18/ProgramLearn/1st_GroupMeet/1st-commended/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>科协软件：STM32简介 | MAL'S_BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MAL'S_BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Welcome to Malossov's Personal Archieve!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-主页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-分类">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-归档">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-友链">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
+
+  </li>
+
+    <li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "//7xuupy.com1.z0.glb.clouddn.com/tongxingSibel%20-%20Im%20Sorry.mp3";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+    })()    '>High一下</a> </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/18/ProgramLearn/1st_GroupMeet/1st-commended/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          科协软件：STM32简介
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-09-18 04:00:53 / Modified: 23:12:10" itemprop="dateCreated datePublished" datetime="2022-09-18T04:00:53+08:00">2022-09-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="科协软件：STM32简介"><a href="#科协软件：STM32简介" class="headerlink" title="科协软件：STM32简介"></a>科协软件：STM32简介</h1><p><strong>所有内容在组会上已经尽量和大家解释过了——内容上，只是做一个科普，了解一下将来如果选择软件路线自己可能做的事情，以及未来需要掌握的一些技能。等你真的做到了，熟练了，都不难。——就和你在EXCEL表中增删查改一样简单（大概）</strong></p>
+<p><del>我会尽量简化我的语言保证绝对的口语化</del></p>
+<h2 id="STM32单片机是什么"><a href="#STM32单片机是什么" class="headerlink" title="STM32单片机是什么"></a>STM32单片机是什么</h2><p>让我们按照<strong>定语越来越多</strong>的方式走进它：</p>
+<ol>
+<li><p>是一款MCU/单片机。</p>
+<ol>
+<li><p>即微控制单元(Microcontroller Unit；MCU)，也就是我们常说的<strong>单片机（单板计算机）</strong>。</p>
+</li>
+<li><p>望文生义，单片机就是一片芯片就能组成的计算机。可以说，MCU就是CPU的小兄弟，但是自带了一套存储设备，不需要另外购买——相当于你电脑里<strong>CPU+硬盘+内存条</strong> 三者合一之后的东西。</p>
+</li>
+<li><p>但是MCU性能比CPU弱很多，内存和存储能力也弱很多。</p>
+</li>
+<li><p>相比于CPU也更加注重 <strong>“控制”</strong>，拥有很多的接口：就像一台带着很多USB接口的电脑（只是单片机的接口可能不叫USB，但是可以对其他模块进行通信和控制。）</p>
+</li>
+</ol>
+</li>
+<li><p>一款ARM内核的MCU/单片机。</p>
+<ol>
+<li><p><strong>ARM内核</strong> 我们不去多了解，我们只需要知道，ARM内核执行的指令和你的电脑是不一样的，因此我们需要特殊的工具对单片机进行“跨指令集”的编程。</p>
+</li>
+<li><p>因此如果需要调试、运行你写出的代码，也必须下载到单片机上——因为我们的电脑无法直接运行单片机使用的机器码，他们的指令集不一样。</p>
+</li>
+</ol>
+<blockquote>
+<p>Q: 为什么我们不能在单片机上直接编程？它不是和计算机差不多吗？</p>
+<p>A: 单片机的算力和存储能力都极为有限，只能运行写好的代码。而不能直接在单片机上编程。</p>
+<pre><code>同样地，单片机的运行的程序也比电脑上的程序更加底层，没有操作系统作为辅助帮你自动分配好一些东西，需要直接对硬件发出一些指令。（比如：电脑会自动识别你插入的U盘，但是单片机如果想使用USB，就需要自己手动配置USB相关的外设。）
+</code></pre></blockquote>
+</li>
+<li><p>一款ST公司出品的ARM内核的MCU/单片机。</p>
+<ol>
+<li>ST公司生产了这款芯片，也为我们提供了技术支持。我们可以使用ST公司给我们提供的软件更加方便地编写单片机程序。</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>如果还不理解，可以看一下B站各路大佬的视频，直接搜索：STM32是什么即可。</p>
+</blockquote>
+<h2 id="STM32单片机能干什么？（简易版）"><a href="#STM32单片机能干什么？（简易版）" class="headerlink" title="STM32单片机能干什么？（简易版）"></a>STM32单片机能干什么？（简易版）</h2><ul>
+<li><p>GPIO（通用输入输出）</p>
+<ul>
+<li><p><strong>名词解释：</strong> 通用，就是说它是万金油，干什么都行。输入输出，就是说既能当输入口使用，又能当输出口使用。</p>
+</li>
+<li><p>（<strong>热知识</strong>：单片机的输入和输出只有两种，<strong>高电平和低电平</strong>，可以理解为高=1，低=0。在STM32中，高电平约为3.3V，低电平约为0V）</p>
+</li>
+<li><p><strong>应用场景：</strong> 开关控制（高电平开，低电平关——点灯就是利用了这一点），按键输入（能够读取外部电平的变化，判断电平高低。），模拟接口……</p>
+</li>
+<li><p><strong>推荐阅读：</strong> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80096604#:~:text=GPIO%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F.%20%E5%AD%97%E9%9D%A2%E6%84%8F%E6%80%9D%E7%9C%8B%EF%BC%8CGPIO%3DGeneral%20Purpose%20Input%20Output%EF%BC%8C%E9%80%9A%E7%94%A8%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E3%80%82.,%E6%9C%89%E6%97%B6%E5%80%99%E7%AE%80%E7%A7%B0%E4%B8%BA%E2%80%9CIO%E5%8F%A3%E2%80%9D%E3%80%82.%20%E9%80%9A%E7%94%A8%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%AF%B4%E5%AE%83%E6%98%AF%E4%B8%87%E9%87%91%E6%B2%B9%EF%BC%8C%E5%B9%B2%E4%BB%80%E4%B9%88%E9%83%BD%E8%A1%8C%E3%80%82.%20%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%AF%B4%E6%97%A2%E8%83%BD%E5%BD%93%E8%BE%93%E5%85%A5%E5%8F%A3%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%8F%88%E8%83%BD%E5%BD%93%E8%BE%93%E5%87%BA%E5%8F%A3%E4%BD%BF%E7%94%A8%E3%80%82.%20%E7%AB%AF%E5%8F%A3%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%85%83%E5%99%A8%E4%BB%B6%E4%B8%8A%E7%9A%84%E4%B8%80%E4%B8%AA%E5%BC%95%E8%84%9A%E3%80%82.%20%E6%80%8E%E4%B9%88%E7%94%A8%EF%BC%9F.%20%E5%86%99%E8%BD%AF%E4%BB%B6%E6%8E%A7%E5%88%B6%E3%80%82.">硬件工程师必看：GPIO用法大汇总 - 知乎 (zhihu.com)</a></p>
+</li>
+</ul>
+</li>
+<li><p>UART（串口通信）</p>
+<ul>
+<li><p><strong>名词解释：</strong> 串口，首先是”串“，意思是串行，将一长串数据切成一个一个0和1，每次发送一位——可以想象一下十字路口车子通过红绿灯的场景。“口”，则表示两边需要相互连接好，就像车辆不能逆行，同一组串口也只有一组通路（导线）互相连接，才能实现通信。</p>
+</li>
+<li><p>（<strong>热知识：</strong> 同理，并行的意思就是，一次性发送全部数据，可以在一次被读取，可以想象一下赛马时所有马一起出闸的场景）</p>
+</li>
+<li><p><strong>应用场景：</strong> 像C语言中，我们使用printf向屏幕打印信息。串口则可以通过CH340模块和计算机连接，向计算机发送信息，也能像scanf一样从计算机中读取信息（但是用法差异较大，这里方便理解）。当然，串口也可以用在单片机对单片机，单片机对模块的通信当中。</p>
+</li>
+<li><p><strong>不推荐的推荐阅读：</strong> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136806005">串口通信（UART）介绍 - 知乎 (zhihu.com)</a>——不建议现在阅读</p>
+</li>
+</ul>
+</li>
+<li><p>ADC（模拟-数字转换器）</p>
+<ul>
+<li><p><strong>名词解释：</strong> 将一个电压值转换成一个数字值，把它理解为单片机上自带的电压表就行。</p>
+</li>
+<li><p><strong>热知识：</strong> STM32中，只能测0-3.3V的电压。</p>
+</li>
+<li><p><strong>应用场景：</strong> 你用电压表做的事情它都可以做——求电阻两端电压并计算出电流<em>等</em>……</p>
+</li>
+</ul>
+</li>
+<li><p>各类通信接口：I2C,SPI等：</p>
+<ul>
+<li><p><strong>名词解释：</strong> 可以理解为电脑上的USB接口，雷电接口，用来和其他设备通信。而I2C，SPI是这些接口的通信标准/协议，单片机用这些接口和其他模块进行通信。</p>
+</li>
+<li><p><strong>热知识：</strong> 以后再说</p>
+</li>
+<li><p><strong>应用场景</strong>： 可以用他们为单片机连接一块屏幕，显示你需要的内容；连接其他协议相同的模块，指挥它们工作。</p>
+</li>
+</ul>
+</li>
+<li><p>TIM（定时器）：</p>
+<ul>
+<li><p><strong>名词解释</strong>：就像你定了一个闹钟提醒你做事一样，单片机中定时器也会计时一段时间，然后触发它去做某些事情。</p>
+</li>
+<li><p><strong>应用场景：</strong> 像我们“点灯”时，也可以使用定时器，在计数到一定时间时去点灯。但是在“等待”定时器周期时，单片机也可以忙其他事情，有效提高了效率。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>其他：</strong> 单片机还有很多强力功能，希望后来大家能在科协把他们实践出来。</p>
+</li>
+</ul>
+<h2 id="一些软件的学习建议"><a href="#一些软件的学习建议" class="headerlink" title="一些软件的学习建议"></a>一些软件的学习建议</h2><ul>
+<li><p>bilibili大学: </p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1m7411H7oT?share_source=copy_web&amp;vd_source=56e06834c0dfb1f67392b50d18e1c704">【小蜜蜂笔记】基于STM32CubeMX的嵌入式开发基础教程</a></p>
+</li>
+<li><p>↑这是讲的最基础最细的教程哦。但是它使用的按键/LED等可能和你的开发板上的引脚号并不一样，组会上已经教过大家如何看原理图了。</p>
+</li>
+<li><p>同样推荐：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV18X4y1M763?share_source=copy_web&amp;vd_source=56e06834c0dfb1f67392b50d18e1c704">【野火】STM32 HAL库开发实战指南 教学视频 手把手教学STM32全系列 零基础入门CubeMX+HAL库，基于野火全系列STM32开发板</a>——讲的会更贴近原理</p>
+</li>
+</ul>
+</li>
+<li><p>多多尝试，不明白的多找我们学长们：我，胡哥，铃兰，包括群里的其他软件人。</p>
+</li>
+<li><p>多去科协，多去才能多调，多调才能熟练，也能收获学长学姐们手把手的指导。</p>
+</li>
+<li><p>多看手册——目前来看还是太难，算了。但是绝没有坏处，很多技术细节都在手册当中。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/STM32/" rel="tag"># STM32</a>
+              <a href="/tags/%E7%A7%91%E5%8D%8F/" rel="tag"># 科协</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/18/ProgramLearn/1st_GroupMeet/1st-sofr&shop/" rel="prev" title="STM32配套软件的推荐安装和器件购买">
+      <i class="fa fa-chevron-left"></i> STM32配套软件的推荐安装和器件购买
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%91%E5%8D%8F%E8%BD%AF%E4%BB%B6%EF%BC%9ASTM32%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">科协软件：STM32简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#STM32%E5%8D%95%E7%89%87%E6%9C%BA%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.1.</span> <span class="nav-text">STM32单片机是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STM32%E5%8D%95%E7%89%87%E6%9C%BA%E8%83%BD%E5%B9%B2%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%88%E7%AE%80%E6%98%93%E7%89%88%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">STM32单片机能干什么？（简易版）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.3.</span> <span class="nav-text">一些软件的学习建议</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MALossov"
+      src="/uploads/avator.png">
+  <p class="site-author-name" itemprop="name">MALossov</p>
+  <div class="site-description" itemprop="description">是很菜的人的很菜的博客捏，无栈工程学徒ing。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/malossov" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;malossov" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/yi-wan-nzlao-si-ji" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yi-wan-nzlao-si-ji" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/malossov" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;malossov" rel="noopener" target="_blank"><i class="fab fa-gitee fa-fw"></i>Gitee</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MALossov</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+
+</body>
+</html>
