@@ -316,7 +316,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/I2s/">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -330,7 +330,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/19/ProgramLearn/Embed/I2s/" class="post-title-link" itemprop="url">STM32的I2S总线问题（未解决）</a>
+            <a href="/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">树莓派自启动问题</a>
         </h2>
 
         <div class="post-meta">
@@ -340,14 +340,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+              <time title="Created: 2022-02-20 18:00:53" itemprop="dateCreated datePublished" datetime="2022-02-20T18:00:53+08:00">2022-02-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:18:28" itemprop="dateModified" datetime="2022-02-20T01:18:28+08:00">2022-02-20</time>
+                <time title="Modified: 2022-03-04 19:14:42" itemprop="dateModified" datetime="2022-03-04T19:14:42+08:00">2022-03-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -370,18 +370,102 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ul>
-<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
-<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
-<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
-<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
-<li>SCK/BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
+          <h2 id="关于-etc-rc-local"><a href="#关于-etc-rc-local" class="headerlink" title="关于/etc/rc.local"></a>关于<strong>/etc/rc.local</strong></h2><ul>
+<li>该文件为Linux下的系统启动文件。根据各种博客的总结，该文件的启动为：<strong>联网之后运行命令</strong>，并且在进入系统之后停止。</li>
+<li>刚开始搜索时的发现为：可以通过这些运行代码<ul>
+<li>其实可以不完全执行完，每条命令之后加<code>&amp;</code>即可。</li>
 </ul>
 </li>
 </ul>
+<h3 id="问题的出现："><a href="#问题的出现：" class="headerlink" title="问题的出现："></a>问题的出现：</h3><ul>
+<li>由于引用了其他的<strong>bash</strong>脚本，而原本该程序运行的环境为<strong>sh</strong><ul>
+<li>所有的报错和问题和这篇如出一辙，放上来：<a target="_blank" rel="noopener" href="https://www.codenong.com/45776003/">关于bash：修复systemd服务203 / EXEC失败(没有这样的文件或目录) | 码农家园 (codenong.com)</a></li>
+<li>其他不对应的还有：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xmfdsh/p/4469577.html">Linux树莓派中/etc/rc.local不执行的问题 - 晓镜水月 - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/liuwinner/article/details/91040565">(138条消息) Linux自启动脚本及解决rc.local不执行脚本问题<em>社会我大姐，人狠胸不大（^</em>^）-CSDN博客_rc.local不执行</a><h3 id="查询服务的状态："><a href="#查询服务的状态：" class="headerlink" title="查询服务的状态："></a>查询服务的状态：</h3></li>
+</ul>
 </li>
-<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
-<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/codeit/p/14489491.html">树莓派/etc/rc.local开机启动不执行 - 盛世芳华 - 博客园 (cnblogs.com)</a><ul>
+<li>即：<code>sudo systemctl status rc-local</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="进程的保活"><a href="#进程的保活" class="headerlink" title="进程的保活"></a>进程的保活</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-nohup.html#:~:text=Linux%20nohup%20%E5%91%BD%E4%BB%A4.%20Linux%20%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8.%20nohup%20%E8%8B%B1%E6%96%87%E5%85%A8%E7%A7%B0%20no,nohup%20%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%9C%A8%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%88%E9%9D%9E%E9%87%8D%E5%AE%9A%E5%90%91%E6%97%B6%EF%BC%89%EF%BC%8C%E4%BC%9A%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%AA%E5%90%8D%E5%8F%AB%20nohup.out%20%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8B%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9A%84%20nohup.out%20%E6%96%87%E4%BB%B6%E4%B8%8D%E5%8F%AF%E5%86%99%EF%BC%8C%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%20%24HOME%2Fnohup.out%20%E6%96%87%E4%BB%B6%E4%B8%AD%E3%80%82.">Linux nohup 命令 | 菜鸟教程 (runoob.com)</a><ul>
+<li>概括一下：<code>nohup Command [ Arg … ] [　&amp; ]</code></li>
+<li>进行一个删除：如果要停止运行，你需要使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除：<code>ps -aux | grep &quot;runoob.sh&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="开机进程的注册："><a href="#开机进程的注册：" class="headerlink" title="开机进程的注册："></a>开机进程的注册：</h3><p>-<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/93b6a62a8922">ubuntu20.04利用systemctl命令实现开机自启服务 - 简书 (jianshu.com)</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/ComputerCommonSenses/Git_helper/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/ComputerCommonSenses/Git_helper/" class="post-title-link" itemprop="url">Linux的软件源</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-19 19:00:53 / Modified: 19:49:42" itemprop="dateCreated datePublished" datetime="2022-02-19T19:00:53+08:00">2022-02-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基本的全局设置"><a href="#基本的全局设置" class="headerlink" title="基本的全局设置"></a>基本的全局设置</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34802511/article/details/90055273">(135条消息) git—-全局设置用户名、密码、邮箱_qq_34802511的博客-CSDN博客_git设置用户名和密码</a></p>
+<ul>
+<li>无法查看的原因和解决：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30588827/article/details/95389491">(135条消息) window上git bash运行错误记录_weixin_30588827的博客-CSDN博客</a></li>
+</ul>
+</li>
+<li><p>解决无法连接github的问题：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Archer314/p/14641310.html">解决ssh: connect to host github.com port 22: Connection refused - Biile - 博客园 (cnblogs.com)</a></li>
+</ul>
+</li>
 </ul>
 
       
@@ -458,6 +542,92 @@
       
           <p><strong>非常重要</strong>！：自己修改之后一定记得改这个不然肯定要出错！<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/118826584">(133条消息) Clion配置STM32开发环境踩坑_FILWY_M的博客-CSDN博客</a><br><strong>关于最后成功使用OpenOCD的一些个人理解</strong>：所有的连接器配置在<code>/script/target</code>里面，所有的板子的配置在<code>/script/board/</code>里面我们要做的就是把类似于<em>stm32-discovery-f3</em>里面的东西给复制下来改成我们自己需要的。<br>毕竟这玩意里面find一层套一层的，我这种笨比基本上是顶不住的。</p>
 <h2 id="总之要在Board里面新建点东西，就是这样捏"><a href="#总之要在Board里面新建点东西，就是这样捏" class="headerlink" title="总之要在Board里面新建点东西，就是这样捏"></a>总之要在Board里面新建点东西，就是这样捏</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/I2s/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Embed/I2s/" class="post-title-link" itemprop="url">STM32的I2S总线问题（未解决）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:18:28" itemprop="dateModified" datetime="2022-02-20T01:18:28+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
+<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
+<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
+<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
+<li>SCK/BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
+<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
+</ul>
+
       
     </div>
 
@@ -1002,148 +1172,6 @@
 <li>其他就是，只需要调整解释器的地址，包管理也可以从本地做</li>
 <li>注意部署的地址，如果命令行找不到要记得调整，详细见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39319907/article/details/115276598">(136条消息) pycharm连接远程服务器，报错No such file or directory_我又可以了的博客-CSDN博客</a></li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/AD/AD_PCB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/AD/AD_PCB/" class="post-title-link" itemprop="url">AD22-Learning(blogs)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:31:18" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/116459617">(131条消息) Altium AD20批量修改丝印大小、更改丝印字体、丝印显示中文、更改位号丝印 相对元件的位置_Mark_md的博客-CSDN博客_ad20丝印</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/li707414287/article/details/99348867">(131条消息) PCB丝印间距设置_li707414287的博客-CSDN博客_ad丝印间距规则设置</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/116642218">(131条消息) AD20如何用图片做丝印的图案，丝印层导入logo_Mark_md的博客-CSDN博客_ad丝印层导入图片</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41110384/article/details/104913895">(131条消息) Altium Designer 在PCB中添加 图片 Logo 或者丝印_NullStr的博客-CSDN博客_ad丝印层导入图片</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Embed/CLionEnv/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/Embed/CLionEnv/" class="post-title-link" itemprop="url">在Clion下的嵌入式学习配置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-18 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:18:34" itemprop="dateModified" datetime="2022-02-20T01:18:34+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12222811">基于clion的野火stm32标准库开发(printf打印已解决) - 哔哩哔哩 (bilibili.com)</a>——主要是解决printf的问题（其实这个问题没有解决而且版本比较老）</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/444893180">手把手教你用CLion玩转STM32 - 知乎 (zhihu.com)</a>————正在尝试：====很详细，甚至教你怎么配OpenOCD====然后就是printf的事情，后来证明解决的并不好，我们还是需要别的</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43715171/article/details/117776784?spm=1001.2101.3001.6650.6&amp;depth_1-utm_relevant_index=13">(133条消息) CLion 在stm32 环境下使用重定向printf方法,导致float数据无法输出的解决办法_FILWY_M的博客-CSDN博客</a>：这篇讲了浮点的</li>
-</ol>
 
       
     </div>
