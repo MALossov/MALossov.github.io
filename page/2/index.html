@@ -316,6 +316,136 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/20/ProgramLearn/Raspberry/SystemUSE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/20/ProgramLearn/Raspberry/SystemUSE/" class="post-title-link" itemprop="url">树莓派系统基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-20 18:00:53" itemprop="dateCreated datePublished" datetime="2022-02-20T18:00:53+08:00">2022-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-22 17:27:34" itemprop="dateModified" datetime="2022-02-22T17:27:34+08:00">2022-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="内存使用情况"><a href="#内存使用情况" class="headerlink" title="内存使用情况"></a>内存使用情况</h2><ul>
+<li>查看剩余内存使用情况：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/salesking/p/11109546.html">树莓派查看硬盘空间使用 - 13717607836 - 博客园 (cnblogs.com)</a>———一言以蔽之<code>df -h</code></li>
+</ul>
+<h2 id="系统版本"><a href="#系统版本" class="headerlink" title="系统版本"></a>系统版本</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://bbs.shumeipaiba.com/thread-11-1-1.html">linux版本、内核查询的常用方法 - 综合版块 - 树莓派论坛 - Powered by Discuz! (shumeipaiba.com)</a><ul>
+<li>登录到服务器执行 <code>lsb_release -a</code> 即可列出所有版本信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="系统的初始化"><a href="#系统的初始化" class="headerlink" title="系统的初始化"></a>系统的初始化</h2><ul>
+<li>不推荐：奇巧淫技：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e798bf6624aa">树莓派raspberry pi zero w上手笔记 - 简书 (jianshu.com)</a>———用串口通信实属离谱</li>
+<li>如何<strong>联网</strong>——推荐：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/syj888/p/11762702.html">树莓派zero 首次连接WiFi网络 - 在路上2019 - 博客园 (cnblogs.com)</a><br>  <strong>注意：在使用系统的时候依旧需要加入空文件ssh，否则容易出事，否则容易出事，否则不启用ssh</strong><ul>
+<li>另外：在使用ssh的时候如果已经添加过公钥我的建议是直接删除这个公钥orz，不然容易出事，不然容易出事，不然容易出事……：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangguchao/article/details/85614914">(135条消息) 问题解决——SSH时出现WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!_口袋里的跳跳糖-CSDN博客</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="系统的换源"><a href="#系统的换源" class="headerlink" title="系统的换源"></a>系统的换源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/98079246">教你如何给树莓派更换软件源 - 知乎 (zhihu.com)</a>———一键更新，非常丝滑。<strong>不过已经落后了，我查出来我们的是11orz</strong><ul>
+<li>注意换源前查看raspberrypi的debian版本，一定要对上：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35768839/article/details/104751061">(135条消息) 关于Debian发行版本（树莓派系统版本）<em>经济好没有钱的博客-CSDN博客</em>树莓派查看debian版本</a>命令为<code>lsb_release -a</code></li>
+</ul>
+</li>
+<li>真正的教程害得看这个：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_18275789/article/details/122997715">(135条消息) 树莓派 Raspberry Pi （bullseye）更换阿里云源方法_老鱼干的博客-CSDN博客</a></li>
+<li>关于64位（注意要改一下那个啥：改一下<code>buster</code>to<code>bullseye</code>：<a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_26678247/article/details/108930421">(138条消息) 树莓派4B 64位（arm64）系统配置系统源<em>SWORLD-CSDN博客</em>树莓派arm64</a><br><strong>真实命令：</strong><br>编辑 /etc/apt/sources.list 文件，这里推荐就用系统自带的 nano 命令编辑，命令如下：<br><code>sudo nano /etc/apt/sources.list</code><br>进入编辑界面，删除原有的内容，粘贴如下内容：<blockquote>
+<p>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye  main non-free contrib rpi<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> bullseye main non-free contrib</p>
+</blockquote>
+</li>
+<li>如果出现<code>unsigned</code>报错的情况，可以通过这篇帖子更新GPG：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/DragonStart/p/8146272.html">解决linux更新apt软件源时报出GPG错误 - asml - 博客园 (cnblogs.com)</a><h2 id="系统的关机"><a href="#系统的关机" class="headerlink" title="系统的关机"></a>系统的关机</h2></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-halt.html">Linux halt命令 | 菜鸟教程 (runoob.com)</a></li>
+<li><code>halt</code></li>
+</ul>
+<h2 id="设置系统wifi的方法"><a href="#设置系统wifi的方法" class="headerlink" title="设置系统wifi的方法"></a>设置系统wifi的方法</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136463580">设置树莓派wifi的几种方式 - 知乎 (zhihu.com)</a>———单个wifi的多种方式</li>
+<li>多个wifi:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;wo_shi_yige_wifi_ssid&quot;</span></span><br><span class="line"> scan_ssid=1</span><br><span class="line"> psk=<span class="string">&quot;wo_shi_mi_ma&quot;</span></span><br><span class="line"> priority=5</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> network=&#123;</span><br><span class="line"> ssid=<span class="string">&quot;pi&quot;</span></span><br><span class="line"> psk=<span class="string">&quot;onlyforpi&quot;</span></span><br><span class="line"> priority=1</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="系统监视"><a href="#系统监视" class="headerlink" title="系统监视"></a>系统监视</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xingqingly/article/details/104328570">(136条消息) 树莓派监控CPU负载，温度，内存和网络的工具htop和speedometer和s-tui_嵌入式技术在路上-CSDN博客_htop显示温度</a><ul>
+<li>我采用的是<code>speedometer</code>启动命令为：<code>speedometer -r eth0 -t eth0</code>和<code>speedometer -r wlan0 -t wlan0</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="免密码登录"><a href="#免密码登录" class="headerlink" title="免密码登录"></a>免密码登录</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014661152/article/details/109337818">(136条消息) vscode使用ssh密匙远程登录ssh，避免每次登录都输入密码_u014661152的博客-CSDN博客_vscode记住ssh远程密码</a><ul>
+<li>主要内容就是俩密钥orz</li>
+<li><a target="_blank" rel="noopener" href="https://blog.songjiahao.com/archives/262">VS Code使用ssh密钥连接linux – SAquariusの梦想屋 (songjiahao.com)</a></li>
+<li><strong>备注：目前没成功</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="修改树莓派的主机名："><a href="#修改树莓派的主机名：" class="headerlink" title="修改树莓派的主机名："></a>修改树莓派的主机名：</h2><p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2019/02/27/how-to-change-the-hostname-of-your-raspberry-pi.html">如何修改树莓派的主机名 | 树莓派实验室 (nxez.com)</a></p>
+<h2 id="树莓派的清除缓存"><a href="#树莓派的清除缓存" class="headerlink" title="树莓派的清除缓存"></a>树莓派的清除缓存</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2017/12/18/how-to-modify-raspberry-pi-swap-partition.html">修改树莓派交换分区 SWAP 的正确姿势 | 树莓派实验室 (nxez.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pc-boke/articles/10213695.html">Linux释放cache和buffer内存空间 - 腾飞的鹰 - 博客园 (cnblogs.com)</a></li>
+</ul>
+<h2 id="树莓派写脚本"><a href="#树莓派写脚本" class="headerlink" title="树莓派写脚本"></a>树莓派写脚本</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yinheyi/p/6648242.html">linux下的shell脚本（基本） - 殷大侠 - 博客园 (cnblogs.com)</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -486,6 +616,92 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/I2s/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/ProgramLearn/Embed/I2s/" class="post-title-link" itemprop="url">STM32的I2S总线问题（未解决）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 01:18:28" itemprop="dateModified" datetime="2022-02-20T01:18:28+08:00">2022-02-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
+<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
+<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
+<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
+<li>SCK/BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
+<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/OpenOCD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -560,7 +776,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Embed/I2s/">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Java/AboutTomCat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -574,7 +790,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/19/ProgramLearn/Embed/I2s/" class="post-title-link" itemprop="url">STM32的I2S总线问题（未解决）</a>
+            <a href="/2022/02/19/ProgramLearn/Java/AboutTomCat/" class="post-title-link" itemprop="url">TOMCAT的学习</a>
         </h2>
 
         <div class="post-meta">
@@ -591,7 +807,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:18:28" itemprop="dateModified" datetime="2022-02-20T01:18:28+08:00">2022-02-20</time>
+                <time title="Modified: 2022-02-20 01:17:27" itemprop="dateModified" datetime="2022-02-20T01:17:27+08:00">2022-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -599,7 +815,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
                 </span>
             </span>
 
@@ -615,17 +831,23 @@
 
       
           <ul>
-<li>关于I2S的接线问题：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/firege/p/5805977.html">第38章 I2S—音频播放与录音输入—零死角玩转STM32-F429系列 - 野火_firege - 博客园 (cnblogs.com)</a><ul>
-<li>以PCM1808接STM32F103RCT6的I2S2为例：<ul>
-<li>DOUT→SD（(Serial Data)：串行数据线，用于发送或接收两个时分复用的数据通道上的数据(仅半双工模式)，如果是全双工模式，该信号仅用于发送数据。）→PB15</li>
-<li>LRCK→ WS(Word Select)：字段选择线，也称帧时钟(LRC)线，表明当前传输数据的声道，不同标准有不同的定义。WS线的频率等于采样频率(FS)。→PB12</li>
-<li>SCK/BCK→CK(Serial Clock)：串行时钟线，也称位时钟(BCLK)，数字音频的每一位数据都对应有一个CK脉冲，它的频率为：2<em>采样频率</em>量化位数，2代表左右两个通道数据。→PB13</li>
+<li>基本使用方法为：官网下zip,然后bin目录下startup</li>
+<li>服务等高级安装方法见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangmx1993328/article/details/81013715">(128条消息) Tomcat 下载安装，启动，停止，注册服务，开机自启_蚩尤后裔-CSDN博客_tomcat 服务启动</a><ul>
+<li>注意服务启动必须设置JAVA<em>HOME，不设置就很惨[(128条消息) 配置JAVA_HOME</em>追风者-CSDN博客_java_home](<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42017152/article/details/90732057">https://blog.csdn.net/qq_42017152/article/details/90732057</a>)</li>
 </ul>
 </li>
+<li>更改用户名为：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lubin100/article/details/81018054">(128条消息) 如何设置tomcat管理员的用户名和密码_这个人很吊的技术博客-CSDN博客_tomcat 用户名密码</a></li>
+<li>更改GBK编码，不然都是乱码：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25775675/article/details/104839569">(128条消息) Windows 下Tomcat中文乱码解决_菜鸟小窝的博客-CSDN博客_tomcat 乱码</a></li>
+<li>关闭命令为：./shutdown.bat</li>
+</ul>
+<h2 id="非常重要"><a href="#非常重要" class="headerlink" title="非常重要"></a><strong>非常重要</strong></h2><ul>
+<li>开始使用tomcat的一晚上：2/7日晚，一直无法成功部署，原因不明，估计是<strong>pom.xml</strong>没有配置正确导致文件有些损坏的原因</li>
+<li>找了一堆资料，一晚上，终于找到一种能用的：<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/hyh17808770899/article/details/114628758?spm=1001.2101.3001.6650.2&amp;depth_1-utm_relevant_index=3">(129条消息) 在IDEA中使用maven创建第一个Servlet项目_雨云21的博客-CSDN博客</a></li>
+<li>还有一个不能用但看着还挺科学的:<a target="_blank" rel="noopener" href="https://blog.csdn.net/huweiliyi/article/details/107637785">(129条消息) IDEA中用maven创建的Servlet项目_lucashu的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/guodao/p/9702488.html">关于servlet的@WebServlet注解。 - 过道 - 博客园 (cnblogs.com)</a></li>
 </ul>
 </li>
-<li>另外还有： ext_SD(extend Serial Data)：扩展串行数据线，用于全双工传输的数据接收。→PB14</li>
-<li>更多详情见图：![[Pasted image 20220216175041.png]]</li>
 </ul>
 
       
@@ -750,7 +972,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Java/AboutTomCat/">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Raspberry/Command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -764,7 +986,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/19/ProgramLearn/Java/AboutTomCat/" class="post-title-link" itemprop="url">TOMCAT的学习</a>
+            <a href="/2022/02/19/ProgramLearn/Raspberry/Command/" class="post-title-link" itemprop="url">树莓派命令</a>
         </h2>
 
         <div class="post-meta">
@@ -781,7 +1003,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 01:17:27" itemprop="dateModified" datetime="2022-02-20T01:17:27+08:00">2022-02-20</time>
+                <time title="Modified: 2022-05-25 20:20:57" itemprop="dateModified" datetime="2022-05-25T20:20:57+08:00">2022-05-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -804,99 +1026,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ul>
-<li>基本使用方法为：官网下zip,然后bin目录下startup</li>
-<li>服务等高级安装方法见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangmx1993328/article/details/81013715">(128条消息) Tomcat 下载安装，启动，停止，注册服务，开机自启_蚩尤后裔-CSDN博客_tomcat 服务启动</a><ul>
-<li>注意服务启动必须设置JAVA<em>HOME，不设置就很惨[(128条消息) 配置JAVA_HOME</em>追风者-CSDN博客_java_home](<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42017152/article/details/90732057">https://blog.csdn.net/qq_42017152/article/details/90732057</a>)</li>
+          <h2 id="保存命令到文件"><a href="#保存命令到文件" class="headerlink" title="保存命令到文件"></a>保存命令到文件</h2><p><a target="_blank" rel="noopener" href="https://linux.cn/article-12920-1.html">技术|如何将 Linux 终端中命令的输出保存到文件中</a></p>
+<h2 id="关于开机自启动的命令"><a href="#关于开机自启动的命令" class="headerlink" title="关于开机自启动的命令"></a>关于开机自启动的命令</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014120401/article/details/78553611">(136条消息) 树莓派开机 延时运行sh脚本<em>一颗菜的兴趣爱好-CSDN博客</em>树莓派延时启动</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/feixuedongji/article/details/79891735">(136条消息) 树莓派程序开机自启动方法总结<em>老野的成长之路-CSDN博客</em>树莓派程序开机自运行</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100617585">Raspberry开机启动方法 - 知乎 (zhihu.com)</a></li>
+</ul>
+<h2 id="一些命令的总结："><a href="#一些命令的总结：" class="headerlink" title="一些命令的总结："></a>一些命令的总结：</h2><ul>
+<li><strong>printf:</strong><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell-printf.html">Shell printf 命令 | 菜鸟教程 (runoob.com)</a><ul>
+<li><a target="_blank" rel="noopener" href="https://linux.cmsblogs.cn/c/printf.html">printf 命令，Linux printf 命令详解：格式化并输出结果。 - Linux 命令搜索引擎 (cmsblogs.cn)</a></li>
+<li>使用变量：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29603999/article/details/78245736">(136条消息) Unix Shell编程——将命令输出结果保存到变量中_shl的博客-CSDN博客_shell 命令输出到变量</a></li>
 </ul>
 </li>
-<li>更改用户名为：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lubin100/article/details/81018054">(128条消息) 如何设置tomcat管理员的用户名和密码_这个人很吊的技术博客-CSDN博客_tomcat 用户名密码</a></li>
-<li>更改GBK编码，不然都是乱码：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25775675/article/details/104839569">(128条消息) Windows 下Tomcat中文乱码解决_菜鸟小窝的博客-CSDN博客_tomcat 乱码</a></li>
-<li>关闭命令为：./shutdown.bat</li>
+<li>发送http请求：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kaleidoscope/p/9719841.html">Linux命令发送Http GET/POST请求 - kaleidoscopic - 博客园 (cnblogs.com)</a></li>
 </ul>
-<h2 id="非常重要"><a href="#非常重要" class="headerlink" title="非常重要"></a><strong>非常重要</strong></h2><ul>
-<li>开始使用tomcat的一晚上：2/7日晚，一直无法成功部署，原因不明，估计是<strong>pom.xml</strong>没有配置正确导致文件有些损坏的原因</li>
-<li>找了一堆资料，一晚上，终于找到一种能用的：<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/hyh17808770899/article/details/114628758?spm=1001.2101.3001.6650.2&amp;depth_1-utm_relevant_index=3">(129条消息) 在IDEA中使用maven创建第一个Servlet项目_雨云21的博客-CSDN博客</a></li>
-<li>还有一个不能用但看着还挺科学的:<a target="_blank" rel="noopener" href="https://blog.csdn.net/huweiliyi/article/details/107637785">(129条消息) IDEA中用maven创建的Servlet项目_lucashu的博客-CSDN博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/guodao/p/9702488.html">关于servlet的@WebServlet注解。 - 过道 - 博客园 (cnblogs.com)</a></li>
+<h2 id="不多说，今日的收获"><a href="#不多说，今日的收获" class="headerlink" title="不多说，今日的收获"></a>不多说，今日的收获</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://qastack.cn/ubuntu/596830/kill-process-with-htop">用htop终止进程 (qastack.cn)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yangxia-test/p/4371066.html">linux强制用户下线 - 阳光温暖了心情 - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ymtianyu/article/details/105973953">(100条消息) debian linux 添加永久环境变量_曲幽的博客-CSDN博客_debian export</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/jasonzhoujx/article/details/80468885">(100条消息) Debian普通用户获取root权限|sudo的安装与配置_盐味橙汁的博客-CSDN博客_debian sudo</a><ul>
+<li>这个挺好的，甚至包含了教你如何配置root权限的</li>
 </ul>
 </li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/knock/article/details/4801360">(100条消息) linux中向其他用户终端发消息_knock的博客-CSDN博客</a></li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Python/BOT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/ProgramLearn/Python/BOT/" class="post-title-link" itemprop="url">利用python开发基于Nonebot2的QQ机器人</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 22:38:34" itemprop="dateModified" datetime="2022-02-20T22:38:34+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>教程见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/340849952">使用 nonebot 搭建 qq 群聊机器人 - 知乎 (zhihu.com)</a></p>
 
       
     </div>
@@ -1012,7 +1165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Raspberry/Command/">
+    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Python/BOT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -1026,7 +1179,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/19/ProgramLearn/Raspberry/Command/" class="post-title-link" itemprop="url">树莓派命令</a>
+            <a href="/2022/02/19/ProgramLearn/Python/BOT/" class="post-title-link" itemprop="url">利用python开发基于Nonebot2的QQ机器人</a>
         </h2>
 
         <div class="post-meta">
@@ -1043,7 +1196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-25 20:20:57" itemprop="dateModified" datetime="2022-05-25T20:20:57+08:00">2022-05-25</time>
+                <time title="Modified: 2022-02-20 22:38:34" itemprop="dateModified" datetime="2022-02-20T22:38:34+08:00">2022-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1051,7 +1204,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
             </span>
 
@@ -1066,112 +1219,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="保存命令到文件"><a href="#保存命令到文件" class="headerlink" title="保存命令到文件"></a>保存命令到文件</h2><p><a target="_blank" rel="noopener" href="https://linux.cn/article-12920-1.html">技术|如何将 Linux 终端中命令的输出保存到文件中</a></p>
-<h2 id="关于开机自启动的命令"><a href="#关于开机自启动的命令" class="headerlink" title="关于开机自启动的命令"></a>关于开机自启动的命令</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014120401/article/details/78553611">(136条消息) 树莓派开机 延时运行sh脚本<em>一颗菜的兴趣爱好-CSDN博客</em>树莓派延时启动</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/feixuedongji/article/details/79891735">(136条消息) 树莓派程序开机自启动方法总结<em>老野的成长之路-CSDN博客</em>树莓派程序开机自运行</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100617585">Raspberry开机启动方法 - 知乎 (zhihu.com)</a></li>
-</ul>
-<h2 id="一些命令的总结："><a href="#一些命令的总结：" class="headerlink" title="一些命令的总结："></a>一些命令的总结：</h2><ul>
-<li><strong>printf:</strong><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell-printf.html">Shell printf 命令 | 菜鸟教程 (runoob.com)</a><ul>
-<li><a target="_blank" rel="noopener" href="https://linux.cmsblogs.cn/c/printf.html">printf 命令，Linux printf 命令详解：格式化并输出结果。 - Linux 命令搜索引擎 (cmsblogs.cn)</a></li>
-<li>使用变量：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29603999/article/details/78245736">(136条消息) Unix Shell编程——将命令输出结果保存到变量中_shl的博客-CSDN博客_shell 命令输出到变量</a></li>
-</ul>
-</li>
-<li>发送http请求：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kaleidoscope/p/9719841.html">Linux命令发送Http GET/POST请求 - kaleidoscopic - 博客园 (cnblogs.com)</a></li>
-</ul>
-<h2 id="不多说，今日的收获"><a href="#不多说，今日的收获" class="headerlink" title="不多说，今日的收获"></a>不多说，今日的收获</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://qastack.cn/ubuntu/596830/kill-process-with-htop">用htop终止进程 (qastack.cn)</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yangxia-test/p/4371066.html">linux强制用户下线 - 阳光温暖了心情 - 博客园 (cnblogs.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ymtianyu/article/details/105973953">(100条消息) debian linux 添加永久环境变量_曲幽的博客-CSDN博客_debian export</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/jasonzhoujx/article/details/80468885">(100条消息) Debian普通用户获取root权限|sudo的安装与配置_盐味橙汁的博客-CSDN博客_debian sudo</a><ul>
-<li>这个挺好的，甚至包含了教你如何配置root权限的</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/knock/article/details/4801360">(100条消息) linux中向其他用户终端发消息_knock的博客-CSDN博客</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Raspberry/DEV/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/ProgramLearn/Raspberry/DEV/" class="post-title-link" itemprop="url">树莓派远程开发基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 04:00:53" itemprop="dateCreated datePublished" datetime="2022-02-19T04:00:53+08:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 22:36:29" itemprop="dateModified" datetime="2022-02-20T22:36:29+08:00">2022-02-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><h2 id="VSCODE"><a href="#VSCODE" class="headerlink" title="VSCODE"></a>VSCODE</h2><ul>
-<li>使用VSCODE请注意：树莓派的ARM内核必须为<strong>7</strong>及以上，否则压根出不来配置</li>
-<li>然后就挺愉快的，反正VSC的远程和本地是分开来设置的</li>
-</ul>
-<h3 id="PYCHARM"><a href="#PYCHARM" class="headerlink" title="PYCHARM"></a>PYCHARM</h3><ul>
-<li>使用pycharm时无法通过ssh直接将项目部署在树莓派上，原因查不出来</li>
-<li>其他就是，只需要调整解释器的地址，包管理也可以从本地做</li>
-<li>注意部署的地址，如果命令行找不到要记得调整，详细见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39319907/article/details/115276598">(136条消息) pycharm连接远程服务器，报错No such file or directory_我又可以了的博客-CSDN博客</a></li>
-</ul>
+          <p>教程见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/340849952">使用 nonebot 搭建 qq 群聊机器人 - 知乎 (zhihu.com)</a></p>
 
       
     </div>
@@ -1257,7 +1305,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
