@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"180.76.50.251","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"malossov.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="基础命令和服务部分 背景故事：呜呼哀哉，我因为没有趁着第一波危机从学校逃跑，不幸地阳了，没有精力完成实验报告和拷贝文件，只好在家远程连接到学校的电脑上完成作业，他需要做一些操作让他的台机能在家中被连接。   我已有的知识： Linux基础服务命令：systemctl,crontab…… 网页搜索能力   我已有的设备：  台式电脑：在宿舍，运行Windows11和Ubuntu22.04.1 香橙派">
+  <meta name="description" content="基础命令和服务部分 背景故事：呜呼哀哉，我因为没有趁着第一波危机从学校逃跑，不幸地阳了，没有精力完成实验报告和拷贝文件，只好在家远程连接到学校的电脑上完成作业，他需要做一些操作让他的台机能在家中被连接。   我已有的知识：  Linux基础服务命令：systemctl,crontab…… 网页搜索能力   我已有的设备：  台式电脑：在宿舍，运行Windows11和Ubuntu22.04.1 香橙">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在宿舍有幽灵电脑">
-<meta property="og:url" content="http://180.76.50.251/2022/12/28/ProgramLearn/UbuntuUsage/Linux%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:url" content="https://malossov.top/2022/12/28/ProgramLearn/UbuntuUsage/Linux%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="MAL&#39;S_BLOG">
-<meta property="og:description" content="基础命令和服务部分 背景故事：呜呼哀哉，我因为没有趁着第一波危机从学校逃跑，不幸地阳了，没有精力完成实验报告和拷贝文件，只好在家远程连接到学校的电脑上完成作业，他需要做一些操作让他的台机能在家中被连接。   我已有的知识： Linux基础服务命令：systemctl,crontab…… 网页搜索能力   我已有的设备：  台式电脑：在宿舍，运行Windows11和Ubuntu22.04.1 香橙派">
+<meta property="og:description" content="基础命令和服务部分 背景故事：呜呼哀哉，我因为没有趁着第一波危机从学校逃跑，不幸地阳了，没有精力完成实验报告和拷贝文件，只好在家远程连接到学校的电脑上完成作业，他需要做一些操作让他的台机能在家中被连接。   我已有的知识：  Linux基础服务命令：systemctl,crontab…… 网页搜索能力   我已有的设备：  台式电脑：在宿舍，运行Windows11和Ubuntu22.04.1 香橙">
 <meta property="og:locale">
 <meta property="og:image" content="http://picgo.malossov.top/malpicbed/image-20221218132940999.png">
 <meta property="og:image" content="http://picgo.malossov.top/malpicbed/image-20221218133130102.png">
@@ -49,14 +49,14 @@
 <meta property="og:image" content="http://picgo.malossov.top/malpicbed/image-20221218132505568.png">
 <meta property="og:image" content="http://picgo.malossov.top/malpicbed/IMG_20221218_142310.jpg">
 <meta property="article:published_time" content="2022-12-28T06:00:53.000Z">
-<meta property="article:modified_time" content="2022-12-18T06:47:42.111Z">
+<meta property="article:modified_time" content="2023-01-12T02:52:37.187Z">
 <meta property="article:author" content="MALossov">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://picgo.malossov.top/malpicbed/image-20221218132940999.png">
 
-<link rel="canonical" href="http://180.76.50.251/2022/12/28/ProgramLearn/UbuntuUsage/Linux%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5/">
+<link rel="canonical" href="https://malossov.top/2022/12/28/ProgramLearn/UbuntuUsage/Linux%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5/">
 
 
 <script id="page-configurations">
@@ -341,7 +341,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/12/28/ProgramLearn/UbuntuUsage/Linux%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/12/28/ProgramLearn/UbuntuUsage/Linux%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -371,7 +371,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-12-18 14:47:42" itemprop="dateModified" datetime="2022-12-18T14:47:42+08:00">2022-12-18</time>
+                <time title="Modified: 2023-01-12 10:52:37" itemprop="dateModified" datetime="2023-01-12T10:52:37+08:00">2023-01-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -398,7 +398,8 @@
 <p>背景故事：呜呼哀哉，我因为没有趁着第一波危机从学校逃跑，不幸地阳了，没有精力完成实验报告和拷贝文件，只好在家远程连接到学校的电脑上完成作业，他需要做一些操作让他的台机能在家中被连接。</p>
 </blockquote>
 <ul>
-<li>我已有的知识：<ul>
+<li><p>我已有的知识：</p>
+<ul>
 <li>Linux基础服务命令：<code>systemctl</code>,<code>crontab</code>……</li>
 <li>网页搜索能力</li>
 </ul>
@@ -417,7 +418,8 @@
 <li>让这两台设备能够被远控</li>
 </ul>
 </li>
-<li>解决方案：<ul>
+<li><p>解决方案：</p>
+<ul>
 <li>唤醒问题：使用魔术封包的方法让主机支持WakeOnLan</li>
 <li>联网问题：使用crontab定时任务，让香橙派每一分钟给路由器发包，保证联网保活的包不断</li>
 <li>远程连接问题：使用内网透传工具</li>
@@ -487,14 +489,15 @@
 <li><p>接下来使能服务，注意ubuntu中cron的服务不是<code>crond</code>，而是<code>cron.service</code><img src="http://picgo.malossov.top/malpicbed/image-20221218135419224.png" alt="image-20221218135419224"></p>
 <blockquote>
 <p>systemctl基本的服务操作：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl start   &lt;docker&gt;.service	//启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl restart &lt;docker&gt;.service	//重启</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl stop    &lt;docker&gt;.service	//停止</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl reload  &lt;docker&gt;.service	//重新加载</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">enable</span>  &lt;docker&gt;.service	//加入开机启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">disable</span> &lt;docker&gt;.service	//取消开机启动</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl start   &lt;docker&gt;.service    //启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl restart &lt;docker&gt;.service    //重启</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl stop    &lt;docker&gt;.service    //停止</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl reload  &lt;docker&gt;.service    //重新加载</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">enable</span>  &lt;docker&gt;.service    //加入开机启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">disable</span> &lt;docker&gt;.service    //取消开机启动</span></span><br></pre></td></tr></table></figure>
 <p>systemctl配置详解：</p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6963550409482829832">详细讲解systemctl（附常用指令） - 掘金 (juejin.cn)</a></p>
 </blockquote>
 </li>
 <li><p>可以观察tmp.txt日志文件看看是不是真的curl了，也可以使用<code>systemctl status &lt;service&gt;</code>进行日志查看：<img src="http://picgo.malossov.top/malpicbed/image-20221218135844577.png" alt="image-20221218135844577"></p>
 </li>
-<li>可以看到已经成功了。</li>
+<li><p>可以看到已经成功了。</p>
+</li>
 </ol>
 <h3 id="远程登录开启"><a href="#远程登录开启" class="headerlink" title="远程登录开启"></a>远程登录开启</h3><blockquote>
 <p>由于我的路由器时电信送的便宜玩意，管理后台特别烂，所以只有DHCP的局域网IP分配，非常伤心。无法配置todesk的远程唤醒，只能使用ubuntu下的ethtools工具进行相关配置。</p>
@@ -512,7 +515,7 @@
 <li><p>但是由于Linux万物皆文件的特性，在重启时，网卡的配置文件会被覆盖，因此采用systemd的方式，编写系统服务完成自动唤醒网卡的操作：</p>
 <ol>
 <li><p>使用<code>--preserve-env</code>操作进行提权，直接编写systemctl服务：<code>sudo --preserve-env systemctl edit --force --full wol-enable.service</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Unit]	# 服务本身的名字和说明</span><br><span class="line">Description=Enable Wake-up on LAN</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot	# 只执行一项任务、随后立即退出的服务</span><br><span class="line">ExecStart=/sbin/ethtool -s enp2s0   wol g	# 执行的命令，注意ethtool的位置是在sbin下的，泪目</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=basic.target	# 挂载在basic.target下，优先级必须比我用户启动高</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Unit]    # 服务本身的名字和说明</span><br><span class="line">Description=Enable Wake-up on LAN</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot    # 只执行一项任务、随后立即退出的服务</span><br><span class="line">ExecStart=/sbin/ethtool -s enp2s0   wol g    # 执行的命令，注意ethtool的位置是在sbin下的，泪目</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=basic.target    # 挂载在basic.target下，优先级必须比我用户启动高</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>详细配置2.0：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zwcry/p/9602756.html">linux systemctl 指令 —— 阮一峰 - 七脉 - 博客园 (cnblogs.com)</a></p>
 </li>
@@ -610,7 +613,10 @@
     <a href="/2022/09/18/ProgramLearn/1st_GroupMeet/1st-commended/" rel="prev" title="科协软件：STM32简介">
       <i class="fa fa-chevron-left"></i> 科协软件：STM32简介
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/07/29/ProgramLearn/TI/c2000-learn-1/" rel="next" title="TI实时MCU学习-以TILaunchPad为例">
+      TI实时MCU学习-以TILaunchPad为例 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -695,7 +701,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -729,13 +735,13 @@
         
 
         
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022022319号 </a>
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2023019138号 </a>
   </div>
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

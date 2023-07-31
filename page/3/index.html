@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"180.76.50.251","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"malossov.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MAL&#39;S_BLOG">
-<meta property="og:url" content="http://180.76.50.251/page/3/index.html">
+<meta property="og:url" content="https://malossov.top/page/3/index.html">
 <meta property="og:site_name" content="MAL&#39;S_BLOG">
 <meta property="og:description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
 <meta property="og:locale">
@@ -32,7 +32,7 @@
 <meta property="article:tag" content="胡搞瞎搞">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://180.76.50.251/page/3/">
+<link rel="canonical" href="https://malossov.top/page/3/">
 
 
 <script id="page-configurations">
@@ -316,7 +316,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/19/ProgramLearn/Raspberry/DEV/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/19/ProgramLearn/Raspberry/Blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -330,7 +330,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/19/ProgramLearn/Raspberry/DEV/" class="post-title-link" itemprop="url">树莓派远程开发基础</a>
+            <a href="/2022/02/19/ProgramLearn/Raspberry/Blog/" class="post-title-link" itemprop="url">树莓派博客搭建基础</a>
         </h2>
 
         <div class="post-meta">
@@ -347,7 +347,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-20 22:36:29" itemprop="dateModified" datetime="2022-02-20T22:36:29+08:00">2022-02-20</time>
+                <time title="Modified: 2022-02-20 01:28:12" itemprop="dateModified" datetime="2022-02-20T01:28:12+08:00">2022-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -355,7 +355,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
                 </span>
             </span>
 
@@ -370,14 +370,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><h2 id="VSCODE"><a href="#VSCODE" class="headerlink" title="VSCODE"></a>VSCODE</h2><ul>
-<li>使用VSCODE请注意：树莓派的ARM内核必须为<strong>7</strong>及以上，否则压根出不来配置</li>
-<li>然后就挺愉快的，反正VSC的远程和本地是分开来设置的</li>
+          <h2 id="初始化相关"><a href="#初始化相关" class="headerlink" title="初始化相关"></a>初始化相关</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/402382426">用树莓派服务器运行Hexo博客网页 - 知乎 (zhihu.com)</a>—-比较详细，甚至连怎么搞内网穿透都讲了<ul>
+<li>hexo无法提交的小问题：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/764974">hexo d命令报错：ERROR Deployer not found: git-阿里云开发者社区 (aliyun.com)</a>—-注意是在站点目录下（就是本地博客的目录中使用这个命令：<code>npm install hexo-deployer-git --save</code></li>
 </ul>
-<h3 id="PYCHARM"><a href="#PYCHARM" class="headerlink" title="PYCHARM"></a>PYCHARM</h3><ul>
-<li>使用pycharm时无法通过ssh直接将项目部署在树莓派上，原因查不出来</li>
-<li>其他就是，只需要调整解释器的地址，包管理也可以从本地做</li>
-<li>注意部署的地址，如果命令行找不到要记得调整，详细见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39319907/article/details/115276598">(136条消息) pycharm连接远程服务器，报错No such file or directory_我又可以了的博客-CSDN博客</a></li>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/palance/p/5493201.html">使用hexo搭建博客并上传GitHub - palance - 博客园 (cnblogs.com)</a>看着还挺有用的——-其他有关博客的小知识，CSDN搬运的</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/97758641">(134条消息) Hexo新建标签、分类、归档等页面_荷塘月色-CSDN博客_hexo新建页面</a>————关于在blog中新建标签、分类、归档的东西哦<h3 id="在github上的初始化"><a href="#在github上的初始化" class="headerlink" title="在github上的初始化"></a>在github上的初始化</h3></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">知乎：使用hexo在github上建立个人博客</a><h2 id="关于推送相关"><a href="#关于推送相关" class="headerlink" title="关于推送相关"></a>关于推送相关</h2><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45667885/article/details/101084532">(135条消息) Hexo同时部署在GitHub、Coding、Gitee_Ashin Wang’s Blog-CSDN博客</a></li>
+</ul>
+<h2 id="给hexo安装主题"><a href="#给hexo安装主题" class="headerlink" title="给hexo安装主题"></a>给hexo安装主题</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41160054/article/details/89473887">(135条消息) 给hexo安装主题_一颗西蓝花的博客-CSDN博客_hexo主题安装</a></li>
+<li><strong>非常好的教程：</strong><a target="_blank" rel="noopener" href="https://neveryu.github.io/2016/09/03/hexo-next-one/">(ฅ&gt;ω&lt;*ฅ) Thank Vue~ Hexo-NexT搭建个人博客（一） | Never_yu’s Blog (neveryu.github.io)</a><ul>
+<li>或者直接看Next的官方教程：<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">开始使用 - NexT 使用文档 (iissnan.com)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="各种奇奇怪怪的教程"><a href="#各种奇奇怪怪的教程" class="headerlink" title="各种奇奇怪怪的教程"></a>各种奇奇怪怪的教程</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://haee.gitee.io/2021/02/18/hexo32/">hexo | 同时提交到 github 和 gitee | 犀牛的博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45667885/article/details/101084532">(135条消息) Hexo同时部署在GitHub、Coding、Gitee_Ashin Wang’s Blog-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/palance/p/5493201.html">使用hexo搭建博客并上传GitHub - palance - 博客园 (cnblogs.com)</a>__不太靠谱的一个，从一开始就很讲的不太清楚哦</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/59088760">如何用github page搭建博客？ - 知乎 (zhihu.com)</a></li>
 </ul>
 
       
@@ -398,7 +412,71 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Embed/CLionEnv/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/18/ProgramLearn/AD/AD_PCB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/18/ProgramLearn/AD/AD_PCB/" class="post-title-link" itemprop="url">AD22-Learning(blogs)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:31:18" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/116459617">(131条消息) Altium AD20批量修改丝印大小、更改丝印字体、丝印显示中文、更改位号丝印 相对元件的位置_Mark_md的博客-CSDN博客_ad20丝印</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/li707414287/article/details/99348867">(131条消息) PCB丝印间距设置_li707414287的博客-CSDN博客_ad丝印间距规则设置</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/116642218">(131条消息) AD20如何用图片做丝印的图案，丝印层导入logo_Mark_md的博客-CSDN博客_ad丝印层导入图片</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41110384/article/details/104913895">(131条消息) Altium Designer 在PCB中添加 图片 Logo 或者丝印_NullStr的博客-CSDN博客_ad丝印层导入图片</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/18/ProgramLearn/Embed/CLionEnv/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -476,7 +554,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/18/ProgramLearn/Environment&Editor/WindowsTerminal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -559,7 +637,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Environment&Editor/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/18/ProgramLearn/Environment&Editor/%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -647,71 +725,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/AD/AD_PCB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/18/ProgramLearn/AD/AD_PCB/" class="post-title-link" itemprop="url">AD22-Learning(blogs)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-02-18 04:00:53 / Modified: 04:31:18" itemprop="dateCreated datePublished" datetime="2022-02-18T04:00:53+08:00">2022-02-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/116459617">(131条消息) Altium AD20批量修改丝印大小、更改丝印字体、丝印显示中文、更改位号丝印 相对元件的位置_Mark_md的博客-CSDN博客_ad20丝印</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/li707414287/article/details/99348867">(131条消息) PCB丝印间距设置_li707414287的博客-CSDN博客_ad丝印间距规则设置</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/116642218">(131条消息) AD20如何用图片做丝印的图案，丝印层导入logo_Mark_md的博客-CSDN博客_ad丝印层导入图片</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41110384/article/details/104913895">(131条消息) Altium Designer 在PCB中添加 图片 Logo 或者丝印_NullStr的博客-CSDN博客_ad丝印层导入图片</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/18/ProgramLearn/Java/AboutIDE_Eclipse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -807,7 +821,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/18/ProgramLearn/Java/AboutMVN/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/18/ProgramLearn/Java/AboutMVN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -886,7 +900,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/17/ProgramLearn/Front/CSS/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/17/ProgramLearn/Front/CSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -967,7 +981,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/17/ProgramLearn/Java/AboutIDE__iDea/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/17/ProgramLearn/Java/AboutIDE__iDea/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -1044,7 +1058,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/17/ProgramLearn/Java/JDBC/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/17/ProgramLearn/Java/JDBC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -1197,7 +1211,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1231,13 +1245,13 @@
         
 
         
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022022319号 </a>
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2023019138号 </a>
   </div>
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

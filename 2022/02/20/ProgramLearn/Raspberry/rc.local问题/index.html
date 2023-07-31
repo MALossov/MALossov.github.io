@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"180.76.50.251","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"malossov.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="关于&#x2F;etc&#x2F;rc.local 该文件为Linux下的系统启动文件。根据各种博客的总结，该文件的启动为：联网之后运行命令，并且在进入系统之后停止。 刚开始搜索时的发现为：可以通过这些运行代码 其实可以不完全执行完，每条命令之后加&amp;即可。    问题的出现： 由于引用了其他的bash脚本，而原本该程序运行的环境为sh 所有的报错和问题和这篇如出一辙，放上来：关于bash：修复systemd服">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派自启动问题">
-<meta property="og:url" content="http://180.76.50.251/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:url" content="https://malossov.top/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="MAL&#39;S_BLOG">
 <meta property="og:description" content="关于&#x2F;etc&#x2F;rc.local 该文件为Linux下的系统启动文件。根据各种博客的总结，该文件的启动为：联网之后运行命令，并且在进入系统之后停止。 刚开始搜索时的发现为：可以通过这些运行代码 其实可以不完全执行完，每条命令之后加&amp;即可。    问题的出现： 由于引用了其他的bash脚本，而原本该程序运行的环境为sh 所有的报错和问题和这篇如出一辙，放上来：关于bash：修复systemd服">
 <meta property="og:locale">
@@ -31,12 +31,12 @@
 <meta property="article:modified_time" content="2022-03-04T11:14:42.986Z">
 <meta property="article:author" content="MALossov">
 <meta property="article:tag" content="编程学习">
-<meta property="article:tag" content="OS">
 <meta property="article:tag" content="Linux">
+<meta property="article:tag" content="OS">
 <meta property="article:tag" content="Raspberry">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://180.76.50.251/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
+<link rel="canonical" href="https://malossov.top/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -321,7 +321,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/20/ProgramLearn/Raspberry/rc.local%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -411,8 +411,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" rel="tag"># 编程学习</a>
-              <a href="/tags/OS/" rel="tag"># OS</a>
               <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/OS/" rel="tag"># OS</a>
               <a href="/tags/Raspberry/" rel="tag"># Raspberry</a>
           </div>
 
@@ -422,12 +422,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/19/ProgramLearn/ComputerCommonSenses/Git_helper/" rel="prev" title="Linux的软件源">
-      <i class="fa fa-chevron-left"></i> Linux的软件源
+    <a href="/2022/02/20/ProgramLearn/Raspberry/SystemUSE/" rel="prev" title="树莓派系统基础">
+      <i class="fa fa-chevron-left"></i> 树莓派系统基础
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/02/20/ProgramLearn/Raspberry/SystemUSE/" rel="next" title="树莓派系统基础">
-      树莓派系统基础 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/02/23/ProgramLearn/Front/Python/" rel="next" title="PythonLearning">
+      PythonLearning <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -513,7 +513,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -547,13 +547,13 @@
         
 
         
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022022319号 </a>
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2023019138号 </a>
   </div>
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

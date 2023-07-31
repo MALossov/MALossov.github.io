@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"180.76.50.251","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"malossov.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MAL&#39;S_BLOG">
-<meta property="og:url" content="http://180.76.50.251/index.html">
+<meta property="og:url" content="https://malossov.top/index.html">
 <meta property="og:site_name" content="MAL&#39;S_BLOG">
 <meta property="og:description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
 <meta property="og:locale">
@@ -32,7 +32,7 @@
 <meta property="article:tag" content="胡搞瞎搞">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://180.76.50.251/">
+<link rel="canonical" href="https://malossov.top/">
 
 
 <script id="page-configurations">
@@ -316,7 +316,212 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/12/28/ProgramLearn/UbuntuUsage/Linux%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2023/07/29/ProgramLearn/TI/c2000-learn-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avator.png">
+      <meta itemprop="name" content="MALossov">
+      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAL'S_BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/29/ProgramLearn/TI/c2000-learn-1/" class="post-title-link" itemprop="url">TI实时MCU学习-以TILaunchPad为例</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-29 04:00:53" itemprop="dateCreated datePublished" datetime="2023-07-29T04:00:53+08:00">2023-07-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-01 05:26:59" itemprop="dateModified" datetime="2023-08-01T05:26:59+08:00">2023-08-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="C2000学习"><a href="#C2000学习" class="headerlink" title="C2000学习"></a>C2000学习</h1><blockquote>
+<p>基于TI官方板卡：<a target="_blank" rel="noopener" href="https://www.ti.com.cn/tool/cn/LAUNCHXL-F280049C?keyMatch=280049C">LAUNCHXL-F280049C 评估板 | TI.com.cn</a></p>
+</blockquote>
+<h2 id="学习基础"><a href="#学习基础" class="headerlink" title="学习基础"></a>学习基础</h2><ol>
+<li>拥有板卡。</li>
+<li><p>芯片手册：<a target="_blank" rel="noopener" href="https://www.ti.com/product/TMS320F280049C">TMS320F280049C data sheet, product information and support | TI.com</a></p>
+<ol>
+<li><strong>用户指南</strong>：用处不大，但是可以快速开始：<a target="_blank" rel="noopener" href="https://www.ti.com.cn/document-viewer/cn/lit/html/SPRUII7B/trademarks-tm#tm">SPRUII7B | 德州仪器 TI.com.cn</a></li>
+<li><strong>用户手册</strong>：虽然但是，其实MidWare里面东西更多：<a target="_blank" rel="noopener" href="https://www.ti.com.cn/document-viewer/cn/lit/html/zhca981">ZHCA981F | 德州仪器 TI.com.cn</a></li>
+<li><strong>板卡手册：</strong>盒子里面丢了可以看看：<a target="_blank" rel="noopener" href="https://www.ti.com.cn/cn/lit/ug/swau114c/swau114c.pdf">https://www.ti.com.cn/cn/lit/ug/swau114c/swau114c.pdf</a></li>
+</ol>
+</li>
+<li><p>拥有MyTI账号：所有下载都需要这个账号</p>
+</li>
+<li>速通TI的心：其实不比STM32难太多</li>
+<li>准备开始</li>
+</ol>
+<h3 id="板卡导览"><a href="#板卡导览" class="headerlink" title="板卡导览"></a>板卡导览</h3><blockquote>
+<p>等我学完了做吧</p>
+</blockquote>
+<h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><blockquote>
+<p>TI给人的感觉就是：==零碎==</p>
+</blockquote>
+<ol>
+<li><p><strong>CCS：</strong> <a target="_blank" rel="noopener" href="https://www.ti.com.cn/tool/cn/CCSTUDIO?keyMatch=CCS">CCSTUDIO IDE、配置、编译器或调试器 | TI.com.cn</a></p>
+<ol>
+<li>集成开发环境，安装之后装C2000就行。WEB版的下载速度也很快。<ol>
+<li>注意不要下成<code>Theia</code>这个给M0用的了</li>
+</ol>
+</li>
+<li>但是下载之后可以进行美化，详情参考大礼包。<ol>
+<li>资源管理器天天403，别用了，也没啥用，截图留念。<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728060355947.png" alt="image-20230728060355947"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>C2000Ware：</strong> <a target="_blank" rel="noopener" href="https://www.ti.com.cn/tool/cn/C2000WARE">C2000WARE 软件开发套件 (SDK) | TI.com.cn</a></p>
+<ol>
+<li>类似于CUBE给你下的支持包，有例程，而且比CUBE那个辣眼睛的HAL库不带CUBEMX配置好看点。</li>
+<li>文件结构如下：<em>（注意，以下目录结构来自5.0版本，升级之后酌情对照）</em></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">└── C2000Ware_5_00_00_00	<span class="comment"># 根目录</span></span><br><span class="line">    ├── C2000WareUpdater.exe	<span class="comment"># 更新器，没用</span></span><br><span class="line">    ├── C2000Ware_5<span class="number">.00</span><span class="number">.00</span><span class="number">.00</span>_manifest.html	<span class="comment"># 类似于许可证，可以查看支持的板卡和库的级别</span></span><br><span class="line">    ├── C2000Ware_v5<span class="number">.00</span><span class="number">.00</span><span class="number">.00</span>_Release_Notes.pdf	<span class="comment"># 发行说明，没用</span></span><br><span class="line">    ├── archive	<span class="comment"># 没用，存了个历史的库</span></span><br><span class="line">    ├── boards	<span class="comment"># 给硬件看/你板子要看原理图的时候看</span></span><br><span class="line">    ├── change_log.html	<span class="comment"># 没啥用</span></span><br><span class="line">    ├── device_support	<span class="comment"># 军火展示+一些老的用寄存器写的例程（基本不用看）</span></span><br><span class="line">    ├── docs	<span class="comment"># 目录导航`/docs/c2000Ware_quickstart_guide/html/index.html`</span></span><br><span class="line">    ├── driverlib	<span class="comment"># 你滴库函数！！</span></span><br><span class="line">    ├── examples	<span class="comment"># 重新导向你滴库函数</span></span><br><span class="line">    ├── kernel	<span class="comment"># RTOS</span></span><br><span class="line">    ├── libraries	<span class="comment"># 第三方库</span></span><br><span class="line">    ├── license.txt	<span class="comment"># 法律文件</span></span><br><span class="line">    ├── training	<span class="comment"># 类似于靶场，但是很烂</span></span><br><span class="line">    ├── uninstallers	<span class="comment"># 卸载器</span></span><br><span class="line">    └── utilities	<span class="comment"># 一些工具，目前没用</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>根据doc文档中说明如下：</li>
+</ol>
+<p>| Directory Name | Description                                                  |<br>| ——————— | —————————————————————————————— |<br>| .metadata      | 包含 C2000Ware 资源浏览器独立 GUI 文件。请勿修改。           |<br>| boards         | 包含 C2000 controlCARDS的硬件设计原理图、BOM、gerber 文件和文档， |<br>| device_support | 包含所有特定于设备的支持文件、位字段标头和设备开发用户指南。 |<br>| docs           | 包含 C2000Ware 软件包用户指南和所有软件包文档的 HTML 索引页。 |<br>| driverlib      | 包含特定于设备的驱动程序库和基于驱动程序的外围设备示例。     |<br>| examples       | 包含涉及多个设备/外设的示例，以展示不同的应用。              |<br>| libraries      | 包含特定于设备的库和核心库。                                 |<br>| uninstallers   | 包含 C2000Ware 卸载程序。                                    |<br>| utilities      | 包含开发实用程序应用程序，如闪存编程器、Windows 驱动程序和第三方软件 |</p>
+<pre><code>4. 啊对，这么重要的东西CCS是不会给你下的。
+</code></pre></li>
+<li><p><strong>SysConfig</strong>:TI-CubeMX：<a target="_blank" rel="noopener" href="https://www.ti.com.cn/tool/cn/SYSCONFIG">SYSCONFIG IDE、配置、编译器或调试器 | TI.com.cn</a></p>
+<ol>
+<li>功能没那么强大，而且需要手动添加软件包。<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728060521577.png" alt="image-20230728060521577">选中<code>&lt;盘符&gt;:\ti\C2000</code>即可。</li>
+</ol>
+</li>
+<li><strong>ControlSuite</strong>：一个老的库支持软件，但是支持全中文。<ol>
+<li>里面有一些实用案例，结构还可以，可以拿来看。</li>
+<li>和Ware一样，不创建启动方式，自己进去找。</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>迁移可以参考：<a target="_blank" rel="noopener" href="https://www.ti.com.cn/cn/lit/ug/sprui45c/sprui45c.pdf">https://www.ti.com.cn/cn/lit/ug/sprui45c/sprui45c.pdf</a></p>
+</blockquote>
+<ol>
+<li>其他电机、控制包请参考大礼包 :)。</li>
+</ol>
+<h2 id="第一个工程模板"><a href="#第一个工程模板" class="headerlink" title="第一个工程模板"></a>第一个工程模板</h2><blockquote>
+<p>非常重要，直接面向C2000Ware编程的第一步！</p>
+</blockquote>
+<h3 id="创建你的英雄"><a href="#创建你的英雄" class="headerlink" title="创建你的英雄"></a>创建你的英雄</h3><p>直接放目录结构：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">├── .ccsproject	<span class="comment"># CCS创建的工程文件</span></span><br><span class="line">├── .cproject	<span class="comment"># CCS创建的工程文件</span></span><br><span class="line">├── .project	<span class="comment"># CCS创建的工程文件</span></span><br><span class="line">├── App	<span class="comment"># 应用层，你编写的逻辑等</span></span><br><span class="line">│   ├── inc	<span class="comment"># 你自己的库</span></span><br><span class="line">│   └── src	<span class="comment"># 你的主要逻辑</span></span><br><span class="line">├── Bsp	<span class="comment"># SysConfig生成的你自己的班级支持包</span></span><br><span class="line">│   ├── board.c</span><br><span class="line">│   ├── board.cmd.genlibs</span><br><span class="line">│   ├── board.h</span><br><span class="line">│   ├── board.opt</span><br><span class="line">│   ├── c2000ware_libraries.c</span><br><span class="line">│   ├── c2000ware_libraries.cmd.genlibs</span><br><span class="line">│   ├── c2000ware_libraries.h</span><br><span class="line">│   ├── c2000ware_libraries.opt</span><br><span class="line">│   ├── clocktree.h</span><br><span class="line">│   ├── pinmux.csv</span><br><span class="line">│   └── untitled.syscfg	<span class="comment"># 双击可以进入配置界面</span></span><br><span class="line">├── C2000Ware	<span class="comment"># \driverlib\f28004x\driverlib 全部内容</span></span><br><span class="line">│   ├── ccs	<span class="comment"># 需要引用头文件，其中，DEBUG和RELEASE需要分开引入/排除</span></span><br><span class="line">│   ├── inc	<span class="comment"># 寄存器层的东西</span></span><br><span class="line">│   ├── ……	<span class="comment"># 其他DriverLib</span></span><br><span class="line">├── Cmd	<span class="comment"># 烧写算法文件，原始地址为：\device_support\f28004x\common\cmd 按需选用</span></span><br><span class="line">│   ├── 28004x_cla_flash_lnk.cmd</span><br><span class="line">│   ├── 28004x_cla_ram_lnk.cmd</span><br><span class="line">│   ├── 28004x_generic_flash_lnk.cmd</span><br><span class="line">│   ├── 28004x_generic_ram_lnk.cmd</span><br><span class="line">│   ├── 28004x_iqmath_flash_lnk.cmd</span><br><span class="line">│   ├── 28004x_iqmath_ram_lnk.cmd</span><br><span class="line">│   ├── 28004x_launchpad_demo_flash_lnk.cmd</span><br><span class="line">│   ├── 28004x_launchpad_demo_ram_lnk.cmd</span><br><span class="line">│   └── f28004x_headers_nonbios.cmd 	<span class="comment"># \device_support\f28004x\headers\cmd</span></span><br><span class="line">├── Debug	<span class="comment"># CCS自动生成的调试文件</span></span><br><span class="line">├── Device	<span class="comment"># 设备描述文件，只要选用这几个即可，原始目录：\device_support\f28004x\common\include和source当中</span></span><br><span class="line">│   ├── device.c</span><br><span class="line">│   ├── device.h</span><br><span class="line">│   ├── driverlib.h</span><br><span class="line">│   └── f28004x_codestartbranch.asm	<span class="comment"># 板卡启动文件</span></span><br><span class="line">├── Lib	<span class="comment"># 按需使用的C2000的库</span></span><br><span class="line">└── targetConfigs	<span class="comment"># CCS生成的</span></span><br><span class="line">    ├── TMS320F280049C.ccxml	<span class="comment"># 你的烧录器配置文件</span></span><br><span class="line">    └── readme.txt</span><br></pre></td></tr></table></figure>
+<p>主要构建步骤如下：</p>
+<ol>
+<li><p>创建各个文件夹，并拖入文件：<strong>Cmd,Device,C2000Ware</strong></p>
+</li>
+<li><p>使用<code>SysConfig</code>生成<strong>BSP</strong>，直接保存全部文件（右下角）<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728060700456.png" alt="image-20230728060700456"></p>
+</li>
+<li><p>进入CCS之后创建工程，需要设置的地方如下：右键项目属性进入：</p>
+<ol>
+<li>使用的RuntimeSupport和OutputFormat，以及使用的连接器/连接件也可以直接放在工程当中（Cmd,然后禁用其他的）：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728060810966.png" alt="image-20230728060810966"></li>
+<li>预定义设置<code>DEBUG</code>宏：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728060905079.png" alt="image-20230728060905079"></li>
+<li>Include（注意在引用<code>Ware</code>当中的2000之后，还需要引入Debug并且屏蔽Release(3个lib都需要屏蔽！)：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728071302694.png" alt="image-20230728071302694"></li>
+<li>右键禁用其他的连接文件，以免造成困扰：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728061040737.png" alt="image-20230728061040737"><ol>
+<li>推荐使用generic系列的。</li>
+</ol>
+</li>
+<li>Main中建立主函数，构建如下，初始化顺序参考官方例程，如：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;device.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;driverlib.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;board.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * main.c</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    Device_init();  <span class="comment">// 初始化设备</span></span><br><span class="line">    Interrupt_initModule(); <span class="comment">//初始化中断</span></span><br><span class="line">    Interrupt_initVectorTable();    <span class="comment">//初始化中断向量表</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    Board_init();   <span class="comment">//SysConfig文件引入</span></span><br><span class="line">    </span><br><span class="line">    Interrupt_enableMaster();   <span class="comment">//开启中断</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="外设"><a href="#外设" class="headerlink" title="外设"></a>外设</h2><h2 id="大礼包"><a href="#大礼包" class="headerlink" title="大礼包"></a>大礼包</h2><h3 id="一些“增值目录”"><a href="#一些“增值目录”" class="headerlink" title="一些“增值目录”"></a>一些“增值目录”</h3><ol>
+<li>TI官方软件板卡说明：<a target="_blank" rel="noopener" href="https://software-dl.ti.com/C2000/docs/software_guide_zh/index.html">C2000™ 软件指南 — C2000™ 软件指南 (ti.com)</a></li>
+<li>TI官方C2000主页：<a target="_blank" rel="noopener" href="https://www.ti.com.cn/zh-cn/microcontrollers-mcus-processors/c2000-real-time-control-mcus/overview.html">C2000 实时微控制器 | TI.com.cn</a></li>
+</ol>
+<h3 id="C2000的美化"><a href="#C2000的美化" class="headerlink" title="C2000的美化"></a>C2000的美化</h3><h4 id="CCS的汉化"><a href="#CCS的汉化" class="headerlink" title="CCS的汉化"></a>CCS的汉化</h4><ol>
+<li>众所周知，CCS是基于Eclipse的二次开发，那么，采用Eclipse的汉化方式当然可行。</li>
+<li><code>帮助-&gt;安装新软件</code>：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728054051651.png" alt="image-20230728054051651"></li>
+<li>名称随意添加，位置请添加：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/eclipse/technology/babel/update-site/latest/">https://mirrors.tuna.tsinghua.edu.cn/eclipse/technology/babel/update-site/latest/</a><ol>
+<li>这是清华大学的babel镜像源，根据地理位置选择，搜一个。</li>
+</ol>
+</li>
+<li>然后在babel列表Fetch出来之后选择：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/c2000-learn-1image-20230728054225650.png" alt="image-20230728054225650"></li>
+<li>下一步下一步。</li>
+</ol>
+<h4 id="主题选择和美化"><a href="#主题选择和美化" class="headerlink" title="主题选择和美化"></a>主题选择和美化</h4><blockquote>
+<p>我这里安装我喜欢的暗色主题</p>
+</blockquote>
+<ol>
+<li><code>帮助--&gt;Eclipse市场</code>，等待载入之后选择Poular，很快找到：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728054402100.png" alt="image-20230728054402100"></li>
+<li>Icon挺好看的，但是第三个安装不了（CCS缺JAVA包），点完了就点下一个吧。<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728054442741.png" alt="image-20230728054442741"></li>
+<li>安装完后如果不满意的后续更改：<ol>
+<li><code>窗口--&gt;首选项--&gt;常规--&gt;外观</code>:使用主题：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728054546999.png" alt="image-20230728054546999"></li>
+<li>随后点击<code>Open Color Themes Page</code>进入主题的修改页，可以快速搭配，Enjoy！<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728054659114.png" alt="image-20230728054659114">我的：Af7-Qw</li>
+<li>如果有其他好看的主题请分享给我捏。</li>
+</ol>
+</li>
+</ol>
+<h3 id="CCS使用小技巧"><a href="#CCS使用小技巧" class="headerlink" title="CCS使用小技巧"></a>CCS使用小技巧</h3><ol>
+<li><p>CCS是默认开启代码补全的，只是需要快捷键触发，默认快捷键为：<code>Alt+/</code>。</p>
+<ol>
+<li>需要修改可以在<code>首选项--&gt;键</code>当中搜索<code>内容辅助</code>进行修改：<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728054931246.png" alt="image-20230728054931246"></li>
+</ol>
+</li>
+<li><p>CCS恢复默认窗口：<code>窗口--&gt;透视图--&gt;复位透视图</code>根据需求恢复吧。<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728055002376.png" alt="image-20230728055002376"></p>
+</li>
+<li><p>Eclipse没有Copilot，但是应用商店里面有这个叫做<strong>Tabnine</strong>的插件，可以提供代码自动补齐，虽然反应不是很快；<img src="/2023/07/29/ProgramLearn/TI/c2000-learn-1/image-20230728064333468.png" alt="image-20230728064333468"></p>
+<ol>
+<li>在和我一起建立软件包之后，可以直接在code进行代码查找和开发哦w</li>
+<li><del>白嫖Copilot的劳动力</del></li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/12/28/ProgramLearn/UbuntuUsage/Linux%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -347,7 +552,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-12-18 14:47:42" itemprop="dateModified" datetime="2022-12-18T14:47:42+08:00">2022-12-18</time>
+                <time title="Modified: 2023-01-12 10:52:37" itemprop="dateModified" datetime="2023-01-12T10:52:37+08:00">2023-01-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -374,7 +579,8 @@
 <p>背景故事：呜呼哀哉，我因为没有趁着第一波危机从学校逃跑，不幸地阳了，没有精力完成实验报告和拷贝文件，只好在家远程连接到学校的电脑上完成作业，他需要做一些操作让他的台机能在家中被连接。</p>
 </blockquote>
 <ul>
-<li>我已有的知识：<ul>
+<li><p>我已有的知识：</p>
+<ul>
 <li>Linux基础服务命令：<code>systemctl</code>,<code>crontab</code>……</li>
 <li>网页搜索能力</li>
 </ul>
@@ -393,7 +599,8 @@
 <li>让这两台设备能够被远控</li>
 </ul>
 </li>
-<li>解决方案：<ul>
+<li><p>解决方案：</p>
+<ul>
 <li>唤醒问题：使用魔术封包的方法让主机支持WakeOnLan</li>
 <li>联网问题：使用crontab定时任务，让香橙派每一分钟给路由器发包，保证联网保活的包不断</li>
 <li>远程连接问题：使用内网透传工具</li>
@@ -463,14 +670,15 @@
 <li><p>接下来使能服务，注意ubuntu中cron的服务不是<code>crond</code>，而是<code>cron.service</code><img src="http://picgo.malossov.top/malpicbed/image-20221218135419224.png" alt="image-20221218135419224"></p>
 <blockquote>
 <p>systemctl基本的服务操作：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl start   &lt;docker&gt;.service	//启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl restart &lt;docker&gt;.service	//重启</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl stop    &lt;docker&gt;.service	//停止</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl reload  &lt;docker&gt;.service	//重新加载</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">enable</span>  &lt;docker&gt;.service	//加入开机启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">disable</span> &lt;docker&gt;.service	//取消开机启动</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl start   &lt;docker&gt;.service    //启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl restart &lt;docker&gt;.service    //重启</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl stop    &lt;docker&gt;.service    //停止</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl reload  &lt;docker&gt;.service    //重新加载</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">enable</span>  &lt;docker&gt;.service    //加入开机启动</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemctl <span class="built_in">disable</span> &lt;docker&gt;.service    //取消开机启动</span></span><br></pre></td></tr></table></figure>
 <p>systemctl配置详解：</p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6963550409482829832">详细讲解systemctl（附常用指令） - 掘金 (juejin.cn)</a></p>
 </blockquote>
 </li>
 <li><p>可以观察tmp.txt日志文件看看是不是真的curl了，也可以使用<code>systemctl status &lt;service&gt;</code>进行日志查看：<img src="http://picgo.malossov.top/malpicbed/image-20221218135844577.png" alt="image-20221218135844577"></p>
 </li>
-<li>可以看到已经成功了。</li>
+<li><p>可以看到已经成功了。</p>
+</li>
 </ol>
 <h3 id="远程登录开启"><a href="#远程登录开启" class="headerlink" title="远程登录开启"></a>远程登录开启</h3><blockquote>
 <p>由于我的路由器时电信送的便宜玩意，管理后台特别烂，所以只有DHCP的局域网IP分配，非常伤心。无法配置todesk的远程唤醒，只能使用ubuntu下的ethtools工具进行相关配置。</p>
@@ -488,7 +696,7 @@
 <li><p>但是由于Linux万物皆文件的特性，在重启时，网卡的配置文件会被覆盖，因此采用systemd的方式，编写系统服务完成自动唤醒网卡的操作：</p>
 <ol>
 <li><p>使用<code>--preserve-env</code>操作进行提权，直接编写systemctl服务：<code>sudo --preserve-env systemctl edit --force --full wol-enable.service</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Unit]	# 服务本身的名字和说明</span><br><span class="line">Description=Enable Wake-up on LAN</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot	# 只执行一项任务、随后立即退出的服务</span><br><span class="line">ExecStart=/sbin/ethtool -s enp2s0   wol g	# 执行的命令，注意ethtool的位置是在sbin下的，泪目</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=basic.target	# 挂载在basic.target下，优先级必须比我用户启动高</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Unit]    # 服务本身的名字和说明</span><br><span class="line">Description=Enable Wake-up on LAN</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot    # 只执行一项任务、随后立即退出的服务</span><br><span class="line">ExecStart=/sbin/ethtool -s enp2s0   wol g    # 执行的命令，注意ethtool的位置是在sbin下的，泪目</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=basic.target    # 挂载在basic.target下，优先级必须比我用户启动高</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>详细配置2.0：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zwcry/p/9602756.html">linux systemctl 指令 —— 阮一峰 - 七脉 - 博客园 (cnblogs.com)</a></p>
 </li>
@@ -583,7 +791,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/18/ProgramLearn/1st_GroupMeet/1st-commended/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/09/18/ProgramLearn/1st_GroupMeet/1st-commended/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -762,7 +970,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/18/ProgramLearn/1st_GroupMeet/1st-sofr&shop/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/09/18/ProgramLearn/1st_GroupMeet/1st-sofr&shop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -905,7 +1113,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/08/ProgramLearn/UbunUse/UbuntuApps/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/09/08/ProgramLearn/UbunUse/UbuntuApps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -996,7 +1204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/09/06/ProgramLearn/UbunUse/UbunSet/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/09/06/ProgramLearn/UbunUse/UbunSet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -1122,7 +1330,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/08/05/ProgramLearn/UbuntuUsage/FuckNvidia/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/08/05/ProgramLearn/UbuntuUsage/FuckNvidia/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -1227,80 +1435,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/06/04/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avator.png">
-      <meta itemprop="name" content="MALossov">
-      <meta itemprop="description" content="是很菜的人的很菜的博客捏，无栈工程学徒ing。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MAL'S_BLOG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/04/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-06-04 06:12:15" itemprop="dateCreated datePublished" datetime="2022-06-04T06:12:15+08:00">2022-06-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-18 03:50:41" itemprop="dateModified" datetime="2022-02-18T03:50:41+08:00">2022-02-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/05/17/ProgramLearn/Server/BT-Tomcat-JDK/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/05/17/ProgramLearn/Server/BT-Tomcat-JDK/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -1415,7 +1550,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud_1/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/04/16/ProgramLearn/Server/UbuntuOnTencentCloud_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -1592,7 +1727,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://180.76.50.251/2022/02/23/ProgramLearn/Front/Python/">
+    <link itemprop="mainEntityOfPage" href="https://malossov.top/2022/02/23/ProgramLearn/Front/Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avator.png">
@@ -1740,7 +1875,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1774,13 +1909,13 @@
         
 
         
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022022319号 </a>
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2023019138号 </a>
   </div>
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
